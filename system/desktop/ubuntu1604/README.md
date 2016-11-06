@@ -70,7 +70,7 @@ Add something like below:
 Edit password in /home/user/.cifspwd
 
 ```bash
-sudo vi /home/clement/.cifspwd
+sudo vi /home/user/.cifspwd
 ```
 
 such as below
@@ -86,5 +86,7 @@ $ sudo chown root:root .cifspwd
 $ sudo chmod 0600 .cifspwd
 ```
 
+### Docker
 
+[Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/)
 
