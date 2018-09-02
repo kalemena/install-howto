@@ -1,0 +1,105 @@
+
+## Install Ubuntu 18.04
+
+* [Download NetInstall](http://archive.ubuntu.com/ubuntu/dists/bionic-updates/main/installer-amd64/current/images/netboot/mini.iso)
+* Flash the iso to USB key (using UNetBootIn for example)
+* Reboot from the USB key
+* Follow the install up to disk management, and do manual
+ * Split disk in at least 4 partitions:
+  * System mapped on / (reformat)
+  * User Home on /home, this way to ensure next install keeps all files and properties from users
+  * Swap
+  * /var (for docker images mainly)
+ * When asked for distribution, pick ubuntu desktop (may as well select from the plenty other flavors!)
+
+## Components
+
+### Commands
+
+```bash
+# Base stuffs
+$ sudo apt-get install gparted synaptic cifs-utils kdiff3 p7zip krename krusader
+# Medias
+$ sudo apt-get install vlc audacity digikam dvdrip k3b
+# Security
+$ sudo apt install gufw
+# Configuration tuning
+$ sudo apt install dconf-tools
+$ gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+$ gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+$ gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode FIXED
+$ gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 16
+$ gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items false
+$ sudo apt-get install fonts-symbola # fixing bug
+$ sudo apt install gnome-tweak-tool
+$ sudo apt-get install powertop
+$ echo 1 | sudo tee /sys/module/snd_hda_intel/parameters/power_save
+$ gufw
+$ gnome-tweaks 
+# Programming
+$ sudo apt install ubuntu-restricted-extras
+$ sudo snap install pycharm-community --classic
+$ sudo apt install virtualbox
+$ sudo apt install vagrant
+$ sudo snap install gitg
+# vscode (manual)
+# JDK 8
+$ sudo add-apt-repository ppa:webupd8team/java
+$ sudo apt-get update
+$ sudo apt-get install oracle-java8-installer
+```
+
+### Media
+
+Using these very often. There is no need to name below too much:
+- vlc: greatest video and music reader
+- digikam: THE best photo library management by far
+- audacity: whenever need to edit sound
+- dvdrip: whenever you buy a DVD, rip it to NAS for streaming later, and forget about it
+
+### Install NAS mounted drives
+
+```bash
+$ sudo apt-get install cifs-utils
+$ sudo vi /etc/fstab
+```
+
+Add something like below:
+
+```shell
+//mynas/home /media/nas215/home cifs _netdev,vers=1.0,users,credentials=/home/user/.cifspwd,iocharset=utf8,uid=1000,gid=1000,sec=ntlm 0 0
+```
+
+Edit password in /home/user/.cifspwd
+
+```bash
+sudo vi /home/user/.cifspwd
+```
+
+such as below
+```shell
+username=xxx
+password=yyy
+```
+
+Ensure file is not usable by others:
+
+```bash
+$ sudo chown root:root .cifspwd
+$ sudo chmod 0600 .cifspwd
+```
+
+### Docker
+
+[Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/)
+
+```bash
+# docker
+$ sudo apt-get install     apt-transport-https     ca-certificates     curl     software-properties-common
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+$ sudo apt-key fingerprint 0EBFCD88
+$ sudo add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+$ sudo apt-get install docker-ce
+```
