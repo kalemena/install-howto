@@ -13,7 +13,8 @@ Linux games installation & links.
         kbounce \
         kbreakout \
         kdiamond \
-        ri-li
+        ri-li \
+        zaz
 
 == 3D cars
 
@@ -30,6 +31,13 @@ Quake 3:
 
     $ mkdir /opt/games/quake3
     $ game-data-packager -i quake3 /opt/games/quake3
+
+= Game pads
+
+* link:https://www.youtube.com/watch?v=bAI4vnlQhPg[XBox One S]
+
+    $ sudo apt-ge install sysfsutils
+    $ sudo bash -c "echo 1 > /sys/module/bluetooth/parameters/disable_ertm"
 
 = Links
 
