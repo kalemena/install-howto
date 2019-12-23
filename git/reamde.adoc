@@ -1,0 +1,5 @@
+# GIT tips
+
+* link:https://help.github.com/en/github/using-git/changing-author-info[GIT Commit rewrite]
+
+See link:git-rewrite-commits.sh[git-rewrite-commits.sh]
