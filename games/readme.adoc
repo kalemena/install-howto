@@ -3,10 +3,14 @@
 
 Linux games installation & links.
 
+* link:https://doc.ubuntu-fr.org/jeu[Ubuntu Games]
+* link:https://doc.ubuntu-fr.org/jeu_plus[Other Ubuntu Games]
+
 == GCompris
 
     $ apt-get install gcompris gcompris-data gcompris-sound-fr
-    
+    $ gcompris-qt
+   
 == Small Games
 
     $ apt-get install \
@@ -16,21 +20,55 @@ Linux games installation & links.
         ri-li \
         zaz
 
+Games tested:
+
+* ri-li
+* kbounce
+* kdiamond
+* kbreakout
+* zaz
+
+== Play On Linux
+
+link:https://doc.ubuntu-fr.org/playonlinux[PlayOnLinux]
+
+    $ apt-get install playonlinux
+    $ playonlinux
+
+Games tested:
+
+* Xenon 2
+
+== Arcade
+
+link:https://doc.ubuntu-fr.org/arcade[Arcade Ubuntu]
+
 == 3D cars
 
     $ apt-get install supertuxkart
+    $ supertuxkart
 
-== Game Data Packager
+== Strategy
 
-Quake 2:
+* link:https://play0ad.com/[0 A.D. - Empires Ascendant]
+
+* link:https://www.openra.net/[Open Red Alert]
+
+== FPS
+
+* Quake 2:
 
     $ mkdir /opt/games/quake2
     $ game-data-packager -i quake2 /opt/games/quake2
+    $ quake2
 
-Quake 3:
+* Quake 3:
 
     $ mkdir /opt/games/quake3
     $ game-data-packager -i quake3 /opt/games/quake3
+    $ quake3
+
+* link:https://shrimpworks.za.net/2018/02/19/ut-on-linux-2/[Unreal Tournament]
 
 = Game pads
 
@@ -41,9 +79,9 @@ Quake 3:
 
 = Links
 
+* link:http://www.jeuxlinux.fr/[Jeux Linux]
 * link:https://www.reddit.com/r/linux_gaming/comments/edaq0s/guide_migrating_to_linux_in_2020/[Guide to games in linux]
 * link:https://www.gamingonlinux.com/[Gaming on Linux]
-* link:https://shrimpworks.za.net/2018/02/19/ut-on-linux-2/[Unreal Tournament]
 * link:https://doc.ubuntu-fr.org/steam[Steam for Linux]
 
 
