@@ -37,7 +37,8 @@ link:https://doc.ubuntu-fr.org/playonlinux[PlayOnLinux]
 
 Games tested:
 
-* Xenon 2
+* Strike Ball 2 (OK)
+* Xenon 2 (KO)
 
 == Arcade
 
