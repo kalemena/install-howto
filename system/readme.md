@@ -4,6 +4,16 @@
 
 [BASH cheatsheet](https://devhints.io/bash)
 
+# Storage cleanups
+
+link:http://duc.zevv.nl/[DUC]
+
+    $ sudo apt-get install duc 
+    $ duc index /usr
+    $ duc ls -Fg /usr/local
+    $ duc gui /usr 
+    $ duc ui /usr
+
 # Characters
 
 ## encoding and characterset
