@@ -1,0 +1,10 @@
+# Install-howto
+
+This repository contains notes used to setup various things.
+
+## System
+
+Installation How-To (ubuntu, docker, etc)
+
+* link:/system/desktop/ubuntu1604[Install Ubuntu 16.04]
+

@@ -1,14 +1,23 @@
-# install-howto
-
-Installation How-To (ubuntu, docker, etc)
-
-* [Install Ubuntu 16.04](/system/desktop/ubuntu1604)
 
 
-# setting USB to keep same port
+# BASH
+
+[BASH cheatsheet](https://devhints.io/bash)
+
+# Storage cleanups
+
+link:http://duc.zevv.nl/[DUC]
+
+    $ sudo apt-get install duc 
+    $ duc index /usr
+    $ duc ls -Fg /usr/local
+    $ duc gui /usr 
+    $ duc ui /usr
+
+# Setting USB to keep same port
 
 Grep information on device:
-```bash
+
   $ udevadm info -a -n /dev/ttyUSB1 | grep '{serial}'
     ATTRS{serial}=="A600dVPj"
     ATTRS{serial}=="0000:00:14.0"
@@ -20,13 +29,24 @@ Grep information on device:
     ATTRS{idVendor}=="0403"
     ATTRS{idVendor}=="058f"
     ATTRS{idVendor}=="1d6b"
-```
 
 Add rule for this device:
-```bash
+
   $ sudo nano /etc/udev/rules.d/99-usb-serial.rules
 
   SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="04VKC0FD", SYMLINK+="ttyRfxTrx"
   SUBSYSTEM=="tty", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="2303", SYMLINK+="ttyCurrenCost"
   SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="A600dVPj", SYMLINK+="ttyJeeLink"
-```
+
+# Characters
+
+## encoding and characterset
+
+* [unicode converter](http://r12a.github.io/apps/conversion/)
+
+## E-mails and characters
+
+Icons in subjects are funny:
+* Pick some characters in [list]()
+* Convert from Hex to Unicode using [this online tool]()
+* Copy/paste in e-mail subject
