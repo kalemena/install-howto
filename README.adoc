@@ -1,10 +1,9 @@
 # Install-howto
 
-This repository contains notes used to setup various things.
+This repository contains notes used to install various things and help of cheatsheets.
 
-## System
-
-Installation How-To (ubuntu, docker, etc)
-
-* link:/system/desktop/ubuntu1604[Install Ubuntu 16.04]
-
+* link:/games[]
+* link:/git[]
+* link:/monitoring[]
+* link:/system[]
+* link:/video[]

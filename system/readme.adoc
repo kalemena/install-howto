@@ -1,8 +1,13 @@
 
+# System OS installation
+
+Installation How-To (ubuntu, docker, etc)
+
+* link:/system/desktop/ubuntu1604[Install Ubuntu 16.04]
 
 # BASH
 
-[BASH cheatsheet](https://devhints.io/bash)
+link:https://devhints.io/bash[BASH cheatsheet]
 
 # Storage cleanups
 
@@ -42,7 +47,7 @@ Add rule for this device:
 
 ## encoding and characterset
 
-* [unicode converter](http://r12a.github.io/apps/conversion/)
+* link:http://r12a.github.io/apps/conversion/[unicode converter]
 
 ## E-mails and characters
 
