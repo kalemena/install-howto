@@ -1,6 +1,6 @@
 # Install-howto
 
-This repository contains notes used to install various things and help of cheatsheets.
+This repository contains notes used to install various things and help cheatsheets.
 
 * link:/games[]
 * link:/git[]
