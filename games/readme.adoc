@@ -5,13 +5,35 @@ Linux games installation & links.
 
 * link:https://doc.ubuntu-fr.org/jeu[Ubuntu Games]
 * link:https://doc.ubuntu-fr.org/jeu_plus[Other Ubuntu Games]
+* link:https://help.ubuntu.com/community/Games/NativeFreeUbuntuGames[Other Ubuntu Games]
 
 == GCompris
 
     $ apt-get install gcompris gcompris-data gcompris-sound-fr
     $ gcompris-qt
    
-== Small Games
+== Tux Family
+
+    $ apt-get install \
+        tuxpaint \
+        supertux \
+        extremetuxracer \
+        supertuxkart
+
+== Native small games
+
+[width="15%"]
+|=======
+|Name |Package |Tested
+
+|ri-li      |ri-li       |OK
+|kbounce    |kbounce     |OK
+|kdiamond   |kdiamond    |OK
+|kbreakout  |kbreakout   |OK
+|zaz        |zaz         |OK
+|=======
+
+Installation:
 
     $ apt-get install \
         kbounce \
@@ -19,14 +41,6 @@ Linux games installation & links.
         kdiamond \
         ri-li \
         zaz
-
-Games tested:
-
-* ri-li
-* kbounce
-* kdiamond
-* kbreakout
-* zaz
 
 == Play On Linux
 
@@ -44,16 +58,15 @@ Games tested:
 
 link:https://doc.ubuntu-fr.org/arcade[Arcade Ubuntu]
 
-== 3D cars
-
-    $ apt-get install supertuxkart
-    $ supertuxkart
+* chromium ?
 
 == Strategy
 
 * link:https://play0ad.com/[0 A.D. - Empires Ascendant]
 
 * link:https://www.openra.net/[Open Red Alert]
+
+* link:https://www.boswars.org/screenshots.shtml[BosWars] ?
 
 == FPS
 
