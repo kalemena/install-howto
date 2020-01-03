@@ -86,10 +86,9 @@ link:https://doc.ubuntu-fr.org/arcade[Arcade Ubuntu]
 
 = Game pads
 
-* link:https://www.youtube.com/watch?v=bAI4vnlQhPg[XBox One S]
+NOTE: Tested OK on Android TV Box and on Ubuntu 18.04 SuperTux
 
-    $ sudo apt-ge install sysfsutils
-    $ sudo bash -c "echo 1 > /sys/module/bluetooth/parameters/disable_ertm"
+* link:https://gamesir.hk/products/gamesir-g4s[GameSir G4s]
 
 = Links
 
