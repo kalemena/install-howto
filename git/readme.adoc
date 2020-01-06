@@ -3,3 +3,9 @@
 * link:https://help.github.com/en/github/using-git/changing-author-info[GIT Commit rewrite]
 
 See link:git-rewrite-commits.sh[git-rewrite-commits.sh]
+
+## Commit
+
+Date fun tips
+
+    $ git commit -m "Blabla" --date "$(date --date='-2 day')"
