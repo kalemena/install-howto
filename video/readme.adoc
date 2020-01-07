@@ -5,6 +5,7 @@
 
 * link:https://itsfoss.com/best-video-editing-software-linux/[Video Tools Review]
 * link:https://itsfoss.com/linux-photo-management-software/[Photo Tools Review]
+* link:https://github.com/leandromoreira/ffmpeg-libav-tutorial[FFMpeg tutorial]
 
 ## Tools
 
