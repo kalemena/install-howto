@@ -23,6 +23,10 @@ link:https://trac.ffmpeg.org/wiki/Scaling%20(resizing)%20with%20ffmpeg[FFMpeg in
 
     $ ffmpeg -i /video/Perso/GoPro/GOPR0035.MP4 -strict -2 -vf "crop=1920:1080:150:150" after.mp4
 
+### Cut From/To
+
+    $ ffmpeg -i input.mkv -ss 00:01:00 -to 00:02:00 -c:v copy -c:a copy output.mp4
+
 ### Stabilize
 
 Basic stabilization:
