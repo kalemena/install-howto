@@ -5,6 +5,12 @@ Installation How-To (ubuntu, docker, etc)
 
 * link:/system/desktop/ubuntu1604[Install Ubuntu 16.04]
 
+# Files
+
+* find recently modified files (in home and with little grep here):
+
+  $ find ~ -type f -mmin -5 | grep "\.settings"
+
 # BASH
 
 link:https://devhints.io/bash[BASH cheatsheet]
