@@ -10,6 +10,12 @@
 ## Tools
 
 * link:https://doc.ubuntu-fr.org/montage_video[Montage Vidéo]
+* link:https://github.com/konradit/gopro-linux[GoPro tools]
+* link:https://github.com/KonradIT/gopro-py-api[GoPro Python API]
+
+## FUN
+
+* link:https://elder.dev/posts/open-source-virtual-background/[Virtual WebCam]
 
 ## Commands
 
