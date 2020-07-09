@@ -13,11 +13,17 @@
 * link:https://github.com/konradit/gopro-linux[GoPro tools]
 * link:https://github.com/KonradIT/gopro-py-api[GoPro Python API]
 
+### OpenShot
+
+Use AppImage on linux.
+
+
 ## FUN
 
 * link:https://elder.dev/posts/open-source-virtual-background/[Virtual WebCam]
+* link:https://github.com/alyssaq/face_morpher[Face morphing]
 
-## Commands
+## Command lines cheatsheet
 
 ### Resize
 
