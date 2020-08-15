@@ -37,3 +37,4 @@ This is an aggregate of many resources out there to run some monitoring stack.
 ## resources
 
 * link:https://docs.influxdata.com/influxdb/v1.2/introduction/getting_started/[InfluxDB doc]
+* link:https://devconnected.com/how-to-install-influxdb-telegraf-and-grafana-on-docker/[TIG stack]
