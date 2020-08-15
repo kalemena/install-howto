@@ -1,20 +1,6 @@
-version: '2'
+version: '3.7'
 
 services:
-
-  telegraf:
-    image: telegraf
-    network_mode: host    
-    volumes:
-      - ./etc/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /sys:/rootfs/sys:ro
-      - /proc:/rootfs/proc:ro
-      - /etc:/rootfs/etc:ro      
-    environment:
-      HOST_PROC: /rootfs/proc
-      HOST_SYS: /rootfs/sys
-      HOST_ETC: /rootfs/etc
 
   influxdb:
     image: influxdb
@@ -25,20 +11,37 @@ services:
       - ./data/influxdb:/var/lib/influxdb    
     environment:
       INFLUXDB_ADMIN_ENABLED: "true"
-      INFLUXDB_ADMIN_USER: kalemena
-      INFLUXDB_ADMIN_PASSWORD: kalemena
+      INFLUXDB_ADMIN_USER: ${INFLUXDB_ADMIN_USER:-default}
+      INFLUXDB_ADMIN_PASSWORD: ${INFLUXDB_ADMIN_PASSWORD:-password}
+      INFLUXDB_MONITOR_STORE_ENABLED: "false"
 
-  grafana:
-    image: grafana/grafana
-    ports:
-      - "3000:3000"
-    volumes:
-  #    - ./etc/grafana:/etc/grafana
-      - ./data/grafana/var/lib/grafana:/var/lib/grafana
-      - ./data/grafana/var/log/grafana:/var/log/grafana
-    environment:
-      GF_SECURITY_ADMIN_USER: kalemena
-      GF_SECURITY_ADMIN_PASSWORD: kalemena
+  # telegraf:
+  #   image: telegraf
+  #   network_mode: host    
+  #   volumes:
+  #     - ./etc/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+  #     - /var/run/docker.sock:/var/run/docker.sock:ro
+  #     - /sys:/rootfs/sys:ro
+  #     - /proc:/rootfs/proc:ro
+  #     - /etc:/rootfs/etc:ro      
+  #   environment:
+  #     HOST_PROC: /rootfs/proc
+  #     HOST_SYS: /rootfs/sys
+  #     HOST_ETC: /rootfs/etc
+
+
+
+  # grafana:
+  #   image: grafana/grafana
+  #   ports:
+  #     - "3000:3000"
+  #   volumes:
+  # #    - ./etc/grafana:/etc/grafana
+  #     - ./data/grafana/var/lib/grafana:/var/lib/grafana
+  #     - ./data/grafana/var/log/grafana:/var/log/grafana
+  #   environment:
+  #     GF_SECURITY_ADMIN_USER: kalemena
+  #     GF_SECURITY_ADMIN_PASSWORD: kalemena
 
   # bootstrap:
   #   image: "alpine:latest"
