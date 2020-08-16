@@ -12,26 +12,26 @@ services:
       - "8083:8083"
       - "8086:8086"
     volumes: 
-      - ./data/influxdb:/var/lib/influxdb:rw
+      - ./var/lib/influxdb:/var/lib/influxdb:rw
     environment:
       INFLUXDB_ADMIN_ENABLED: "true"
       INFLUXDB_ADMIN_USER: ${INFLUXDB_ADMIN_USER:-default}
       INFLUXDB_ADMIN_PASSWORD: ${INFLUXDB_ADMIN_PASSWORD:-password}
       INFLUXDB_MONITOR_STORE_ENABLED: "false"
 
-  # telegraf:
-  #   image: telegraf
-  #   network_mode: host    
-  #   volumes:
-  #     - ./etc/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
-  #     - /var/run/docker.sock:/var/run/docker.sock:ro
-  #     - /sys:/rootfs/sys:ro
-  #     - /proc:/rootfs/proc:ro
-  #     - /etc:/rootfs/etc:ro      
-  #   environment:
-  #     HOST_PROC: /rootfs/proc
-  #     HOST_SYS: /rootfs/sys
-  #     HOST_ETC: /rootfs/etc
+  telegraf:
+    image: telegraf
+    network_mode: host
+    volumes:
+      - ./etc/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /sys:/rootfs/sys:ro
+      - /proc:/rootfs/proc:ro
+      - /etc:/rootfs/etc:ro      
+    environment:
+      HOST_PROC: /rootfs/proc
+      HOST_SYS: /rootfs/sys
+      HOST_ETC: /rootfs/etc
 
 
 
