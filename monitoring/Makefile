@@ -1,5 +1,8 @@
 
-start:
+init:
+	mkdir -p data/influxdb
+
+start: init
 	docker-compose up -d
 
 stop:
