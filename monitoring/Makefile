@@ -1,8 +1,12 @@
 
 init:
-	mkdir -p data/influxdb
+	docker-compose pull
+	# prepare influxDB
+	mkdir -p var/lib/influxdb
+	mkdir -p etc/influxdb
+	docker run --rm influxdb influxd config | tee etc/influxdb/influxdb.conf > /dev/null
 
-start: init
+start: 
 	docker-compose up -d
 
 stop:
