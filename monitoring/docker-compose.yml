@@ -34,19 +34,18 @@ services:
       HOST_SYS: /rootfs/sys
       HOST_ETC: /rootfs/etc
 
-
-
-  # grafana:
-  #   image: grafana/grafana
-  #   ports:
-  #     - "3000:3000"
-  #   volumes:
-  # #    - ./etc/grafana:/etc/grafana
-  #     - ./data/grafana/var/lib/grafana:/var/lib/grafana
-  #     - ./data/grafana/var/log/grafana:/var/log/grafana
-  #   environment:
-  #     GF_SECURITY_ADMIN_USER: kalemena
-  #     GF_SECURITY_ADMIN_PASSWORD: kalemena
+  grafana:
+    image: grafana/grafana
+    user: "${UID}:${GID}"
+    ports:
+      - "3000:3000"
+    volumes:
+  #    - ./etc/grafana:/etc/grafana
+      - ./var/lib/grafana:/var/lib/grafana
+      - ./var/log/grafana:/var/log/grafana
+    environment:
+      GF_SECURITY_ADMIN_USER: ${GRAFANA_ADMIN_USER:-default}
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-password}
 
   # bootstrap:
   #   image: "alpine:latest"

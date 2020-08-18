@@ -2,13 +2,13 @@
 init:
 	docker-compose pull
 
-	# prepare influxDB
+init-influxdb:
 	mkdir -p var/lib/influxdb
 	mkdir -p etc/influxdb
 	docker run --rm influxdb influxd config | tee etc/influxdb/influxdb.conf > /dev/null
 	touch var/lib/.influx_history
 
-	docker run -it --rm \
+	docker run --rm \
 		--user 1000:1000 \
 		-e INFLUXDB_HTTP_AUTH_ENABLED=true \
         -e INFLUXDB_ADMIN_USER=default \
@@ -16,6 +16,14 @@ init:
         -v $(CURDIR)/var/lib/influxdb:/var/lib/influxdb \
         -v $(CURDIR)/etc/influxdb/scripts:/docker-entrypoint-initdb.d \
         influxdb /init-influxdb.sh
+
+init-telegraf:
+	mkdir -p etc/telegraf
+	docker run --rm telegraf telegraf config | tee etc/telegraf/telegraf.conf > /dev/null
+
+init-grafana:
+	mkdir -p var/lib/grafana
+	mkdir -p var/log/grafana
 
 start: 
 	docker-compose up -d
