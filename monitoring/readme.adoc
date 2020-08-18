@@ -50,4 +50,5 @@ Import -> dashboards -> id = 1443 => OK
 ## resources
 
 * link:https://docs.influxdata.com/influxdb/v1.2/introduction/getting_started/[InfluxDB doc]
+* link:https://docs.influxdata.com/influxdb/v1.8/query_language/manage-database/[InfluxDB doc database retention]
 * link:https://devconnected.com/how-to-install-influxdb-telegraf-and-grafana-on-docker/[TIG stack]
