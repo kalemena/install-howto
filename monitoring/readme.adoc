@@ -38,8 +38,14 @@ $ curl -G http://localhost:8086/query --data-urlencode "q=SHOW DATABASES"
 ----
 
 * Open your brower to: link:http://localhost:3000/[]
-* Use the username/password: __kalemena/kalemena__
+* Use the username/password: __default/password__
 * Select the __System__ dashboard
+
+[TIP]
+====
+Importing Telegraf Dashboard: +
+Import -> dashboards -> id = 1443 => OK
+====
 
 ## resources
 
