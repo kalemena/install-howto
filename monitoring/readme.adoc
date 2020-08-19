@@ -1,33 +1,53 @@
-# Monitoring docker stack
+= Monitoring docker stack
 
 This is an aggregate of many resources out there to run some monitoring stack.
 
-## Simple telegraf + grafana + influxdb
+== Simple telegraf + grafana + influxdb
 
 `docker-compose` includes `telegraf`, `grafana` and `influxdb`.
 
-### Usage
+=== Setup
+
+* Initialize using user 1000
+
+[source,bash]
+----
+$ make init
+----
 
 * Start the stack
 
-    $ docker-compose up -d
-    ...
-    $ docker exec -it monitoring_influxdb_1 bash
-    root@bb69221ac8fe:/# influx
-    Visit https://enterprise.influxdata.com to register for updates, InfluxDB server management, and monitoring.
-    Connected to http://localhost:8086 version 0.9.6.1
-    InfluxDB shell 0.9.6.1
-    > create database telegraf;
-    ...
-    > create database SensorData;
-    ...
-    > show databases;
-    name: databases
-    ---------------
-    name
-    SensorData
-    telegraf
-    > 
+[source,bash]
+----
+$ make start
+----
+
+* Open your brower to: link:http://localhost:3000/[]
+* Use the username/password: __default/password__
+* Go to *Data Sources* and add an InfluxDB with host URL: *http://influxdb:8086* and database name *telegraf* (there are for now no credentials)
+* Then in *+*, import Dashboard and specify *1443* to import a default *Telegraf* dashboard
+
+=== Use
+
+* Manually create more database:
+
+[source,bash]
+----
+$ docker exec -it monitoring_influxdb_1 bash
+root@bb69221ac8fe:/# influx
+Visit https://enterprise.influxdata.com to register for updates, InfluxDB server management, and monitoring.
+Connected to http://localhost:8086 version 0.9.6.1
+InfluxDB shell 0.9.6.1
+> create database SensorData;
+...
+> show databases;
+name: databases
+---------------
+name
+SensorData
+telegraf
+> 
+----
 
 * Test InfluxDB as curl:
 
@@ -37,17 +57,7 @@ $ curl -G http://localhost:8086/query --data-urlencode "q=SHOW DATABASES"
 {"results":[{"statement_id":0,"series":[{"name":"databases","columns":["name"],"values":[["telegraf"],["SensorData"]]}]}]}
 ----
 
-* Open your brower to: link:http://localhost:3000/[]
-* Use the username/password: __default/password__
-* Select the __System__ dashboard
-
-[TIP]
-====
-Importing Telegraf Dashboard: +
-Import -> dashboards -> id = 1443 => OK
-====
-
-## resources
+== resources
 
 * link:https://docs.influxdata.com/influxdb/v1.2/introduction/getting_started/[InfluxDB doc]
 * link:https://docs.influxdata.com/influxdb/v1.8/query_language/manage-database/[InfluxDB doc database retention]
