@@ -1,5 +1,7 @@
 
-init:
+init: init-images init-influxdb init-telegraf init-grafana
+
+init-images:
 	docker-compose pull
 
 init-influxdb:
