@@ -24,8 +24,20 @@ $ make start
 
 * Open your brower to: link:http://localhost:3000/[]
 * Use the username/password: __default/password__
-* Go to *Data Sources* and add an InfluxDB with host URL: *http://influxdb:8086* and database name *telegraf* (there are for now no credentials)
-* Then in *+*, import Dashboard and specify *1443* to import a default *Telegraf* dashboard
+* Search for a dashboard to display
+
+TIP: Dashboards are automatically imported in Grafana !
+
+To update default dashboards:
+
+* Select *+* and *import Dashboard*
+** specify an id or import a previously exported dashboard (here *914* and *1443* are imported)
+or
+* Modify an existing dashbord
+
+Then:
+* Export dashboard using *Share* button
+* Copy the files under folder *etc/grafana/provisioning/dashboards* (and remove previous dashboard if needed)
 
 === Use
 
