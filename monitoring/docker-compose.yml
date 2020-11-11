@@ -1,28 +1,39 @@
 version: '3.7'
 
-# volumes:
-#   influxdb:
+volumes:
+  influxdb-data:
+  grafana-data:
 
 services:
 
   influxdb:
     image: influxdb
-    user: "${UID}:${GID}"
+    # user: "${UID}:${GID}"
+    restart: always
     ports:
       - "8083:8083"
       - "8086:8086"
     volumes: 
-      - ./var/lib/influxdb:/var/lib/influxdb:rw
-      - ./var/lib/.influx_history:/.influx_history
+      - ./etc/influxdb/scripts:/docker-entrypoint-initdb.d
+      # - ./var/lib/influxdb:/var/lib/influxdb:rw
+      # - ./var/lib/.influx_history:/.influx_history
+      - influxdb-data:/var/lib/influxdb:rw
     environment:
+      INFLUXDB_DB: "telegraf"
+      INFLUXDB_REPORTING_DISABLED: "true"
       INFLUXDB_ADMIN_ENABLED: "true"
       INFLUXDB_ADMIN_USER: ${INFLUXDB_ADMIN_USER:-default}
       INFLUXDB_ADMIN_PASSWORD: ${INFLUXDB_ADMIN_PASSWORD:-password}
+      INFLUXDB_USER: ${INFLUXDB_USER:-default}
+      INFLUXDB_USER_PASSWORD: ${INFLUXDB_USER_PASSWORD:-password}
       INFLUXDB_MONITOR_STORE_ENABLED: "false"
+      INFLUXDB_META_LOGGING_ENABLED: "true"
+      INFLUXDB_DATA_QUERY_LOG_ENABLED: "false"
 
   telegraf:
     image: telegraf
     network_mode: host
+    restart: always
     volumes:
       - ./etc/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
@@ -36,13 +47,15 @@ services:
 
   grafana:
     image: grafana/grafana
-    user: "${UID}:${GID}"
+    restart: always
+    # user: "${UID}:${GID}"
     ports:
       - "3000:3000"
     volumes:
-  #    - ./etc/grafana:/etc/grafana
-      - ./var/lib/grafana:/var/lib/grafana
-      - ./var/log/grafana:/var/log/grafana
+      # - ./etc/grafana:/etc/grafana
+      # - ./var/lib/grafana:/var/lib/grafana
+      # - ./var/log/grafana:/var/log/grafana
+      - grafana-data:/var/lib/grafana
     environment:
       GF_SECURITY_ADMIN_USER: ${GRAFANA_ADMIN_USER:-default}
       GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-password}

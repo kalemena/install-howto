@@ -33,8 +33,7 @@ $ make start
 
 [source,bash]
 ----
-$ docker exec -it monitoring_influxdb_1 bash
-root@bb69221ac8fe:/# influx
+$ docker-compose exec influxdb influx
 Visit https://enterprise.influxdata.com to register for updates, InfluxDB server management, and monitoring.
 Connected to http://localhost:8086 version 0.9.6.1
 InfluxDB shell 0.9.6.1
