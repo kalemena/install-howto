@@ -1,0 +1,25 @@
+
+
+
+
+https://realpython.com/python-boto3-aws-s3/
+
+https://github.com/tbumi/glacier-upload
+https://github.com/numblr/glaciertools
+
+https://auspicacious.org/posts/2018/10/12/duplicity-with-glacier/
+
+https://aws.amazon.com/fr/blogs/aws/new-amazon-s3-storage-class-glacier-deep-archive/
+
+
+
+import boto3
+s3_client = boto3.client('s3')
+s3_client.upload_file('/tmp/hello.txt', 'my-bucket', 'hello.txt', ExtraArgs={'StorageClass': 'DEEP_ARCHIVE'})
+
+
+https://pypi.org/project/S3Backup/
+https://pypi.org/project/s3-encryption/
+
+
+https://docs.aws.amazon.com/code-samples/latest/catalog/code-catalog-python-example_code-glacier.html
