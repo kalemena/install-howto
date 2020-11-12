@@ -60,11 +60,13 @@ services:
     environment:
       GF_SECURITY_ADMIN_USER: ${GRAFANA_ADMIN_USER:-default}
       GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-password}
+      GF_INSTALL_PLUGINS: grafana-worldmap-panel
+    env_file:
+      - .env
 
-  # bootstrap:
-  #   image: "alpine:latest"
-  #   volumes:
-  #     - "./bootstrap.sh:/bootstrap.sh:ro"
-  #     - "./etc/grafana/dashboard-system.json:/etc/grafana/dashboard-system.json:ro"
-  #   command: /bootstrap.sh
-
+  covid:
+    image: covid-19-influxdb
+    build: https://github.com/smartcuc/COVID-19.git
+    environment:
+      INFLUX_HOST: influxdb
+      SCHEDULE_H: 8
