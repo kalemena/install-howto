@@ -79,6 +79,27 @@ bash-5.0$ grafana-cli plugins install grafana-worldmap-panel
 installing grafana-worldmap-panel @ 0.3.2
 ----
 
+Interesting panels ?
+
+* link:https://grafana.com/grafana/plugins/agenty-flowcharting-panel[agenty-flowcharting-panel]
+** link:https://play.grafana.org/d/yNQz3OCZk/flowcharting-floorplan?orgId=1&refresh=30s[Floorplan]
+* link:https://grafana.com/grafana/plugins/pierosavi-imageit-panel/installation[Floorplan #2]
+* link:https://grafana.com/grafana/plugins/michaeldmoore-multistat-panel[Tenants]
+* link:https://grafana.com/grafana/plugins/snuids-radar-panel[Radar]
+* link:https://grafana.com/grafana/plugins/novatec-sdg-panel[Services]
+* link:https://grafana.com/grafana/plugins/snuids-trafficlights-panel[TrafficLights]
+* link:https://grafana.com/grafana/plugins/magnesium-wordcloud-panel[Word Cloud]
+* grafana-clock-panel
+* satellogic-3d-globe-panel
+* ryantxu-ajax-panel
+* yesoreyeram-boomtable-panel
+* cloudspout-button-panel
+* jdbranham-diagram-panel
+* natel-discrete-panel => heaters or service states?
+* dalvany-image-panel => meteo ?
+* marcusolsson-dynamictext-panel => services states?
+* larona-epict-panel => architecture AWS annotation?
+
 == resources
 
 * link:https://docs.influxdata.com/influxdb/v1.2/introduction/getting_started/[InfluxDB doc]
