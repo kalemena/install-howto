@@ -1,0 +1,78 @@
+= Tock
+:hardbreaks:
+
+This is slightly modified link:https://github.com/theopenconversationkit/tock-docker[Tock Bot API stack]
+
+== Usage
+
+.Commands
+[source,bash]
+----
+$ make start
+$ make stop
+$ make clean
+----
+
+IMPORTANT: Tock Studio is at *http://localhost:7080* and has creds *admin@app.com / password*
+
+IMPORTANT: at first connection, you are asked to create an app by 3 questions, language, etc. This ends as below app usage.
+
+.Test stack works => run command against default namespace/bot/connector
+[source, bash]
+----
+$ curl localhost:5082/io/app/new_assistant/web -d '{ "query": "Hello!", "userId": "ID_00001" }' | jq .
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   133  100    90  100    43    608    290 --:--:-- --:--:-- --:--:--   898
+{
+  "responses": [
+    {
+      "type": "WebMessage",
+      "text": "Sorry, I didn't understand :(",
+      "version": "1"
+    }
+  ]
+}
+----
+
+.Configure WebHook *http://demo_api_webhook:8887*
+image:images/tock-admin-app-config.png[]
+
+.Test webhook works => run command against default namespace/bot/connector
+[source, bash]
+----
+$ curl localhost:5082/io/app/new_assistant/web -d '{ "query": "Coucou", "userId": "ID_00001" }' | jq .
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   396  100   353  100    43   5268    641 --:--:-- --:--:-- --:--:--  5910
+{
+  "responses": [
+    {
+      "type": "WebMessage",
+      "text": "Sorry - not understood",
+      "buttons": [
+        {
+          "clazz": "postback_button",
+          "title": "Card",
+          "payload": "card?_previous_intent=unknown&_source=new_assistant",
+          "type": "postback"
+        },
+        {
+          "clazz": "postback_button",
+          "title": "Carousel",
+          "payload": "carousel?_previous_intent=unknown&_source=new_assistant",
+          "type": "postback"
+        }
+      ],
+      "version": "1"
+    }
+  ]
+}
+----
+
+== References
+
+* link:https://doc.tock.ai/tock/fr/user/concepts/[Tock Concepts]
+* link:http://doc.tock.ai/tock/api/web-connector#/[Tock Swagger API]
+
+* link:https://flows.nodered.org/search?term=linto[Linto node-red]

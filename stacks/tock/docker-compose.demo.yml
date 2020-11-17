@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  # DEMO
+  demo_api_webhook:
+    image: tock/bot_api_webhook:$TAG
+    depends_on:
+      - mongo
+      - mongo2
+      - mongo3
+      - bot_api
+    environment:
+      - tock_env=integ
+    ports:
+      - "5087:8887"
