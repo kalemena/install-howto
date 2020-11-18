@@ -14,3 +14,10 @@ services:
       - tock_env=integ
     ports:
       - "5087:8887"
+
+  # tock-bot-samples:
+  #   build: tock-bot-samples
+  #   environment:
+  #     - tock_env=integ
+  #   ports:
+  #     - "5089:8887"
