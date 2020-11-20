@@ -13,7 +13,7 @@ $ make stop
 $ make clean
 ----
 
-IMPORTANT: Tock Studio is at *http://localhost:7080* and has creds *admin@app.com / password*
+IMPORTANT: Tock Studio is at *http://localhost:5080* and has creds *admin@app.com / password*
 
 IMPORTANT: at first connection, you are asked to create an app by 3 questions, language, etc. This ends as below app usage.
 
@@ -68,6 +68,80 @@ $ curl localhost:5082/io/app/new_assistant/web -d '{ "query": "Coucou", "userId"
     }
   ]
 }
+----
+
+.Check a sample nodeJS bot works
+* in Settings, import (button Upload Dump):
+** app, use file ipa_test_app.json
+** sentence, use file ipa_test_sentences.json
+* Edit samples/tock-bot-node/main.js and set proper token for the imported bot *ipa_test*
+* now build and run the bot
+
+[source,bash]
+----
+# Build
+$ docker-compose -f docker-compose.demo.yml build demo_node
+
+# Run
+$ docker-compose -f docker-compose.database.yml -f docker-compose.yml -f docker-compose.demo.yml up -d demo_node
+
+# Use => bonjour => que puis-je pour vous ?
+$ curl localhost:5082/io/app/ipa_test/web --data '{"query":"bonjour","userId":"id"}' | jq .
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   117  100    84  100    33    661    259 --:--:-- --:--:-- --:--:--   921
+{
+  "responses": [
+    {
+      "type": "WebMessage",
+      "text": "que puis-je pour vous ?",
+      "version": "1"
+    }
+  ]
+}
+
+# Use => allumer la lumière => j'allume la lumière
+$ curl localhost:5082/io/app/ipa_test/web --data '{"query":"allumer la lumière","userId":"id"}' | jq .
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   126  100    81  100    45    931    517 --:--:-- --:--:-- --:--:--  1448
+{
+  "responses": [
+    {
+      "type": "WebMessage",
+      "text": "j'allume la lumière",
+      "version": "1"
+    }
+  ]
+}
+
+# Check Bot logs
+$ docker logs -f tock_demo_node_1
+Connecting to ws://bot_api:8080/6d544b70-b0bf-4f7c-9cf7-11889b33a3a9
+Connection established
+intent greeting/bonjour
+undefined
+bonjour
+[]
+intent greeting/bonjour
+{}
+bonjour
+[]
+intent allumer
+{}
+allumer la lumière
+[ { type: 'app:action',
+    role: 'domotiqueaction',
+    content: 'allumer',
+    evaluated: false,
+    subEntities: [],
+    new: true },
+  { type: 'app:appliance',
+    role: 'domotiqueappliance',
+    content: 'lumière',
+    evaluated: false,
+    subEntities: [],
+    new: true } ]
 ----
 
 .Check link:https://github.com/theopenconversationkit/tock-bot-samples[Kotlin Bot API]

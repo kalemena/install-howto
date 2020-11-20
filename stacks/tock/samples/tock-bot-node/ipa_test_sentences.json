@@ -1,0 +1,34 @@
+{
+    "applicationName": "app:ipa_test",
+    "sentences": [
+        {
+            "text": "bonjour",
+            "intent": "app:greeting",
+            "entities": [],
+            "language": "fr",
+            "status": "model"
+        },
+        {
+            "text": "allumer la lumière",
+            "intent": "app:allumer",
+            "entities": [
+                {
+                    "entity": "app:action",
+                    "role": "domotiqueaction",
+                    "subEntities": [],
+                    "start": 0,
+                    "end": 7
+                },
+                {
+                    "entity": "app:appliance",
+                    "role": "domotiqueappliance",
+                    "subEntities": [],
+                    "start": 11,
+                    "end": 18
+                }
+            ],
+            "language": "fr",
+            "status": "model"
+        }
+    ]
+}

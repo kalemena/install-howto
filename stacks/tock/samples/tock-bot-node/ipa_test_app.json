@@ -1,0 +1,644 @@
+{
+    "application": {
+        "name": "ipa_test",
+        "label": "ipa_test",
+        "namespace": "app",
+        "intents": [
+            "5fb3cff6929a2c504f69f5bd",
+            "5fb4ded469d9085b63f9c63e"
+        ],
+        "supportedLocales": [
+            "fr"
+        ],
+        "intentStatesMap": {},
+        "nlpEngineType": {
+            "name": "opennlp"
+        },
+        "mergeEngineTypes": true,
+        "useEntityModels": true,
+        "supportSubEntities": true,
+        "unknownIntentThreshold": 0,
+        "_id": "5fb4ddf469d9085b63f9c63a"
+    },
+    "entityTypes": [
+        {
+            "name": "duckling:volume",
+            "description": "built-in entity duckling:volume",
+            "subEntities": [],
+            "dictionary": false,
+            "obfuscated": false,
+            "_id": "5fb2ab7a9195f467538a7118"
+        },
+        {
+            "name": "duckling:amount-of-money",
+            "description": "built-in entity duckling:amount-of-money",
+            "subEntities": [],
+            "dictionary": false,
+            "obfuscated": false,
+            "_id": "5fb2ab7a9195f467538a7119"
+        },
+        {
+            "name": "duckling:url",
+            "description": "built-in entity duckling:url",
+            "subEntities": [],
+            "dictionary": false,
+            "obfuscated": false,
+            "_id": "5fb2ab7a9195f467538a711c"
+        },
+        {
+            "name": "duckling:datetime",
+            "description": "built-in entity duckling:datetime",
+            "subEntities": [],
+            "dictionary": false,
+            "obfuscated": false,
+            "_id": "5fb2ab799195f467538a7113"
+        },
+        {
+            "name": "duckling:distance",
+            "description": "built-in entity duckling:distance",
+            "subEntities": [],
+            "dictionary": false,
+            "obfuscated": false,
+            "_id": "5fb2ab7a9195f467538a7117"
+        },
+        {
+            "name": "duckling:duration",
+            "description": "built-in entity duckling:duration",
+            "subEntities": [],
+            "dictionary": false,
+            "obfuscated": false,
+            "_id": "5fb2ab7a9195f467538a711a"
+        },
+        {
+            "name": "duckling:temperature",
+            "description": "built-in entity duckling:temperature",
+            "subEntities": [],
+            "dictionary": false,
+            "obfuscated": false,
+            "_id": "5fb2ab799195f467538a7114"
+        },
+        {
+            "name": "duckling:ordinal",
+            "description": "built-in entity duckling:ordinal",
+            "subEntities": [],
+            "dictionary": false,
+            "obfuscated": false,
+            "_id": "5fb2ab7a9195f467538a7116"
+        },
+        {
+            "name": "duckling:number",
+            "description": "built-in entity duckling:number",
+            "subEntities": [],
+            "dictionary": false,
+            "obfuscated": false,
+            "_id": "5fb2ab799195f467538a7115"
+        },
+        {
+            "name": "duckling:phone-number",
+            "description": "built-in entity duckling:phone-number",
+            "subEntities": [],
+            "dictionary": false,
+            "obfuscated": false,
+            "_id": "5fb2ab7a9195f467538a711d"
+        },
+        {
+            "name": "duckling:email",
+            "description": "built-in entity duckling:email",
+            "subEntities": [],
+            "dictionary": false,
+            "obfuscated": false,
+            "_id": "5fb2ab7a9195f467538a711b"
+        },
+        {
+            "name": "app:action",
+            "description": "",
+            "subEntities": [],
+            "dictionary": true,
+            "obfuscated": false,
+            "_id": "5fb3d059929a2c504f69f5be"
+        },
+        {
+            "name": "app:appliance",
+            "description": "",
+            "subEntities": [],
+            "dictionary": true,
+            "obfuscated": false,
+            "_id": "5fb3d085929a2c504f69f5bf"
+        },
+        {
+            "name": "app:location",
+            "description": "",
+            "subEntities": [],
+            "dictionary": true,
+            "obfuscated": false,
+            "_id": "5fb3d092929a2c504f69f5c0"
+        }
+    ],
+    "intents": [
+        {
+            "name": "allumer",
+            "namespace": "app",
+            "applications": [
+                "5fb2ad439195f467538a711e",
+                "5fb4ddf469d9085b63f9c63a"
+            ],
+            "entities": [
+                {
+                    "entityTypeName": "app:action",
+                    "role": "domotiqueaction",
+                    "atStartOfDay": null
+                },
+                {
+                    "entityTypeName": "app:location",
+                    "role": "domotiquelocation",
+                    "atStartOfDay": null
+                },
+                {
+                    "entityTypeName": "app:appliance",
+                    "role": "domotiqueappliance",
+                    "atStartOfDay": null
+                }
+            ],
+            "entitiesRegexp": {},
+            "mandatoryStates": [],
+            "sharedIntents": [],
+            "label": "allumer",
+            "description": null,
+            "category": null,
+            "_id": "5fb3cff6929a2c504f69f5bd"
+        },
+        {
+            "name": "greeting",
+            "namespace": "app",
+            "applications": [
+                "5fb4ddf469d9085b63f9c63a"
+            ],
+            "entities": [],
+            "entitiesRegexp": {},
+            "mandatoryStates": [],
+            "sharedIntents": [],
+            "label": "greeting",
+            "description": null,
+            "category": null,
+            "_id": "5fb4ded469d9085b63f9c63e"
+        }
+    ],
+    "sentences": [
+        {
+            "text": "allumer la lumière de la cuisine",
+            "language": "fr",
+            "applicationId": "5fb2ad439195f467538a711e",
+            "creationDate": "2020-11-17T13:26:21.685Z",
+            "updateDate": "2020-11-17T13:40:00.712Z",
+            "status": "model",
+            "classification": {
+                "intentId": "5fb3cff6929a2c504f69f5bd",
+                "entities": [
+                    {
+                        "type": "app:action",
+                        "role": "domotiqueaction",
+                        "start": 0,
+                        "end": 7,
+                        "subEntities": []
+                    },
+                    {
+                        "type": "app:appliance",
+                        "role": "domotiqueappliance",
+                        "start": 11,
+                        "end": 18,
+                        "subEntities": []
+                    },
+                    {
+                        "type": "app:location",
+                        "role": "domotiquelocation",
+                        "start": 25,
+                        "end": 32,
+                        "subEntities": []
+                    }
+                ]
+            },
+            "lastIntentProbability": 1,
+            "lastEntityProbability": 1,
+            "usageCount": 0,
+            "unknownCount": 0,
+            "forReview": false,
+            "reviewComment": "",
+            "qualifier": "admin@app.com",
+            "otherIntentsProbabilities": {}
+        },
+        {
+            "text": "je veux allumer le luste dans la salle à manger",
+            "language": "fr",
+            "applicationId": "5fb2ad439195f467538a711e",
+            "creationDate": "2020-11-17T13:35:06.170Z",
+            "updateDate": "2020-11-17T13:39:22.728Z",
+            "status": "model",
+            "classification": {
+                "intentId": "5fb3cff6929a2c504f69f5bd",
+                "entities": [
+                    {
+                        "type": "app:action",
+                        "role": "domotiqueaction",
+                        "start": 8,
+                        "end": 15,
+                        "subEntities": []
+                    },
+                    {
+                        "type": "app:location",
+                        "role": "domotiquelocation",
+                        "start": 33,
+                        "end": 47,
+                        "subEntities": []
+                    }
+                ]
+            },
+            "lastIntentProbability": 1,
+            "lastEntityProbability": 1,
+            "usageCount": 0,
+            "unknownCount": 0,
+            "forReview": false,
+            "reviewComment": "",
+            "qualifier": "admin@app.com",
+            "otherIntentsProbabilities": {}
+        },
+        {
+            "text": "allume la cuisine",
+            "language": "fr",
+            "applicationId": "5fb2ad439195f467538a711e",
+            "creationDate": "2020-11-17T13:37:00.994Z",
+            "updateDate": "2020-11-17T13:39:58.690Z",
+            "status": "model",
+            "classification": {
+                "intentId": "5fb3cff6929a2c504f69f5bd",
+                "entities": [
+                    {
+                        "type": "app:action",
+                        "role": "domotiqueaction",
+                        "start": 0,
+                        "end": 6,
+                        "subEntities": []
+                    },
+                    {
+                        "type": "app:location",
+                        "role": "domotiquelocation",
+                        "start": 10,
+                        "end": 17,
+                        "subEntities": []
+                    }
+                ]
+            },
+            "lastIntentProbability": 1,
+            "lastEntityProbability": 1,
+            "usageCount": 0,
+            "unknownCount": 0,
+            "forReview": false,
+            "reviewComment": "",
+            "qualifier": "admin@app.com",
+            "otherIntentsProbabilities": {}
+        },
+        {
+            "text": "allumer le feux",
+            "language": "fr",
+            "applicationId": "5fb2ad439195f467538a711e",
+            "creationDate": "2020-11-17T13:48:21.418Z",
+            "updateDate": "2020-11-17T13:50:20.711Z",
+            "status": "model",
+            "classification": {
+                "intentId": "5fb3cff6929a2c504f69f5bd",
+                "entities": [
+                    {
+                        "type": "app:action",
+                        "role": "domotiqueaction",
+                        "start": 0,
+                        "end": 7,
+                        "subEntities": []
+                    }
+                ]
+            },
+            "lastIntentProbability": 1,
+            "lastEntityProbability": 1,
+            "usageCount": 0,
+            "unknownCount": 0,
+            "forReview": false,
+            "reviewComment": "",
+            "qualifier": "admin@app.com",
+            "otherIntentsProbabilities": {}
+        },
+        {
+            "text": "je veux allumer le lustre dans la salle à manger",
+            "language": "fr",
+            "applicationId": "5fb2ad439195f467538a711e",
+            "creationDate": "2020-11-17T13:47:10.196Z",
+            "updateDate": "2020-11-17T13:59:03.711Z",
+            "status": "model",
+            "classification": {
+                "intentId": "5fb3cff6929a2c504f69f5bd",
+                "entities": [
+                    {
+                        "type": "app:action",
+                        "role": "domotiqueaction",
+                        "start": 8,
+                        "end": 15,
+                        "subEntities": []
+                    },
+                    {
+                        "type": "app:appliance",
+                        "role": "domotiqueappliance",
+                        "start": 19,
+                        "end": 25,
+                        "subEntities": []
+                    },
+                    {
+                        "type": "app:location",
+                        "role": "domotiquelocation",
+                        "start": 34,
+                        "end": 48,
+                        "subEntities": []
+                    }
+                ]
+            },
+            "lastIntentProbability": 1,
+            "lastEntityProbability": 1,
+            "usageCount": 0,
+            "unknownCount": 0,
+            "forReview": false,
+            "reviewComment": "",
+            "qualifier": "admin@app.com",
+            "otherIntentsProbabilities": {}
+        },
+        {
+            "text": "allume le lustre",
+            "language": "fr",
+            "applicationId": "5fb2ad439195f467538a711e",
+            "creationDate": "2020-11-17T14:00:47.822Z",
+            "updateDate": "2020-11-17T14:02:04.692Z",
+            "status": "model",
+            "classification": {
+                "intentId": "5fb3cff6929a2c504f69f5bd",
+                "entities": [
+                    {
+                        "type": "app:action",
+                        "role": "domotiqueaction",
+                        "start": 0,
+                        "end": 6,
+                        "subEntities": []
+                    },
+                    {
+                        "type": "app:appliance",
+                        "role": "domotiqueappliance",
+                        "start": 10,
+                        "end": 16,
+                        "subEntities": []
+                    }
+                ]
+            },
+            "lastIntentProbability": 1,
+            "lastEntityProbability": 1,
+            "usageCount": 0,
+            "unknownCount": 0,
+            "forReview": false,
+            "reviewComment": "",
+            "qualifier": "admin@app.com",
+            "otherIntentsProbabilities": {}
+        },
+        {
+            "text": "allume le luste dans le salon",
+            "language": "fr",
+            "applicationId": "5fb2ad439195f467538a711e",
+            "creationDate": "2020-11-17T14:01:08.584Z",
+            "updateDate": "2020-11-17T14:01:55.699Z",
+            "status": "model",
+            "classification": {
+                "intentId": "5fb3cff6929a2c504f69f5bd",
+                "entities": [
+                    {
+                        "type": "app:action",
+                        "role": "domotiqueaction",
+                        "start": 0,
+                        "end": 6,
+                        "subEntities": []
+                    },
+                    {
+                        "type": "app:location",
+                        "role": "domotiquelocation",
+                        "start": 24,
+                        "end": 29,
+                        "subEntities": []
+                    }
+                ]
+            },
+            "lastIntentProbability": 1,
+            "lastEntityProbability": 1,
+            "usageCount": 0,
+            "unknownCount": 0,
+            "forReview": false,
+            "reviewComment": "",
+            "qualifier": "admin@app.com",
+            "otherIntentsProbabilities": {}
+        },
+        {
+            "text": "allume le lustre dans le salon",
+            "language": "fr",
+            "applicationId": "5fb2ad439195f467538a711e",
+            "creationDate": "2020-11-17T14:01:32.564Z",
+            "updateDate": "2020-11-17T14:01:47.693Z",
+            "status": "model",
+            "classification": {
+                "intentId": "5fb3cff6929a2c504f69f5bd",
+                "entities": [
+                    {
+                        "type": "app:action",
+                        "role": "domotiqueaction",
+                        "start": 0,
+                        "end": 6,
+                        "subEntities": []
+                    },
+                    {
+                        "type": "app:appliance",
+                        "role": "domotiqueappliance",
+                        "start": 10,
+                        "end": 16,
+                        "subEntities": []
+                    },
+                    {
+                        "type": "app:location",
+                        "role": "domotiquelocation",
+                        "start": 25,
+                        "end": 30,
+                        "subEntities": []
+                    }
+                ]
+            },
+            "lastIntentProbability": 1,
+            "lastEntityProbability": 1,
+            "usageCount": 0,
+            "unknownCount": 0,
+            "forReview": false,
+            "reviewComment": "",
+            "qualifier": "admin@app.com",
+            "otherIntentsProbabilities": {}
+        },
+        {
+            "text": "allume le plafond",
+            "language": "fr",
+            "applicationId": "5fb2ad439195f467538a711e",
+            "creationDate": "2020-11-17T14:07:49.753Z",
+            "updateDate": "2020-11-17T14:08:51.712Z",
+            "status": "model",
+            "classification": {
+                "intentId": "5fb3cff6929a2c504f69f5bd",
+                "entities": [
+                    {
+                        "type": "app:action",
+                        "role": "domotiqueaction",
+                        "start": 0,
+                        "end": 6,
+                        "subEntities": []
+                    },
+                    {
+                        "type": "app:appliance",
+                        "role": "domotiqueappliance",
+                        "start": 10,
+                        "end": 17,
+                        "subEntities": []
+                    }
+                ]
+            },
+            "lastIntentProbability": 1,
+            "lastEntityProbability": 1,
+            "usageCount": 0,
+            "unknownCount": 0,
+            "forReview": false,
+            "reviewComment": "",
+            "qualifier": "admin@app.com",
+            "otherIntentsProbabilities": {}
+        },
+        {
+            "text": "démarre le néon dans cette pièce",
+            "language": "fr",
+            "applicationId": "5fb2ad439195f467538a711e",
+            "creationDate": "2020-11-17T14:28:30.924Z",
+            "updateDate": "2020-11-17T14:29:21.694Z",
+            "status": "model",
+            "classification": {
+                "intentId": "5fb3cff6929a2c504f69f5bd",
+                "entities": [
+                    {
+                        "type": "app:action",
+                        "role": "domotiqueaction",
+                        "start": 0,
+                        "end": 7,
+                        "subEntities": []
+                    },
+                    {
+                        "type": "app:appliance",
+                        "role": "domotiqueappliance",
+                        "start": 11,
+                        "end": 15,
+                        "subEntities": []
+                    },
+                    {
+                        "type": "app:location",
+                        "role": "domotiquelocation",
+                        "start": 27,
+                        "end": 32,
+                        "subEntities": []
+                    }
+                ]
+            },
+            "lastIntentProbability": 1,
+            "lastEntityProbability": 1,
+            "usageCount": 0,
+            "unknownCount": 0,
+            "forReview": false,
+            "reviewComment": "",
+            "qualifier": "admin@app.com",
+            "otherIntentsProbabilities": {}
+        },
+        {
+            "text": "allumer le feu",
+            "language": "fr",
+            "applicationId": "5fb2ad439195f467538a711e",
+            "creationDate": "2020-11-17T18:27:05.038Z",
+            "updateDate": "2020-11-18T07:58:07.157Z",
+            "status": "model",
+            "classification": {
+                "intentId": "5fb3cff6929a2c504f69f5bd",
+                "entities": [
+                    {
+                        "type": "app:action",
+                        "role": "domotiqueaction",
+                        "start": 0,
+                        "end": 7,
+                        "subEntities": []
+                    }
+                ]
+            },
+            "lastIntentProbability": 1,
+            "lastEntityProbability": 1,
+            "usageCount": 0,
+            "unknownCount": 0,
+            "forReview": false,
+            "reviewComment": "",
+            "qualifier": "admin@app.com",
+            "otherIntentsProbabilities": {}
+        },
+        {
+            "text": "bonjour",
+            "language": "fr",
+            "applicationId": "5fb4ddf469d9085b63f9c63a",
+            "creationDate": "2020-11-18T08:42:01.193Z",
+            "updateDate": "2020-11-18T08:44:14.065Z",
+            "status": "model",
+            "classification": {
+                "intentId": "5fb4ded469d9085b63f9c63e",
+                "entities": []
+            },
+            "lastIntentProbability": 1,
+            "lastEntityProbability": 1,
+            "usageCount": 0,
+            "unknownCount": 3,
+            "forReview": false,
+            "reviewComment": "",
+            "qualifier": "admin@app.com",
+            "otherIntentsProbabilities": {}
+        },
+        {
+            "text": "allumer la lumière",
+            "language": "fr",
+            "applicationId": "5fb4ddf469d9085b63f9c63a",
+            "creationDate": "2020-11-18T08:42:48.268Z",
+            "updateDate": "2020-11-18T08:43:51.078Z",
+            "status": "model",
+            "classification": {
+                "intentId": "5fb3cff6929a2c504f69f5bd",
+                "entities": [
+                    {
+                        "type": "app:action",
+                        "role": "domotiqueaction",
+                        "start": 0,
+                        "end": 7,
+                        "subEntities": []
+                    },
+                    {
+                        "type": "app:appliance",
+                        "role": "domotiqueappliance",
+                        "start": 11,
+                        "end": 18,
+                        "subEntities": []
+                    }
+                ]
+            },
+            "lastIntentProbability": 1,
+            "lastEntityProbability": 1,
+            "usageCount": 0,
+            "unknownCount": 3,
+            "forReview": false,
+            "reviewComment": "",
+            "qualifier": "admin@app.com",
+            "otherIntentsProbabilities": {}
+        }
+    ],
+    "dumpType": "full",
+    "timestamp": "2020-11-18T09:11:29.993418456Z"
+}

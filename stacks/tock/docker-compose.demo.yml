@@ -15,6 +15,11 @@ services:
     ports:
       - "5087:8887"
 
+  demo_node:
+    build: samples/tock-bot-node
+    ports:
+      - "5085:8080"
+
   # tock-bot-samples:
   #   build: tock-bot-samples
   #   environment:
