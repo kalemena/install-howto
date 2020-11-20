@@ -144,19 +144,21 @@ allumer la lumière
     new: true } ]
 ----
 
-.Check link:https://github.com/theopenconversationkit/tock-bot-samples[Kotlin Bot API]
-* uncomment section in docker-compose.demo.yml
-[source,bash]
-----
-  # tock-bot-samples:
-  #   build: tock-bot-samples
-  #   environment:
-  #     - tock_env=integ
-  #   ports:
-  #     - "5089:8887"
-----
 
-* Edit *tock-bot-samples/src/main/kotlin/StartWebsocketWithLocalhost.kt* to setup host API Key as seen in Tock Studio
+// .Check link:https://github.com/theopenconversationkit/tock-bot-samples[Kotlin Bot API]
+// * uncomment section in docker-compose.demo.yml
+// [source,bash]
+// ----
+//   # tock-bot-samples:
+//   #   build: tock-bot-samples
+//   #   environment:
+//   #     - tock_env=integ
+//   #   ports:
+//   #     - "5089:8887"
+// ----
+
+// * Edit *tock-bot-samples/src/main/kotlin/StartWebsocketWithLocalhost.kt* to setup host API Key as seen in Tock Studio
+
 
 == References
 
