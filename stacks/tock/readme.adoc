@@ -5,6 +5,8 @@ This is slightly modified link:https://github.com/theopenconversationkit/tock-do
 
 == Usage
 
+=== Environment up/down
+
 .Commands
 [source,bash]
 ----
@@ -34,6 +36,10 @@ $ curl localhost:5082/io/app/new_assistant/web -d '{ "query": "Hello!", "userId"
   ]
 }
 ----
+
+=== Testing
+
+==== WebHook (not advised)
 
 .Configure WebHook *http://demo_api_webhook:8887*
 image:images/tock-admin-app-config.png[]
@@ -70,6 +76,8 @@ $ curl localhost:5082/io/app/new_assistant/web -d '{ "query": "Coucou", "userId"
 }
 ----
 
+==== WebSocket (advised)
+
 .Check a sample nodeJS bot works
 * in Settings, import (button Upload Dump):
 ** app, use file ipa_test_app.json
@@ -77,13 +85,13 @@ $ curl localhost:5082/io/app/new_assistant/web -d '{ "query": "Coucou", "userId"
 * Edit samples/tock-bot-node/main.js and set proper token for the imported bot *ipa_test*
 * now build and run the bot
 
-[source,bash]
+[source,bash,collapse="true"]
 ----
 # Build
-$ docker-compose -f docker-compose.demo.yml build demo_node
+$ docker-compose build demo_api_ws_node
 
 # Run
-$ docker-compose -f docker-compose.database.yml -f docker-compose.yml -f docker-compose.demo.yml up -d demo_node
+$ docker-compose up -d demo_api_ws_node
 
 # Use => bonjour => que puis-je pour vous ?
 $ curl localhost:5082/io/app/ipa_test/web --data '{"query":"bonjour","userId":"id"}' | jq .
@@ -116,7 +124,7 @@ $ curl localhost:5082/io/app/ipa_test/web --data '{"query":"allumer la lumière"
 }
 
 # Check Bot logs
-$ docker logs -f tock_demo_node_1
+$ docker logs -f tock_demo_api_ws_node_1
 Connecting to ws://bot_api:8080/6d544b70-b0bf-4f7c-9cf7-11889b33a3a9
 Connection established
 intent greeting/bonjour
@@ -144,7 +152,6 @@ allumer la lumière
     new: true } ]
 ----
 
-
 // .Check link:https://github.com/theopenconversationkit/tock-bot-samples[Kotlin Bot API]
 // * uncomment section in docker-compose.demo.yml
 // [source,bash]
@@ -166,3 +173,4 @@ allumer la lumière
 * link:http://doc.tock.ai/tock/api/web-connector#/[Tock Swagger API]
 
 * link:https://flows.nodered.org/search?term=linto[Linto node-red]
+
