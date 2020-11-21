@@ -1,7 +1,7 @@
 
 const { Bot } = require('tock-node');
 
-const bot = new Bot('e10f4aaf-a7c9-470d-933c-a4b8b08a49c4', 'bot_api', 8080, 'ws');
+const bot = new Bot('9437c8e6-a493-41e9-9b28-9a922bbf6c2f', 'bot_api', 8080, 'ws');
 
 bot.addStory('allumer la lumière', bot => {
   console.log("allumer lumière");

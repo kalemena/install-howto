@@ -3,26 +3,46 @@ version: '3'
 services:
 
   # DEMO
-  demo_api_webhook:
-    image: tock/bot_api_webhook:$TAG
-    depends_on:
-      - mongo
-      - mongo2
-      - mongo3
-      - bot_api
-    environment:
-      - tock_env=integ
-    ports:
-      - "5087:8887"
 
-  demo_node:
+  # demo_api_webhook:
+  #   image: tock/bot_api_webhook:$TOCK_TAG
+  #   depends_on:
+  #     - mongo
+  #     - mongo2
+  #     - mongo3
+  #     - bot_api
+  #   environment:
+  #     - tock_env=integ
+  #   ports:
+  #     - "5087:8887"
+
+  demo_api_ws_node:
     build: samples/tock-bot-node
     ports:
       - "5085:8080"
 
-  # tock-bot-samples:
+  # demo_open_data_kt:
   #   build: tock-bot-samples
   #   environment:
   #     - tock_env=integ
   #   ports:
   #     - "5089:8887"
+
+  nodered:
+    build: ./scripts
+    restart: always
+    ports:
+     - "${NODERED_PORT:-1880}:1880"
+    volumes:
+     # - /home/nodered/.node-red                  # Default User Directory
+     # - /home/nodered/.node-red/settings.js      # Default Settings file
+     # - /data/flows.json                         # Default Flows file
+     # - /home/nodered/.node-red/flows_cred.json  # Defaults credentials
+     - .:/data
+    environment:
+     - NODERED_FLOWS=/data/flows.json
+     - NODERED_USERDIR=/home/nodered/.node-red
+     - NODERED_SETTINGS=/home/nodered/.node-red/settings.js
+     - NODERED_CREDENTIAL_SECRETS=changeme
+
+

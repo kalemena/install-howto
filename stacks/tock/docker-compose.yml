@@ -3,7 +3,7 @@ version: '3'
 services:
 
   build_worker:
-    image: tock/build_worker:$TAG
+    image: tock/build_worker:$TOCK_TAG
     depends_on:
       - mongo
       - mongo2
@@ -14,14 +14,14 @@ services:
       - JAVA_ARGS=-Xmx1g -XX:MaxMetaspaceSize=256m
 
   duckling:
-    image: tock/duckling:$TAG
+    image: tock/duckling:$TOCK_TAG
     environment:
       - tock_env=prod
     expose:
       - "8080"
 
   kotlin_compiler:
-    image: tock/kotlin_compiler:$TAG
+    image: tock/kotlin_compiler:$TOCK_TAG
     environment:
       - tock_env=prod
       - tock_kotlin_compiler_classpath=/maven
@@ -29,7 +29,7 @@ services:
       - "8080"
 
   admin_web:
-    image: tock/bot_admin:$TAG
+    image: tock/bot_admin:$TOCK_TAG
     depends_on:
       - mongo
       - mongo2
@@ -46,11 +46,12 @@ services:
       #remove this in production
       - tock_https_env=false
       - botadminverticle_body_limit=-1
+      - tock_default_locale=fr
     ports:
       - "5080:8080"
 
   nlp_api:
-    image: tock/nlp_api:$TAG
+    image: tock/nlp_api:$TOCK_TAG
     depends_on:
       - mongo
       - mongo2
@@ -67,7 +68,7 @@ services:
       - "5081:8080"
 
   bot_api:
-    image: tock/bot_api:$TAG
+    image: tock/bot_api:$TOCK_TAG
     depends_on:
       - mongo
       - mongo2

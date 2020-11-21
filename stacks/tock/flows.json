@@ -1,0 +1,235 @@
+[
+    {
+        "id": "f85ef37c.29fc3",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f1d2a466.5d24e8",
+        "type": "tock-web-bot-connector-api",
+        "z": "f85ef37c.29fc3",
+        "method": "postIoByNamespaceByBotByConnector",
+        "postIoByNamespaceByBotByConnector_namespace": "app",
+        "postIoByNamespaceByBotByConnector_namespaceType": "str",
+        "postIoByNamespaceByBotByConnector_bot": "ipa_test",
+        "postIoByNamespaceByBotByConnector_botType": "str",
+        "postIoByNamespaceByBotByConnector_connector": "web",
+        "postIoByNamespaceByBotByConnector_connectorType": "str",
+        "postIoByNamespaceByBotByConnector_body": "",
+        "postIoByNamespaceByBotByConnector_bodyType": "str",
+        "getIoByNamespaceByBotByConnectorSse_namespace": "",
+        "getIoByNamespaceByBotByConnectorSse_namespaceType": "str",
+        "getIoByNamespaceByBotByConnectorSse_bot": "",
+        "getIoByNamespaceByBotByConnectorSse_botType": "str",
+        "getIoByNamespaceByBotByConnectorSse_connector": "",
+        "getIoByNamespaceByBotByConnectorSse_connectorType": "str",
+        "getIoByNamespaceByBotByConnectorSse_userId": "",
+        "getIoByNamespaceByBotByConnectorSse_userIdType": "str",
+        "name": "Query Bot",
+        "x": 540,
+        "y": 300,
+        "wires": [
+            [
+                "d7adba59.3da7a8"
+            ]
+        ]
+    },
+    {
+        "id": "35ae7ad4.4619ae",
+        "type": "inject",
+        "z": "f85ef37c.29fc3",
+        "name": "allumer la lunmière",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"query\":\"allumer la lumière\",\"userId\":\"user0\"}",
+        "payloadType": "json",
+        "x": 270,
+        "y": 300,
+        "wires": [
+            [
+                "f1d2a466.5d24e8"
+            ]
+        ]
+    },
+    {
+        "id": "d7adba59.3da7a8",
+        "type": "debug",
+        "z": "f85ef37c.29fc3",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "bd08de2f.624d4",
+        "type": "inject",
+        "z": "f85ef37c.29fc3",
+        "name": "plop",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"query\":\"plop\",\"userId\":\"user0\"}",
+        "payloadType": "json",
+        "x": 310,
+        "y": 260,
+        "wires": [
+            [
+                "f1d2a466.5d24e8"
+            ]
+        ]
+    },
+    {
+        "id": "9adb3d9c.5dcdf",
+        "type": "inject",
+        "z": "f85ef37c.29fc3",
+        "name": "bonjour",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"query\":\"bonjour\",\"userId\":\"user0\"}",
+        "payloadType": "json",
+        "x": 310,
+        "y": 220,
+        "wires": [
+            [
+                "f1d2a466.5d24e8"
+            ]
+        ]
+    },
+    {
+        "id": "ee1ef650.9dbff",
+        "type": "tock-web-bot-connector-api",
+        "z": "f85ef37c.29fc3",
+        "method": "getIoByNamespaceByBotByConnectorSse",
+        "postIoByNamespaceByBotByConnector_namespace": "app",
+        "postIoByNamespaceByBotByConnector_namespaceType": "str",
+        "postIoByNamespaceByBotByConnector_bot": "ipa_test",
+        "postIoByNamespaceByBotByConnector_botType": "str",
+        "postIoByNamespaceByBotByConnector_connector": "web",
+        "postIoByNamespaceByBotByConnector_connectorType": "str",
+        "postIoByNamespaceByBotByConnector_body": "",
+        "postIoByNamespaceByBotByConnector_bodyType": "str",
+        "getIoByNamespaceByBotByConnectorSse_namespace": "app",
+        "getIoByNamespaceByBotByConnectorSse_namespaceType": "str",
+        "getIoByNamespaceByBotByConnectorSse_bot": "ipa_test",
+        "getIoByNamespaceByBotByConnectorSse_botType": "str",
+        "getIoByNamespaceByBotByConnectorSse_connector": "web",
+        "getIoByNamespaceByBotByConnectorSse_connectorType": "str",
+        "getIoByNamespaceByBotByConnectorSse_userId": "user0",
+        "getIoByNamespaceByBotByConnectorSse_userIdType": "str",
+        "name": "Streams User Discuss",
+        "x": 520,
+        "y": 400,
+        "wires": [
+            [
+                "47f322ae.d9c30c"
+            ]
+        ]
+    },
+    {
+        "id": "47f322ae.d9c30c",
+        "type": "debug",
+        "z": "f85ef37c.29fc3",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "4ed2010c.2550b8",
+        "type": "inject",
+        "z": "f85ef37c.29fc3",
+        "name": "trigger",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{}",
+        "payloadType": "json",
+        "x": 310,
+        "y": 400,
+        "wires": [
+            [
+                "ee1ef650.9dbff"
+            ]
+        ]
+    },
+    {
+        "id": "da01fd6d.15e348",
+        "type": "catch",
+        "z": "f85ef37c.29fc3",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 260,
+        "y": 140,
+        "wires": [
+            [
+                "df42e57f.44e3c8"
+            ]
+        ]
+    },
+    {
+        "id": "df42e57f.44e3c8",
+        "type": "debug",
+        "z": "f85ef37c.29fc3",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 140,
+        "wires": []
+    }
+]
