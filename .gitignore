@@ -8,3 +8,9 @@ var
 
 # Backups
 *.backup
+
+# Private
+*_cred.json
+.config*.json
+settings.js
+package.json

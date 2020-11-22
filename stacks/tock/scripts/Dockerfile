@@ -1,5 +1,7 @@
 FROM kalemena/node-red:latest
 
+RUN npm i   node-red-contrib-telegrambot;
+
 USER root
 
 ADD [ "*.yaml", "*.json", "/apis/" ]

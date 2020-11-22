@@ -12,6 +12,29 @@
         "name": "TockAdmin"
     },
     {
+        "id": "f8720941.81145",
+        "type": "telegram bot",
+        "botname": "DemoBot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
         "id": "f1d2a466.5d24e8",
         "type": "tock-web-bot-connector-api",
         "z": "f85ef37c.29fc3",
@@ -479,6 +502,232 @@
         "wires": [
             [
                 "f1d2a466.5d24e8"
+            ]
+        ]
+    },
+    {
+        "id": "fd2b51e8.444778",
+        "type": "telegram receiver",
+        "z": "f85ef37c.29fc3",
+        "name": "",
+        "bot": "f8720941.81145",
+        "saveDataDir": "/tmp",
+        "filterCommands": true,
+        "x": 130,
+        "y": 920,
+        "wires": [
+            [
+                "c5f1e901.7ec428",
+                "83424a34.ca9058"
+            ],
+            [
+                "a872c4b6.f9b7"
+            ]
+        ]
+    },
+    {
+        "id": "c5f1e901.7ec428",
+        "type": "debug",
+        "z": "f85ef37c.29fc3",
+        "name": "debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "a872c4b6.f9b7",
+        "type": "debug",
+        "z": "f85ef37c.29fc3",
+        "name": "error",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "83424a34.ca9058",
+        "type": "change",
+        "z": "f85ef37c.29fc3",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.query",
+                "pt": "msg",
+                "to": "payload.content",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.userId",
+                "pt": "msg",
+                "to": "payload.chatId",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 920,
+        "wires": [
+            [
+                "688af020.753e4",
+                "c943aee5.518b1"
+            ]
+        ]
+    },
+    {
+        "id": "688af020.753e4",
+        "type": "debug",
+        "z": "f85ef37c.29fc3",
+        "name": "debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "c943aee5.518b1",
+        "type": "tock-web-bot-connector-api",
+        "z": "f85ef37c.29fc3",
+        "method": "postIoByNamespaceByBotByConnector",
+        "postIoByNamespaceByBotByConnector_namespace": "app",
+        "postIoByNamespaceByBotByConnector_namespaceType": "str",
+        "postIoByNamespaceByBotByConnector_bot": "ipa_test",
+        "postIoByNamespaceByBotByConnector_botType": "str",
+        "postIoByNamespaceByBotByConnector_connector": "web",
+        "postIoByNamespaceByBotByConnector_connectorType": "str",
+        "postIoByNamespaceByBotByConnector_body": "",
+        "postIoByNamespaceByBotByConnector_bodyType": "str",
+        "getIoByNamespaceByBotByConnectorSse_namespace": "",
+        "getIoByNamespaceByBotByConnectorSse_namespaceType": "str",
+        "getIoByNamespaceByBotByConnectorSse_bot": "",
+        "getIoByNamespaceByBotByConnectorSse_botType": "str",
+        "getIoByNamespaceByBotByConnectorSse_connector": "",
+        "getIoByNamespaceByBotByConnectorSse_connectorType": "str",
+        "getIoByNamespaceByBotByConnectorSse_userId": "",
+        "getIoByNamespaceByBotByConnectorSse_userIdType": "str",
+        "name": "Query Bot",
+        "x": 600,
+        "y": 920,
+        "wires": [
+            [
+                "15c721c7.255cbe",
+                "e4b9d2e8.308688"
+            ]
+        ]
+    },
+    {
+        "id": "15c721c7.255cbe",
+        "type": "debug",
+        "z": "f85ef37c.29fc3",
+        "name": "debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "118c1433.43e014",
+        "type": "telegram sender",
+        "z": "f85ef37c.29fc3",
+        "name": "",
+        "bot": "f8720941.81145",
+        "x": 1110,
+        "y": 920,
+        "wires": [
+            [
+                "3e389739.5ff9f"
+            ]
+        ]
+    },
+    {
+        "id": "3e389739.5ff9f",
+        "type": "debug",
+        "z": "f85ef37c.29fc3",
+        "name": "debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1270,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "e4b9d2e8.308688",
+        "type": "change",
+        "z": "f85ef37c.29fc3",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.content",
+                "pt": "msg",
+                "to": "payload.responses[0].text",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.chatId",
+                "pt": "msg",
+                "to": "originalMessage.from.id",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.type",
+                "pt": "msg",
+                "to": "message",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 920,
+        "wires": [
+            [
+                "118c1433.43e014"
             ]
         ]
     }
