@@ -7,6 +7,11 @@
         "info": ""
     },
     {
+        "id": "30b115e8.14d24a",
+        "type": "tock-nlp-admin-api-service",
+        "name": "TockAdmin"
+    },
+    {
         "id": "f1d2a466.5d24e8",
         "type": "tock-web-bot-connector-api",
         "z": "f85ef37c.29fc3",
@@ -28,8 +33,8 @@
         "getIoByNamespaceByBotByConnectorSse_userId": "",
         "getIoByNamespaceByBotByConnectorSse_userIdType": "str",
         "name": "Query Bot",
-        "x": 540,
-        "y": 300,
+        "x": 420,
+        "y": 340,
         "wires": [
             [
                 "d7adba59.3da7a8"
@@ -53,8 +58,8 @@
         "topic": "",
         "payload": "{\"query\":\"allumer la lumière\",\"userId\":\"user0\"}",
         "payloadType": "json",
-        "x": 270,
-        "y": 300,
+        "x": 150,
+        "y": 340,
         "wires": [
             [
                 "f1d2a466.5d24e8"
@@ -74,8 +79,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 730,
-        "y": 300,
+        "x": 610,
+        "y": 340,
         "wires": []
     },
     {
@@ -95,8 +100,8 @@
         "topic": "",
         "payload": "{\"query\":\"plop\",\"userId\":\"user0\"}",
         "payloadType": "json",
-        "x": 310,
-        "y": 260,
+        "x": 190,
+        "y": 300,
         "wires": [
             [
                 "f1d2a466.5d24e8"
@@ -120,8 +125,8 @@
         "topic": "",
         "payload": "{\"query\":\"bonjour\",\"userId\":\"user0\"}",
         "payloadType": "json",
-        "x": 310,
-        "y": 220,
+        "x": 190,
+        "y": 260,
         "wires": [
             [
                 "f1d2a466.5d24e8"
@@ -150,8 +155,8 @@
         "getIoByNamespaceByBotByConnectorSse_userId": "user0",
         "getIoByNamespaceByBotByConnectorSse_userIdType": "str",
         "name": "Streams User Discuss",
-        "x": 520,
-        "y": 400,
+        "x": 400,
+        "y": 460,
         "wires": [
             [
                 "47f322ae.d9c30c"
@@ -171,8 +176,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 730,
-        "y": 400,
+        "x": 610,
+        "y": 460,
         "wires": []
     },
     {
@@ -192,8 +197,8 @@
         "topic": "",
         "payload": "{}",
         "payloadType": "json",
-        "x": 310,
-        "y": 400,
+        "x": 190,
+        "y": 460,
         "wires": [
             [
                 "ee1ef650.9dbff"
@@ -207,8 +212,8 @@
         "name": "",
         "scope": null,
         "uncaught": false,
-        "x": 260,
-        "y": 140,
+        "x": 120,
+        "y": 120,
         "wires": [
             [
                 "df42e57f.44e3c8"
@@ -228,8 +233,253 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 400,
-        "y": 140,
+        "x": 320,
+        "y": 120,
         "wires": []
+    },
+    {
+        "id": "7a12e914.060968",
+        "type": "inject",
+        "z": "f85ef37c.29fc3",
+        "name": "allumer le salon",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"query\":\"allumer le salon\",\"userId\":\"user0\"}",
+        "payloadType": "json",
+        "x": 160,
+        "y": 380,
+        "wires": [
+            [
+                "f1d2a466.5d24e8"
+            ]
+        ]
+    },
+    {
+        "id": "fba220c1.1de8e8",
+        "type": "tock-nlp-admin-api",
+        "z": "f85ef37c.29fc3",
+        "service": "30b115e8.14d24a",
+        "method": "getApplications",
+        "postApplication_body": "",
+        "postApplication_bodyType": "str",
+        "getApplicationDumpByApplicationId_applicationId": "",
+        "getApplicationDumpByApplicationId_applicationIdType": "str",
+        "deleteApplicationByApplicationId_applicationId": "",
+        "deleteApplicationByApplicationId_applicationIdType": "str",
+        "getApplicationByApplicationId_applicationId": "",
+        "getApplicationByApplicationId_applicationIdType": "str",
+        "deleteApplicationByApplicationIdIntentByIntentId_applicationId": "",
+        "deleteApplicationByApplicationIdIntentByIntentId_applicationIdType": "str",
+        "deleteApplicationByApplicationIdIntentByIntentId_intentId": "",
+        "deleteApplicationByApplicationIdIntentByIntentId_intentIdType": "str",
+        "deleteApplicationByApplicationIdIntentByIntentIdEntityByEntityTypeByRole_applicationId": "",
+        "deleteApplicationByApplicationIdIntentByIntentIdEntityByEntityTypeByRole_applicationIdType": "str",
+        "deleteApplicationByApplicationIdIntentByIntentIdEntityByEntityTypeByRole_intentId": "",
+        "deleteApplicationByApplicationIdIntentByIntentIdEntityByEntityTypeByRole_intentIdType": "str",
+        "deleteApplicationByApplicationIdIntentByIntentIdEntityByEntityTypeByRole_entityType": "",
+        "deleteApplicationByApplicationIdIntentByIntentIdEntityByEntityTypeByRole_entityTypeType": "str",
+        "deleteApplicationByApplicationIdIntentByIntentIdEntityByEntityTypeByRole_role": "",
+        "deleteApplicationByApplicationIdIntentByIntentIdEntityByEntityTypeByRole_roleType": "str",
+        "postDumpApplication_fileName": "",
+        "postDumpApplication_fileNameType": "str",
+        "postDumpApplicationByName_name": "",
+        "postDumpApplicationByName_nameType": "str",
+        "postDumpApplicationByName_fileName": "",
+        "postDumpApplicationByName_fileNameType": "str",
+        "postDumpSentences_fileName": "",
+        "postDumpSentences_fileNameType": "str",
+        "postDumpSentencesByName_name": "",
+        "postDumpSentencesByName_nameType": "str",
+        "postDumpSentencesByName_fileName": "",
+        "postDumpSentencesByName_fileNameType": "str",
+        "postParse_body": "",
+        "postParse_bodyType": "str",
+        "getSentencesDumpByDumpTypeByApplicationIdByIntentByLocale_dumpType": "full",
+        "getSentencesDumpByDumpTypeByApplicationIdByIntentByLocale_dumpTypeType": "str",
+        "getSentencesDumpByDumpTypeByApplicationIdByIntentByLocale_applicationId": "",
+        "getSentencesDumpByDumpTypeByApplicationIdByIntentByLocale_applicationIdType": "str",
+        "getSentencesDumpByDumpTypeByApplicationIdByIntentByLocale_intent": "",
+        "getSentencesDumpByDumpTypeByApplicationIdByIntentByLocale_intentType": "str",
+        "getSentencesDumpByDumpTypeByApplicationIdByIntentByLocale_locale": "",
+        "getSentencesDumpByDumpTypeByApplicationIdByIntentByLocale_localeType": "str",
+        "name": "",
+        "x": 380,
+        "y": 600,
+        "wires": [
+            [
+                "b4302804.026d68"
+            ]
+        ]
+    },
+    {
+        "id": "d6b41e01.113de",
+        "type": "inject",
+        "z": "f85ef37c.29fc3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 600,
+        "wires": [
+            [
+                "fba220c1.1de8e8"
+            ]
+        ]
+    },
+    {
+        "id": "b4302804.026d68",
+        "type": "debug",
+        "z": "f85ef37c.29fc3",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "1bb4f4b4.943963",
+        "type": "comment",
+        "z": "f85ef37c.29fc3",
+        "name": "Admin API",
+        "info": "",
+        "x": 100,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "e8bba725.e5d7a",
+        "type": "comment",
+        "z": "f85ef37c.29fc3",
+        "name": "Bot API",
+        "info": "",
+        "x": 90,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "86c85c3d.9e219",
+        "type": "comment",
+        "z": "f85ef37c.29fc3",
+        "name": "NLP API",
+        "info": "",
+        "x": 100,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "635b2d7d.0d762c",
+        "type": "inject",
+        "z": "f85ef37c.29fc3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"queries\":[\"Text to parse\"],\"namespace\":\"app\",\"applicationName\":\"ipa_test\",\"context\":{\"language\":\"en\"}}",
+        "payloadType": "json",
+        "x": 160,
+        "y": 720,
+        "wires": [
+            [
+                "aeebc2ff.2b661"
+            ]
+        ]
+    },
+    {
+        "id": "60d44469.38fb5c",
+        "type": "debug",
+        "z": "f85ef37c.29fc3",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "aeebc2ff.2b661",
+        "type": "tock-nlp-api",
+        "z": "f85ef37c.29fc3",
+        "method": "parse",
+        "parse_body": "",
+        "parse_bodyType": "str",
+        "name": "Parse",
+        "x": 350,
+        "y": 720,
+        "wires": [
+            [
+                "60d44469.38fb5c"
+            ]
+        ]
+    },
+    {
+        "id": "8048ca24.c908e8",
+        "type": "inject",
+        "z": "f85ef37c.29fc3",
+        "name": "Text to parse",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"query\":\"Text to parse\",\"userId\":\"user0\"}",
+        "payloadType": "json",
+        "x": 170,
+        "y": 420,
+        "wires": [
+            [
+                "f1d2a466.5d24e8"
+            ]
+        ]
     }
 ]
