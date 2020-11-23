@@ -2,7 +2,21 @@
     {
         "id": "f85ef37c.29fc3",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "Tests",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d6af186b.004918",
+        "type": "tab",
+        "label": "Covid Attestation",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "20462735.a2d2b8",
+        "type": "tab",
+        "label": "NLP",
         "disabled": false,
         "info": ""
     },
@@ -363,7 +377,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 190,
+        "x": 180,
         "y": 600,
         "wires": [
             [
@@ -422,7 +436,7 @@
         "id": "635b2d7d.0d762c",
         "type": "inject",
         "z": "f85ef37c.29fc3",
-        "name": "",
+        "name": "allume la cuisine",
         "props": [
             {
                 "p": "payload"
@@ -437,7 +451,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "{\"queries\":[\"Text to parse\"],\"namespace\":\"app\",\"applicationName\":\"ipa_test\",\"context\":{\"language\":\"en\"}}",
+        "payload": "{\"queries\":[\"allume la cuisine\"],\"namespace\":\"app\",\"applicationName\":\"ipa_test\",\"context\":{\"language\":\"en\"}}",
         "payloadType": "json",
         "x": 160,
         "y": 720,
@@ -506,31 +520,307 @@
         ]
     },
     {
-        "id": "fd2b51e8.444778",
-        "type": "telegram receiver",
+        "id": "6c01035a.e453ac",
+        "type": "inject",
         "z": "f85ef37c.29fc3",
-        "name": "",
-        "bot": "f8720941.81145",
-        "saveDataDir": "/tmp",
-        "filterCommands": true,
-        "x": 130,
-        "y": 920,
+        "name": "allume la TV",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"queries\":[\"allume la TV\"],\"namespace\":\"app\",\"applicationName\":\"ipa_test\",\"context\":{\"language\":\"en\"}}",
+        "payloadType": "json",
+        "x": 150,
+        "y": 760,
         "wires": [
             [
-                "c5f1e901.7ec428",
-                "83424a34.ca9058"
-            ],
-            [
-                "a872c4b6.f9b7"
+                "aeebc2ff.2b661"
             ]
         ]
     },
     {
-        "id": "c5f1e901.7ec428",
+        "id": "e9319f35.5786b8",
+        "type": "catch",
+        "z": "d6af186b.004918",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 140,
+        "y": 120,
+        "wires": [
+            [
+                "fa07d08a.86bc48"
+            ]
+        ]
+    },
+    {
+        "id": "fa07d08a.86bc48",
         "type": "debug",
-        "z": "f85ef37c.29fc3",
-        "name": "debug",
+        "z": "d6af186b.004918",
+        "name": "error",
         "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 330,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "a26fd5ef.fa8028",
+        "type": "comment",
+        "z": "d6af186b.004918",
+        "name": "Error Handling",
+        "info": "",
+        "x": 150,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "cb997968.6edb7",
+        "type": "telegram sender",
+        "z": "d6af186b.004918",
+        "name": "Send",
+        "bot": "f8720941.81145",
+        "x": 1290,
+        "y": 220,
+        "wires": [
+            [
+                "4f221dec.6cfee4"
+            ]
+        ]
+    },
+    {
+        "id": "4f221dec.6cfee4",
+        "type": "debug",
+        "z": "d6af186b.004918",
+        "name": "Status",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 1440,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "4ea74386.1933f4",
+        "type": "function",
+        "z": "d6af186b.004918",
+        "name": "msg",
+        "func": "context.global.keyboard = { pending : false };\n\nmsg.payload = {\n    \"chatId\": msg.topic,\n    \"type\": \"document\",\n    \"content\": \"/tmp/attestation.pdf\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1150,
+        "y": 260,
+        "wires": [
+            [
+                "cb997968.6edb7"
+            ]
+        ]
+    },
+    {
+        "id": "aed86f0.948f01",
+        "type": "http request",
+        "z": "d6af186b.004918",
+        "name": "/attestation",
+        "method": "POST",
+        "ret": "bin",
+        "paytoqs": "ignore",
+        "url": "http://attestation.covid.local:5000/attestation",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 810,
+        "y": 260,
+        "wires": [
+            [
+                "fc0ffc19.9960d8"
+            ]
+        ]
+    },
+    {
+        "id": "fc0ffc19.9960d8",
+        "type": "file",
+        "z": "d6af186b.004918",
+        "name": "",
+        "filename": "/tmp/attestation.pdf",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 990,
+        "y": 260,
+        "wires": [
+            [
+                "4ea74386.1933f4"
+            ]
+        ]
+    },
+    {
+        "id": "a7ab4c26.76db98",
+        "type": "comment",
+        "z": "d6af186b.004918",
+        "name": "Covid",
+        "info": "",
+        "x": 130,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "c720388.9a36648",
+        "type": "telegram command",
+        "z": "d6af186b.004918",
+        "name": "/covid",
+        "command": "/covid",
+        "bot": "f8720941.81145",
+        "strict": false,
+        "hasresponse": true,
+        "useRegex": false,
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "a6ed36a3.328918"
+            ],
+            [
+                "947521a5.0fcf58"
+            ]
+        ]
+    },
+    {
+        "id": "d68f3481.a4af5",
+        "type": "change",
+        "z": "d6af186b.004918",
+        "name": "topic/chatId",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "originalMessage.from.id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 260,
+        "wires": [
+            [
+                "f306c184.109e"
+            ]
+        ]
+    },
+    {
+        "id": "a6ed36a3.328918",
+        "type": "function",
+        "z": "d6af186b.004918",
+        "name": "Quel motif ?",
+        "func": "context.global.keyboard = { pending : true };\n\nvar opts = {\n  reply_to_message_id: msg.payload.messageId,\n  reply_markup: JSON.stringify({\n    keyboard: [\n      ['travail', 'courses', 'sante'],\n      ['famille', 'handicap', 'sport'],\n      ['judiciaire', 'missions', 'enfants'],\n      ],\n      'resize_keyboard' : true, \n      'one_time_keyboard' : true\n  })\n};\n\nmsg.payload.content = 'Quel motif ?';\nmsg.payload.options = opts;\n\nreturn [ msg ];",
+        "outputs": "1",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 290,
+        "y": 220,
+        "wires": [
+            [
+                "c7cca884.03ea78"
+            ]
+        ]
+    },
+    {
+        "id": "947521a5.0fcf58",
+        "type": "function",
+        "z": "d6af186b.004918",
+        "name": "motif = x",
+        "func": "if(context.global.keyboard.pending) {\n    context.global.keyboard = { pending : false };\n    msg.motif = msg.payload.content\n}\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 280,
+        "y": 260,
+        "wires": [
+            [
+                "d68f3481.a4af5"
+            ]
+        ]
+    },
+    {
+        "id": "c7cca884.03ea78",
+        "type": "change",
+        "z": "d6af186b.004918",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "originalMessage.from.id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 220,
+        "wires": [
+            [
+                "cb997968.6edb7"
+            ]
+        ]
+    },
+    {
+        "id": "83a87699.c9fa08",
+        "type": "telegram receiver",
+        "z": "20462735.a2d2b8",
+        "name": "",
+        "bot": "f8720941.81145",
+        "saveDataDir": "/tmp",
+        "filterCommands": true,
+        "x": 170,
+        "y": 280,
+        "wires": [
+            [
+                "f6d864cf.28aac",
+                "9bddc814.775f28"
+            ],
+            [
+                "b752ad19.75115"
+            ]
+        ]
+    },
+    {
+        "id": "f6d864cf.28aac",
+        "type": "debug",
+        "z": "20462735.a2d2b8",
+        "name": "debug",
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -539,13 +829,13 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 370,
-        "y": 840,
+        "y": 200,
         "wires": []
     },
     {
-        "id": "a872c4b6.f9b7",
+        "id": "b752ad19.75115",
         "type": "debug",
-        "z": "f85ef37c.29fc3",
+        "z": "20462735.a2d2b8",
         "name": "error",
         "active": true,
         "tosidebar": true,
@@ -556,27 +846,34 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 370,
-        "y": 880,
+        "y": 240,
         "wires": []
     },
     {
-        "id": "83424a34.ca9058",
+        "id": "a5dc8d64.5d841",
         "type": "change",
-        "z": "f85ef37c.29fc3",
+        "z": "20462735.a2d2b8",
         "name": "",
         "rules": [
             {
                 "t": "set",
-                "p": "payload.query",
+                "p": "query",
                 "pt": "msg",
                 "to": "payload.content",
                 "tot": "msg"
             },
             {
                 "t": "set",
-                "p": "payload.userId",
+                "p": "messageId",
                 "pt": "msg",
-                "to": "payload.chatId",
+                "to": "payload.messageId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "chatId",
+                "pt": "msg",
+                "to": "originalMessage.from.id",
                 "tot": "msg"
             }
         ],
@@ -585,19 +882,52 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 400,
-        "y": 920,
+        "x": 540,
+        "y": 280,
         "wires": [
             [
-                "688af020.753e4",
-                "c943aee5.518b1"
+                "3e38d306.0737d4"
             ]
         ]
     },
     {
-        "id": "688af020.753e4",
+        "id": "a4aba6d8.e7a278",
         "type": "debug",
-        "z": "f85ef37c.29fc3",
+        "z": "20462735.a2d2b8",
+        "name": "debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "770a00a3.afc6e8",
+        "type": "tock-nlp-api",
+        "z": "20462735.a2d2b8",
+        "method": "parse",
+        "parse_body": "",
+        "parse_bodyType": "str",
+        "name": "Parse",
+        "x": 870,
+        "y": 280,
+        "wires": [
+            [
+                "761ffeee.3b7a",
+                "edabe3a8.6a9788"
+            ]
+        ]
+    },
+    {
+        "id": "761ffeee.3b7a",
+        "type": "debug",
+        "z": "20462735.a2d2b8",
         "name": "debug",
         "active": true,
         "tosidebar": true,
@@ -607,107 +937,137 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 590,
-        "y": 880,
+        "x": 1030,
+        "y": 240,
         "wires": []
     },
     {
-        "id": "c943aee5.518b1",
-        "type": "tock-web-bot-connector-api",
-        "z": "f85ef37c.29fc3",
-        "method": "postIoByNamespaceByBotByConnector",
-        "postIoByNamespaceByBotByConnector_namespace": "app",
-        "postIoByNamespaceByBotByConnector_namespaceType": "str",
-        "postIoByNamespaceByBotByConnector_bot": "ipa_test",
-        "postIoByNamespaceByBotByConnector_botType": "str",
-        "postIoByNamespaceByBotByConnector_connector": "web",
-        "postIoByNamespaceByBotByConnector_connectorType": "str",
-        "postIoByNamespaceByBotByConnector_body": "",
-        "postIoByNamespaceByBotByConnector_bodyType": "str",
-        "getIoByNamespaceByBotByConnectorSse_namespace": "",
-        "getIoByNamespaceByBotByConnectorSse_namespaceType": "str",
-        "getIoByNamespaceByBotByConnectorSse_bot": "",
-        "getIoByNamespaceByBotByConnectorSse_botType": "str",
-        "getIoByNamespaceByBotByConnectorSse_connector": "",
-        "getIoByNamespaceByBotByConnectorSse_connectorType": "str",
-        "getIoByNamespaceByBotByConnectorSse_userId": "",
-        "getIoByNamespaceByBotByConnectorSse_userIdType": "str",
-        "name": "Query Bot",
-        "x": 600,
-        "y": 920,
-        "wires": [
-            [
-                "15c721c7.255cbe",
-                "e4b9d2e8.308688"
-            ]
-        ]
-    },
-    {
-        "id": "15c721c7.255cbe",
-        "type": "debug",
-        "z": "f85ef37c.29fc3",
-        "name": "debug",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 770,
-        "y": 880,
-        "wires": []
-    },
-    {
-        "id": "118c1433.43e014",
-        "type": "telegram sender",
-        "z": "f85ef37c.29fc3",
+        "id": "3e38d306.0737d4",
+        "type": "template",
+        "z": "20462735.a2d2b8",
         "name": "",
-        "bot": "f8720941.81145",
-        "x": 1110,
-        "y": 920,
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{\n    \"queries\": [\n        \"{{query}}\"\n    ],\n    \"namespace\": \"app\",\n    \"applicationName\": \"ipa_test\",\n    \"context\": {\n        \"language\": \"en\"\n    }\n}",
+        "output": "json",
+        "x": 720,
+        "y": 280,
         "wires": [
             [
-                "3e389739.5ff9f"
+                "770a00a3.afc6e8",
+                "a4aba6d8.e7a278"
             ]
         ]
     },
     {
-        "id": "3e389739.5ff9f",
-        "type": "debug",
-        "z": "f85ef37c.29fc3",
-        "name": "debug",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1270,
-        "y": 920,
-        "wires": []
+        "id": "fe09f678.a3c668",
+        "type": "link in",
+        "z": "d6af186b.004918",
+        "name": "Covid-Attestation-Generate",
+        "links": [
+            "a77c0435.26b8d"
+        ],
+        "x": 475,
+        "y": 380,
+        "wires": [
+            [
+                "404bbc63.d74a04",
+                "f306c184.109e"
+            ]
+        ]
     },
     {
-        "id": "e4b9d2e8.308688",
+        "id": "9bddc814.775f28",
+        "type": "function",
+        "z": "20462735.a2d2b8",
+        "name": "filter",
+        "func": "if(!context.global.keyboard.pending) {\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 370,
+        "y": 280,
+        "wires": [
+            [
+                "a5dc8d64.5d841"
+            ]
+        ]
+    },
+    {
+        "id": "2a3a5cc8.c42e4c",
+        "type": "switch",
+        "z": "20462735.a2d2b8",
+        "name": "Is Attestation?",
+        "property": "payload.intent",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "attestation",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 380,
+        "y": 340,
+        "wires": [
+            [
+                "3503c68f.40f5ba"
+            ]
+        ]
+    },
+    {
+        "id": "3503c68f.40f5ba",
         "type": "change",
-        "z": "f85ef37c.29fc3",
+        "z": "20462735.a2d2b8",
         "name": "",
         "rules": [
             {
                 "t": "set",
-                "p": "payload.content",
+                "p": "topic",
                 "pt": "msg",
-                "to": "payload.responses[0].text",
+                "to": "originalMessage.from.id",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "originalMessage",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "headers",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "responseUrl",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.messageId",
+                "pt": "msg",
+                "to": "messageId",
                 "tot": "msg"
             },
             {
                 "t": "set",
                 "p": "payload.chatId",
                 "pt": "msg",
-                "to": "originalMessage.from.id",
+                "to": "chatId",
                 "tot": "msg"
             },
             {
@@ -723,12 +1083,279 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 820,
-        "y": 920,
+        "x": 580,
+        "y": 340,
         "wires": [
             [
-                "118c1433.43e014"
+                "e2265bcf.0b633",
+                "306f20d0.6d565"
             ]
         ]
+    },
+    {
+        "id": "a77c0435.26b8d",
+        "type": "link out",
+        "z": "20462735.a2d2b8",
+        "name": "",
+        "links": [
+            "fe09f678.a3c668"
+        ],
+        "x": 1095,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "e2265bcf.0b633",
+        "type": "debug",
+        "z": "20462735.a2d2b8",
+        "name": "debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "404bbc63.d74a04",
+        "type": "debug",
+        "z": "d6af186b.004918",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "f306c184.109e",
+        "type": "template",
+        "z": "d6af186b.004918",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{\n    \"prenom\": \"John\",\n    \"nom\": \"Doe\",\n    \"naissance_date\": \"01/02/1903\",\n    \"naissance_lieu\": \"Even\",\n    \"adresse\": \"123, rue du ciel\",\n    \"motif\": \"{{motif}}\",\n    \"fait_lieu\": \"Even\"\n}",
+        "output": "json",
+        "x": 640,
+        "y": 260,
+        "wires": [
+            [
+                "aed86f0.948f01"
+            ]
+        ]
+    },
+    {
+        "id": "a85ac18d.443d58",
+        "type": "inject",
+        "z": "d6af186b.004918",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "motif",
+                "v": "courses",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "xxxx",
+        "payloadType": "str",
+        "x": 450,
+        "y": 340,
+        "wires": [
+            [
+                "f306c184.109e"
+            ]
+        ]
+    },
+    {
+        "id": "edabe3a8.6a9788",
+        "type": "function",
+        "z": "20462735.a2d2b8",
+        "name": "WrapResult",
+        "func": "\nconst text = msg.payload.retainedQuery\n\nlet wrappedPayload = {}\nwrappedPayload.intent = msg.payload.intent\nwrappedPayload.query = text\n\nif (msg.payload.entities.length) {\n  wrappedPayload.entitiesNumber = msg.payload.entities.length\n}\nwrappedPayload.entities = []\n\nfor (const entity of msg.payload.entities) {\n  let wrappedEntity = entity\n  let textEntitie = text.substring(entity.start, entity.end)\n\n  if (entity.entity.entityType.name === 'duckling:datetime') {\n    wrappedEntity.duckling = entity.value.date\n  }\n\n  wrappedEntity.value = textEntitie\n  wrappedEntity.entity = entity.entity.role\n  wrappedPayload.entities.push(wrappedEntity)\n}\n\nmsg.nlpParsed = wrappedPayload\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1050,
+        "y": 280,
+        "wires": [
+            [
+                "6294f5eb.d19c1c",
+                "2a3a5cc8.c42e4c"
+            ]
+        ]
+    },
+    {
+        "id": "6294f5eb.d19c1c",
+        "type": "debug",
+        "z": "20462735.a2d2b8",
+        "name": "debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "306f20d0.6d565",
+        "type": "function",
+        "z": "20462735.a2d2b8",
+        "name": "Which ?",
+        "func": "\nmsg.motif = \"unknown\"\n\nfor (const entity of msg.nlpParsed.entities) {\n  if (entity.entity === 'covidattestationtype') {\n    msg.motif = entity.value\n  }\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 780,
+        "y": 340,
+        "wires": [
+            [
+                "b45ea86a.c9181",
+                "f11aa72b.95792"
+            ]
+        ]
+    },
+    {
+        "id": "b45ea86a.c9181",
+        "type": "switch",
+        "z": "20462735.a2d2b8",
+        "name": "",
+        "property": "motif",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "unknown",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 930,
+        "y": 340,
+        "wires": [
+            [
+                "18db9dac.79e0d2"
+            ],
+            [
+                "a77c0435.26b8d"
+            ]
+        ]
+    },
+    {
+        "id": "18db9dac.79e0d2",
+        "type": "link out",
+        "z": "20462735.a2d2b8",
+        "name": "",
+        "links": [
+            "e77b4961.9d5"
+        ],
+        "x": 1095,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "e77b4961.9d5",
+        "type": "link in",
+        "z": "d6af186b.004918",
+        "name": "Covid-Attestation-Which",
+        "links": [
+            "18db9dac.79e0d2"
+        ],
+        "x": 235,
+        "y": 160,
+        "wires": [
+            [
+                "a6ed36a3.328918"
+            ]
+        ]
+    },
+    {
+        "id": "f11aa72b.95792",
+        "type": "debug",
+        "z": "20462735.a2d2b8",
+        "name": "debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "2d57cf5e.61f178",
+        "type": "catch",
+        "z": "20462735.a2d2b8",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 140,
+        "y": 120,
+        "wires": [
+            [
+                "7d692e5b.f3792"
+            ]
+        ]
+    },
+    {
+        "id": "7d692e5b.f3792",
+        "type": "debug",
+        "z": "20462735.a2d2b8",
+        "name": "error",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 330,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "a34e6d89.d29328",
+        "type": "comment",
+        "z": "20462735.a2d2b8",
+        "name": "Error Handling",
+        "info": "",
+        "x": 150,
+        "y": 80,
+        "wires": []
     }
 ]

@@ -44,3 +44,10 @@ services:
      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN:-changeme}
     env_file:
      - .env
+
+  attestation-covid19:
+    image: kalemena/attestation-covid19:latest   
+    networks:
+      default:
+        aliases:
+          - attestation.covid.local

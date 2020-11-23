@@ -35,6 +35,19 @@ bot.addStory('greeting',  (bot, request) => {
 //  bot.end('Comment puis-je aider ?');
 });
 
+bot.addStory('attestation',  (bot, request) => {
+  console.log("intent attestation");
+  // getting user context
+  console.log(bot.userData);
+  // user message
+  console.log(request.message.text);
+  // entities
+  console.log(request.entities);
+  // answer
+  bot.send("Quel Motif ?");
+});
+
+
 //     newStory("qui-es-tu") { // Answer for the 'qui-es-tu' story
 //                send("Je suis un assistant conversationnel construit avec Tock")
 //                end("Comment puis-je aider ?")
