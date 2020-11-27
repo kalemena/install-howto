@@ -168,6 +168,8 @@ allumer la lumière
 
 == References
 
+=== Tock
+
 * link:https://doc.tock.ai/tock/fr/user/concepts/[Tock Concepts]
 * link:http://doc.tock.ai/tock/api/web-connector#/[Tock Swagger API]
 
@@ -177,3 +179,7 @@ allumer la lumière
 ** link:http://doc.tock.ai/tock/api/web-connector[Tock Bot API]
 ** link:http://doc.tock.ai/tock/api/#/Nlp/parse[Tock NLP API]
 ** link:http://doc.tock.ai/tock/api/admin[Tock Admin API]
+
+=== NLP.JS
+
+* link:https://github.com/rodrigopivi/Chatito[Chatito]
