@@ -13,4 +13,4 @@ var
 *_cred.json
 .config*.json
 settings.js
-package.json
+#package.json

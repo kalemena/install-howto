@@ -165,29 +165,3 @@ allumer la lumière
 // ----
 
 // * Edit *tock-bot-samples/src/main/kotlin/StartWebsocketWithLocalhost.kt* to setup host API Key as seen in Tock Studio
-
-== References
-
-=== Tock
-
-* link:https://doc.tock.ai/tock/fr/user/concepts/[Tock Concepts]
-* link:http://doc.tock.ai/tock/api/web-connector#/[Tock Swagger API]
-
-* link:https://flows.nodered.org/search?term=linto[Linto node-red]
-
-* APIs:
-** link:http://doc.tock.ai/tock/api/web-connector[Tock Bot API]
-** link:http://doc.tock.ai/tock/api/#/Nlp/parse[Tock NLP API]
-** link:http://doc.tock.ai/tock/api/admin[Tock Admin API]
-
-=== NLP.JS
-
-* link:https://github.com/rodrigopivi/Chatito[Chatito]
-
-=== SNIPS
-
-* link:https://github.com/syntithenai/hermod[SNIPS stack]
-
-=== Flair
-
-* link:https://github.com/samhavens/flair-as-service[Flair stack]
