@@ -183,3 +183,11 @@ allumer la lumière
 === NLP.JS
 
 * link:https://github.com/rodrigopivi/Chatito[Chatito]
+
+=== SNIPS
+
+* link:https://github.com/syntithenai/hermod[SNIPS stack]
+
+=== Flair
+
+* link:https://github.com/samhavens/flair-as-service[Flair stack]
