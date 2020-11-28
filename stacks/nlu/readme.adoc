@@ -27,6 +27,10 @@
 
 * link:https://github.com/samhavens/flair-as-service[Flair stack]
 
+=== BotKit
+
+* link:https://github.com/howdyai/botkit[BotKit]
+
 === RASA
 
 * Demo
