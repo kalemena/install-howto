@@ -11,4 +11,5 @@ RUN pip3 install rasa \
 # https://rasa.com/docs/rasa/command-line-interface
 # https://rasa.com/docs/rasa/custom-actions
 
-CMD rasa init
+# CMD rasa init
+CMD /bin/bash
