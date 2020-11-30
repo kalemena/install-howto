@@ -1,0 +1,33 @@
+= Micro Services tools
+
+== Ngrok
+
+link:https://ngrok.com/docs[Ngrok Doc]
+
+=== Manual steps
+
+.Run you web service, locally, as it should
+
+.Run ngrok by targetting your service host and port
+[source,bash]
+----
+$ ngrok http dev.example.com:8000
+----
+
+.Open browser
+Browse link:http://localhost:4040[]
+
+.Do some public Calls to your assigned ngrok URL
+[source,bash]
+----
+----
+
+.Tips
+[source,bash]
+----
+# Share files
+$ ngrok http -auth="user:password" file:///Users/alan/share
+----
+
+=== The Docker way
+
