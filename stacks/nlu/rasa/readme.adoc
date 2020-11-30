@@ -19,8 +19,22 @@ $> rasa init
 $> exit
 ----
 
+.Running the service
+[source,bash]
+----
+# Starts a rasa-init container with mapping current folder
+$ make rasa-cli
+$> rasa run
+# Browse to *http://localhost:5005* 
+# Try this now
+$ curl --request POST 'http://localhost:5005/webhooks/rest/webhook' --data '{"sender":"Test","message":"Hi"}' 
+[{"recipient_id":"Test","text":"Hey! How are you?"}]
+----
+
 .Generate the missing parts
 * copy missing parts from *projects/template* into the new *helloworld* folder
+
+
 
 == Resources
 
