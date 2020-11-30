@@ -1,0 +1,30 @@
+= HelloWorld project
+
+== Discovery - The Docker way
+
+.Build the docker image locally
+[source,bash]
+----
+$ make build
+----
+
+.Build a new project
+[source,bash]
+----
+# Starts a rasa-init container with mapping current folder
+$ make rasa-cli
+$> rasa init
+# Answer and name your project *helloworld* for example
+# Folder will get created eventually
+$> exit
+----
+
+.Generate the missing parts
+* copy missing parts from *projects/template* into the new *helloworld* folder
+
+== Resources
+
+* link:https://rasa.com/docs/rasa/installation/[]
+* link:https://rasa.com/docs/rasa/playground/[]
+* link:https://rasa.com/docs/rasa/command-line-interface[]
+* link:https://rasa.com/docs/rasa/custom-actions[]

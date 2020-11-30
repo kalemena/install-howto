@@ -8,6 +8,7 @@ var
 
 # Backups
 *.backup
+*.pyc
 
 # Private
 *_cred.json
