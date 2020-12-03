@@ -2,6 +2,24 @@
 
 link:https://k3d.io/[K3D] is a minimal stack for Kubernetes.
 
+== Overview
+
+[source,bash]
+----
+# Install kubectl
+$ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+$ chmod +x ./kubectl
+$ sudo mv ./kubectl /usr/local/bin/kubectl
+$ kubectl version --client
+Client Version: version.Info{Major:"1", Minor:"20", GitVersion:"v1.20.0", GitCommit:"af46c47ce925f4c4ad5cc8d1fca46c7b77d13b38", GitTreeState:"clean", BuildDate:"2020-12-08T17:59:43Z", GoVersion:"go1.15.5", Compiler:"gc", Platform:"linux/amd64"}
+
+# Install latest stable
+$ wget -q -O - https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash
+$ k3d --version
+k3d version v3.4.0
+k3s version v1.19.4-k3s1 (default)
+----
+
 == Resources
 
 * link:https://github.com/iwilltry42/k3d-demo[Demo] (do not run make prep !!!)
