@@ -1,0 +1,7 @@
+= K3D
+
+link:https://k3d.io/[K3D] is a minimal stack for Kubernetes.
+
+== Resources
+
+* link:https://github.com/iwilltry42/k3d-demo[Demo] (do not run make prep !!!)
