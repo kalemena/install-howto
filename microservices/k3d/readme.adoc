@@ -18,6 +18,36 @@ $ wget -q -O - https://raw.githubusercontent.com/rancher/k3d/main/install.sh | b
 $ k3d --version
 k3d version v3.4.0
 k3s version v1.19.4-k3s1 (default)
+
+# Create a cluster
+$ k3d cluster create mycluster
+INFO[0000] Created network 'k3d-mycluster'              
+INFO[0000] Created volume 'k3d-mycluster-images'        
+INFO[0001] Creating node 'k3d-mycluster-server-0'       
+INFO[0002] Pulling image 'docker.io/rancher/k3s:v1.19.4-k3s1' 
+INFO[0100] Creating LoadBalancer 'k3d-mycluster-serverlb' 
+INFO[0102] Pulling image 'docker.io/rancher/k3d-proxy:v3.4.0' 
+INFO[0136] (Optional) Trying to get IP of the docker host and inject it into the cluster as 'host.k3d.internal' for easy access 
+INFO[0140] Successfully added host record to /etc/hosts in 2/2 nodes and to the CoreDNS ConfigMap 
+INFO[0140] Cluster 'mycluster' created successfully!    
+INFO[0140] You can now use it like this:                
+kubectl cluster-info
+
+# Check this Cluster details
+$ kubectl cluster-info
+Kubernetes control plane is running at https://0.0.0.0:41789
+CoreDNS is running at https://0.0.0.0:41789/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+Metrics-server is running at https://0.0.0.0:41789/api/v1/namespaces/kube-system/services/https:metrics-server:/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'
+
+# Prepare everything
+$ k3d kubeconfig merge mycluster --switch-context
+/home/clement/.k3d/kubeconfig-mycluster.yaml
+$ kubectl get nodes
+NAME                     STATUS   ROLES    AGE   VERSION
+k3d-mycluster-server-0   Ready    master   24m   v1.19.4+k3s1
+
 ----
 
 == Resources
