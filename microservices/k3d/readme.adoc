@@ -52,4 +52,6 @@ k3d-mycluster-server-0   Ready    master   24m   v1.19.4+k3s1
 
 == Resources
 
+* link:https://k3d.io/usage/commands/[Commands]
 * link:https://github.com/iwilltry42/k3d-demo[Demo] (do not run make prep !!!)
+* link:https://github.com/inercia/k3x[K3D UI]
