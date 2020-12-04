@@ -19,7 +19,14 @@ $ k3d --version
 k3d version v3.4.0
 k3s version v1.19.4-k3s1 (default)
 
-# Create a cluster
+# Helm charts
+$ curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+----
+
+.Cluster creation
+[source,bash]
+----
+# Create a cluster with 3 nodes
 $ k3d cluster create mycluster --servers 3
 INFO[0000] Created network 'k3d-mycluster'              
 INFO[0000] Created volume 'k3d-mycluster-images'        
