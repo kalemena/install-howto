@@ -178,5 +178,9 @@ default       whoami           ClusterIP      10.43.224.225   <none>          80
 == Resources
 
 * link:https://k3d.io/usage/commands/[Commands]
-* link:https://github.com/iwilltry42/k3d-demo[Demo] (do not run make prep !!!)
 * link:https://github.com/inercia/k3x[K3D UI]
+
+* Demos:
+** link:https://github.com/iwilltry42/k3d-demo[Demo] (do not run make prep !!!)
+** link:https://blog.gabrielsagnard.fr/gerer-les-clusters-k3s-avec-k3d/[Outdated but interesting]
+** link:https://codeburst.io/creating-a-local-development-kubernetes-cluster-with-k3s-and-traefik-proxy-7a5033cb1c2d[CodeBurst Whoami]
