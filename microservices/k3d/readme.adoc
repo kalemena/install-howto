@@ -109,9 +109,24 @@ default       traefik          LoadBalancer   10.43.65.79    192.168.192.2   80:
 kube-system   kube-dns         ClusterIP      10.43.0.10     <none>          53/UDP,53/TCP,9153/TCP       8m26s
 kube-system   metrics-server   ClusterIP      10.43.209.20   <none>          443/TCP                      8m26s
 ----
-----
 
-=== Deployment
+.Little exposing of ports
+[source,bash]
+----
+# Check Traefik on browser at link:http://localhost:9000/dashboard/[]
+$ kubectl port-forward $(kubectl get pods --selector "app.kubernetes.io/name=traefik" --output=name) 9000:9000
+Forwarding from 127.0.0.1:9000 -> 9000
+Forwarding from [::1]:9000 -> 9000
+
+# Here is how to find a service port ...
+$ kubectl get pod traefik-5fc4947cf9-bvrkq --template='{{(index (index .spec.containers 0).ports 0).containerPort}}{{"\n"}}'
+9000
+
+# Or another way ...
+$ kubectl port-forward deployment/traefik 9000:9000 &
+Forwarding from 127.0.0.1:9000 -> 9000
+Forwarding from [::1]:9000 -> 9000
+----
 
 Following the tutorial link:https://codeburst.io/creating-a-local-development-kubernetes-cluster-with-k3s-and-traefik-proxy-7a5033cb1c2d[CodeBurst K3D Whoami]
 
