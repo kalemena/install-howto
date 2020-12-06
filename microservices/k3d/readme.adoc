@@ -31,18 +31,21 @@ $ curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | b
 .Cluster creation
 [source,bash]
 ----
-$ k3d cluster create cluster-whoami --api-port 127.0.0.1:6443 -p 80:80@loadbalancer -p 443:443@loadbalancer --servers=3 --k3s-server-arg "--no-deploy=traefik"
-INFO[0000] Created network 'k3d-cluster-whoami'         
-INFO[0000] Created volume 'k3d-cluster-whoami-images'   
+$ k3d cluster create cluster-dev --api-port 127.0.0.1:6443 -p 80:80@loadbalancer -p 443:443@loadbalancer --servers=3 --agents=3 --k3s-server-arg "--no-deploy=traefik"
+INFO[0000] Created network 'k3d-cluster-dev'            
+INFO[0000] Created volume 'k3d-cluster-dev-images'      
 INFO[0000] Creating initializing server node            
-INFO[0000] Creating node 'k3d-cluster-whoami-server-0'  
-INFO[0012] Creating node 'k3d-cluster-whoami-server-1'  
-INFO[0027] Creating node 'k3d-cluster-whoami-server-2'  
-INFO[0040] Creating LoadBalancer 'k3d-cluster-whoami-serverlb' 
-INFO[0042] (Optional) Trying to get IP of the docker host and inject it into the cluster as 'host.k3d.internal' for easy access 
-INFO[0048] Successfully added host record to /etc/hosts in 4/4 nodes and to the CoreDNS ConfigMap 
-INFO[0048] Cluster 'cluster-whoami' created successfully! 
-INFO[0048] You can now use it like this:                
+INFO[0000] Creating node 'k3d-cluster-dev-server-0'     
+INFO[0011] Creating node 'k3d-cluster-dev-server-1'     
+INFO[0025] Creating node 'k3d-cluster-dev-server-2'     
+INFO[0038] Creating node 'k3d-cluster-dev-agent-0'      
+INFO[0039] Creating node 'k3d-cluster-dev-agent-1'      
+INFO[0040] Creating node 'k3d-cluster-dev-agent-2'      
+INFO[0041] Creating LoadBalancer 'k3d-cluster-dev-serverlb' 
+INFO[0043] (Optional) Trying to get IP of the docker host and inject it into the cluster as 'host.k3d.internal' for easy access 
+INFO[0052] Successfully added host record to /etc/hosts in 7/7 nodes and to the CoreDNS ConfigMap 
+INFO[0052] Cluster 'cluster-dev' created successfully!  
+INFO[0052] You can now use it like this:                
 kubectl cluster-info
 
 # Check this Cluster details
@@ -54,14 +57,17 @@ Metrics-server is running at https://127.0.0.1:6443/api/v1/namespaces/kube-syste
 To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 
 # Load config for kubectl
-$ k3d kubeconfig merge cluster-whoami --switch-context
-/home/clement/.k3d/kubeconfig-cluster-whoami.yaml
+$ k3d kubeconfig merge cluster-dev --switch-context
+/home/clement/.k3d/kubeconfig-cluster-dev.yaml
 
 $ kubectl get nodes
-NAME                          STATUS   ROLES         AGE    VERSION
-k3d-cluster-whoami-server-0   Ready    etcd,master   110s   v1.19.4+k3s1
-k3d-cluster-whoami-server-1   Ready    etcd,master   95s    v1.19.4+k3s1
-k3d-cluster-whoami-server-2   Ready    etcd,master   80s    v1.19.4+k3s1
+NAME                       STATUS   ROLES         AGE   VERSION
+k3d-cluster-dev-agent-0    Ready    <none>        36s   v1.19.4+k3s1
+k3d-cluster-dev-agent-1    Ready    <none>        35s   v1.19.4+k3s1
+k3d-cluster-dev-agent-2    Ready    <none>        34s   v1.19.4+k3s1
+k3d-cluster-dev-server-0   Ready    etcd,master   72s   v1.19.4+k3s1
+k3d-cluster-dev-server-1   Ready    etcd,master   58s   v1.19.4+k3s1
+k3d-cluster-dev-server-2   Ready    etcd,master   43s   v1.19.4+k3s1
 
 # Wait and see after some times ...
 $ kubectl get pods --all-namespaces
@@ -86,20 +92,26 @@ TEST SUITE: None
 # Wait and see after some times ...
 $ kubectl get pods --all-namespaces
 NAMESPACE     NAME                                     READY   STATUS    RESTARTS   AGE
-default       svclb-traefik-2vhhd                      2/2     Running   1          2m3s
-default       svclb-traefik-gx8kh                      2/2     Running   0          2m3s
-default       svclb-traefik-wllrd                      2/2     Running   0          2m3s
-default       traefik-5fc4947cf9-bvrkq                 1/1     Running   0          2m4s
-kube-system   coredns-66c464876b-jpb5n                 1/1     Running   0          4m46s
-kube-system   local-path-provisioner-7ff9579c6-69nwc   1/1     Running   0          4m46s
-kube-system   metrics-server-7b4f8b595-hzf87           1/1     Running   0          4m46s
+default       svclb-traefik-mxnzn                      2/2     Running   0          93s
+default       svclb-traefik-nm62k                      2/2     Running   0          93s
+default       svclb-traefik-sszff                      2/2     Running   0          93s
+default       svclb-traefik-tgdvw                      2/2     Running   1          93s
+default       svclb-traefik-wjxmw                      2/2     Running   0          93s
+default       svclb-traefik-zjfrx                      2/2     Running   0          93s
+default       traefik-5fc4947cf9-2hpzw                 0/1     Running   0          93s
+kube-system   coredns-66c464876b-8xx56                 1/1     Running   0          3m15s
+kube-system   local-path-provisioner-7ff9579c6-5wjbm   1/1     Running   0          3m15s
+kube-system   metrics-server-7b4f8b595-rvw8x           1/1     Running   0          3m15s
 
 $ docker ps -a
 CONTAINER ID        IMAGE                      COMMAND                  CREATED             STATUS              PORTS                                                                                     NAMES
-66bba1b9fb50        rancher/k3d-proxy:v3.4.0   "/bin/sh -c nginx-pr…"   4 minutes ago       Up 4 minutes        0.0.0.0:80->80/tcp, 0.0.0.0:443->443/tcp, 127.0.0.1:6443->6443/tcp                        k3d-cluster-whoami-serverlb
-ae6fa831ae1d        rancher/k3s:v1.19.4-k3s1   "/bin/k3s server --n…"   4 minutes ago       Up 4 minutes                                                                                                  k3d-cluster-whoami-server-2
-2b8718c7b54e        rancher/k3s:v1.19.4-k3s1   "/bin/k3s server --n…"   4 minutes ago       Up 4 minutes                                                                                                  k3d-cluster-whoami-server-1
-9ad8f6383c8d        rancher/k3s:v1.19.4-k3s1   "/bin/k3s server --n…"   5 minutes ago       Up 5 minutes                                                                                                  k3d-cluster-whoami-server-0
+afa67a0ca7c4        rancher/k3d-proxy:v3.4.0   "/bin/sh -c nginx-pr…"   3 minutes ago       Up 3 minutes        0.0.0.0:80->80/tcp, 0.0.0.0:443->443/tcp, 127.0.0.1:6443->6443/tcp                        k3d-cluster-dev-serverlb
+a34a11cb2092        rancher/k3s:v1.19.4-k3s1   "/bin/k3s agent"         3 minutes ago       Up 3 minutes                                                                                                  k3d-cluster-dev-agent-2
+7d699dba785d        rancher/k3s:v1.19.4-k3s1   "/bin/k3s agent"         3 minutes ago       Up 3 minutes                                                                                                  k3d-cluster-dev-agent-1
+d473ca524922        rancher/k3s:v1.19.4-k3s1   "/bin/k3s agent"         3 minutes ago       Up 3 minutes                                                                                                  k3d-cluster-dev-agent-0
+219f68392dab        rancher/k3s:v1.19.4-k3s1   "/bin/k3s server --n…"   3 minutes ago       Up 3 minutes                                                                                                  k3d-cluster-dev-server-2
+e3bf906877db        rancher/k3s:v1.19.4-k3s1   "/bin/k3s server --n…"   3 minutes ago       Up 3 minutes                                                                                                  k3d-cluster-dev-server-1
+b7ef97a1b760        rancher/k3s:v1.19.4-k3s1   "/bin/k3s server --n…"   3 minutes ago       Up 3 minutes                                                                                                  k3d-cluster-dev-server-0
 
 # Check after some time deploying ...
 $ kubectl get services --all-namespaces
@@ -126,6 +138,71 @@ $ kubectl get pod traefik-5fc4947cf9-bvrkq --template='{{(index (index .spec.con
 $ kubectl port-forward deployment/traefik 9000:9000 &
 Forwarding from 127.0.0.1:9000 -> 9000
 Forwarding from [::1]:9000 -> 9000
+----
+
+=== Deployments
+
+.Nginx + forward
+[source,bash]
+----
+$ kubectl create deployment nginx --image=nginx
+deployment.apps/nginx created
+
+$ kubectl create service clusterip nginx --tcp=80:80
+service/nginx created
+
+$ kubectl get services --all-namespaces
+NAMESPACE     NAME             TYPE           CLUSTER-IP     EXTERNAL-IP     PORT(S)                      AGE
+default       kubernetes       ClusterIP      10.43.0.1      <none>          443/TCP                      5m41s
+default       nginx            ClusterIP      10.43.214.52   <none>          80/TCP                       4s
+default       traefik          LoadBalancer   10.43.42.239   192.168.208.7   80:31864/TCP,443:31047/TCP   3m44s
+kube-system   kube-dns         ClusterIP      10.43.0.10     <none>          53/UDP,53/TCP,9153/TCP       5m39s
+kube-system   metrics-server   ClusterIP      10.43.66.192   <none>          443/TCP                      5m39s
+
+$ kubectl get pods --all-namespaces
+NAMESPACE     NAME                                     READY   STATUS    RESTARTS   AGE
+default       nginx-6799fc88d8-t5dqs                   1/1     Running   0          112s
+default       svclb-traefik-mxnzn                      2/2     Running   0          5m18s
+default       svclb-traefik-nm62k                      2/2     Running   0          5m18s
+default       svclb-traefik-sszff                      2/2     Running   0          5m18s
+default       svclb-traefik-tgdvw                      2/2     Running   1          5m18s
+default       svclb-traefik-wjxmw                      2/2     Running   0          5m18s
+default       svclb-traefik-zjfrx                      2/2     Running   0          5m18s
+default       traefik-5fc4947cf9-2hpzw                 1/1     Running   0          5m18s
+kube-system   coredns-66c464876b-8xx56                 1/1     Running   0          7m
+kube-system   local-path-provisioner-7ff9579c6-5wjbm   1/1     Running   0          7m
+kube-system   metrics-server-7b4f8b595-rvw8x           1/1     Running   0          7m
+
+# Configure a redirect for host nginx.local to port 80
+$ kubectl apply -f k3d-demo-nginx-ingress-80.yml 
+ingress.networking.k8s.io/nginx created
+
+$ curl -H "Host: nginx.local" localhost:80/
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
 ----
 
 Following the tutorial link:https://codeburst.io/creating-a-local-development-kubernetes-cluster-with-k3s-and-traefik-proxy-7a5033cb1c2d[CodeBurst K3D Whoami]
