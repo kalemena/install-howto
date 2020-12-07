@@ -1,15 +1,19 @@
-apiVersion: networking.k8s.io/v1beta1
+# apiVersion: networking.k8s.io/v1beta1 # for k3s < v1.19
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: whoami
   annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
-    traefik.ingress.kubernetes.io/router.tls: "true"
+    ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-  - http:
+  - host: whoami.local
+    http:
       paths:
       - path: /
+        pathType: Prefix
         backend:
-          serviceName: whoami
-          servicePort: 80
+          service:
+            name: whoami
+            port:
+              number: 80

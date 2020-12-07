@@ -140,6 +140,8 @@ Forwarding from 127.0.0.1:9000 -> 9000
 Forwarding from [::1]:9000 -> 9000
 ----
 
+* Browse http://localhost:9000/dashboard/ for Traefik
+
 === Deployments
 
 .Nginx + forward
@@ -155,23 +157,12 @@ $ kubectl get services --all-namespaces
 NAMESPACE     NAME             TYPE           CLUSTER-IP     EXTERNAL-IP     PORT(S)                      AGE
 default       kubernetes       ClusterIP      10.43.0.1      <none>          443/TCP                      5m41s
 default       nginx            ClusterIP      10.43.214.52   <none>          80/TCP                       4s
-default       traefik          LoadBalancer   10.43.42.239   192.168.208.7   80:31864/TCP,443:31047/TCP   3m44s
-kube-system   kube-dns         ClusterIP      10.43.0.10     <none>          53/UDP,53/TCP,9153/TCP       5m39s
-kube-system   metrics-server   ClusterIP      10.43.66.192   <none>          443/TCP                      5m39s
+...
 
 $ kubectl get pods --all-namespaces
 NAMESPACE     NAME                                     READY   STATUS    RESTARTS   AGE
 default       nginx-6799fc88d8-t5dqs                   1/1     Running   0          112s
-default       svclb-traefik-mxnzn                      2/2     Running   0          5m18s
-default       svclb-traefik-nm62k                      2/2     Running   0          5m18s
-default       svclb-traefik-sszff                      2/2     Running   0          5m18s
-default       svclb-traefik-tgdvw                      2/2     Running   1          5m18s
-default       svclb-traefik-wjxmw                      2/2     Running   0          5m18s
-default       svclb-traefik-zjfrx                      2/2     Running   0          5m18s
-default       traefik-5fc4947cf9-2hpzw                 1/1     Running   0          5m18s
-kube-system   coredns-66c464876b-8xx56                 1/1     Running   0          7m
-kube-system   local-path-provisioner-7ff9579c6-5wjbm   1/1     Running   0          7m
-kube-system   metrics-server-7b4f8b595-rvw8x           1/1     Running   0          7m
+...
 
 # Configure a redirect for host nginx.local to port 80
 $ kubectl apply -f k3d-demo-nginx-ingress-80.yml 
@@ -205,57 +196,9 @@ Commercial support is available at
 </html>
 ----
 
-Following the tutorial link:https://codeburst.io/creating-a-local-development-kubernetes-cluster-with-k3s-and-traefik-proxy-7a5033cb1c2d[CodeBurst K3D Whoami]
-
+.Service Whoami + forward (kindof same thing)
 [source,bash]
 ----
-$ k3d cluster create cluster-whoami --api-port 127.0.0.1:6443 -p 80:80@loadbalancer -p 443:443@loadbalancer --k3s-server-arg "--no-deploy=traefik"
-INFO[0000] Created network 'k3d-cluster-whoami'         
-INFO[0000] Created volume 'k3d-cluster-whoami-images'   
-INFO[0001] Creating node 'k3d-cluster-whoami-server-0'  
-INFO[0008] Creating LoadBalancer 'k3d-cluster-whoami-serverlb' 
-INFO[0010] (Optional) Trying to get IP of the docker host and inject it into the cluster as 'host.k3d.internal' for easy access 
-INFO[0014] Successfully added host record to /etc/hosts in 2/2 nodes and to the CoreDNS ConfigMap 
-INFO[0014] Cluster 'cluster-whoami' created successfully! 
-INFO[0014] You can now use it like this:                
-kubectl cluster-info
-
-$ k3d kubeconfig merge cluster-whoami --switch-context
-/home/clement/.k3d/kubeconfig-cluster-whoami.yaml
-
-$ kubectl get nodes
-NAME                          STATUS   ROLES    AGE   VERSION
-k3d-cluster-whoami-server-0   Ready    master   68s   v1.19.4+k3s1
-
-# Wait and see after some times ...
-$ kubectl get pods --all-namespaces
-NAMESPACE     NAME                                     READY   STATUS    RESTARTS   AGE
-kube-system   local-path-provisioner-7ff9579c6-2kbc8   1/1     Running   0          2m6s
-kube-system   metrics-server-7b4f8b595-5g299           1/1     Running   0          2m6s
-kube-system   coredns-66c464876b-sfg9d                 1/1     Running   0          2m6s
-
-# Add Traefik
-$ helm repo add traefik https://containous.github.io/traefik-helm-chart
-"traefik" has been added to your repositories
-$ helm install traefik traefik/traefik
-W1212 22:18:10.602576   28728 warnings.go:67] apiextensions.k8s.io/v1beta1 CustomResourceDefinition is deprecated in v1.16+, unavailable in v1.22+; use apiextensions.k8s.io/v1 CustomResourceDefinition
-...
-NAME: traefik
-LAST DEPLOYED: Sat Dec 12 22:18:13 2020
-NAMESPACE: default
-STATUS: deployed
-REVISION: 1
-TEST SUITE: None
-
-# Wait and see after some times ...
-$ kubectl get pods --all-namespaces
-NAMESPACE     NAME                                     READY   STATUS    RESTARTS   AGE
-kube-system   local-path-provisioner-7ff9579c6-2kbc8   1/1     Running   0          4m33s
-kube-system   metrics-server-7b4f8b595-5g299           1/1     Running   0          4m33s
-kube-system   coredns-66c464876b-sfg9d                 1/1     Running   0          4m33s
-default       svclb-traefik-rwcfr                      2/2     Running   1          2m5s
-default       traefik-5fc4947cf9-cnnf9                 1/1     Running   0          2m5s
-
 # Deploy Whoami service
 $ kubectl create deploy whoami --image containous/whoami
 deployment.apps/whoami created
@@ -263,31 +206,38 @@ deployment.apps/whoami created
 # Wait and see after some times ...
 $ kubectl get pods --all-namespaces
 NAMESPACE     NAME                                     READY   STATUS    RESTARTS   AGE
-kube-system   local-path-provisioner-7ff9579c6-2kbc8   1/1     Running   0          5m14s
-kube-system   metrics-server-7b4f8b595-5g299           1/1     Running   0          5m14s
-kube-system   coredns-66c464876b-sfg9d                 1/1     Running   0          5m14s
-default       svclb-traefik-rwcfr                      2/2     Running   1          2m46s
-default       traefik-5fc4947cf9-cnnf9                 1/1     Running   0          2m46s
-default       whoami-84f56668f5-lnwvl                  1/1     Running   0          23s
+...
+default       whoami-84f56668f5-b6kd6                  1/1     Running   0          19s
+...
 
+# Exposing Service
 $ kubectl expose deploy whoami --port 80
 service/whoami exposed
 
 $ kubectl apply -f k3d-demo-whoami-ingress-80.yml 
-Warning: networking.k8s.io/v1beta1 Ingress is deprecated in v1.19+, unavailable in v1.22+; use networking.k8s.io/v1 Ingress
 ingress.networking.k8s.io/whoami created
 
-$ kubectl port-forward $(kubectl get pods --selector "app.kubernetes.io/name=traefik" --output=name) 9000:9000
-Forwarding from 127.0.0.1:9000 -> 9000
-Forwarding from [::1]:9000 -> 9000
-
+# Whoami service is running
 $ kubectl get services --all-namespaces
 NAMESPACE     NAME             TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)                      AGE
-default       kubernetes       ClusterIP      10.43.0.1       <none>          443/TCP                      8m18s
-kube-system   kube-dns         ClusterIP      10.43.0.10      <none>          53/UDP,53/TCP,9153/TCP       8m16s
-kube-system   metrics-server   ClusterIP      10.43.138.9     <none>          443/TCP                      8m16s
-default       traefik          LoadBalancer   10.43.145.129   192.168.160.2   80:30192/TCP,443:31549/TCP   5m33s
+...
 default       whoami           ClusterIP      10.43.224.225   <none>          80/TCP                       2m36s
+
+# Testing
+$ curl -H "Host: whoami.local" localhost:80/
+Hostname: whoami-84f56668f5-b6kd6
+IP: 127.0.0.1
+IP: ::1
+...
+GET / HTTP/1.1
+Host: whoami.local
+User-Agent: curl/7.58.0
+Accept: */*
+Accept-Encoding: gzip
+X-Forwarded-Host: whoami.local
+X-Forwarded-Port: 80
+X-Forwarded-Proto: http
+X-Forwarded-Server: traefik-5fc4947cf9-2hpzw
 ----
 
 * Browse https://localhost/ to see whoami page
