@@ -240,40 +240,7 @@ X-Forwarded-Proto: http
 X-Forwarded-Server: traefik-5fc4947cf9-2hpzw
 ----
 
-.Service Node-red + forward
-[source,bash]
-----
-$ kubectl create deployment node-red --image=kalemena/node-red:latest
-deployment.apps/node-red created
-
-# Wait long for the pull ...
-$ kubectl get pods --all-namespaces
-NAMESPACE     NAME                                     READY   STATUS    RESTARTS   AGE
-default       nginx-6799fc88d8-t5dqs                   1/1     Running   0          120m
-default       node-red-689fc59998-qkdb6                1/1     Running   0          15m
-...
-
-# Expose the port as a service
-$ kubectl expose deployment node-red --type=LoadBalancer --port=1880
-service/node-red exposed
-
-$ kubectl get services
-NAME         TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)                      AGE
-kubernetes   ClusterIP      10.43.0.1       <none>          443/TCP                      126m
-...
-node-red     LoadBalancer   10.43.122.168   192.168.208.7   1880:30322/TCP               3s
-...
-
-# Here you can test connect onto http://192.168.208.7:1880 which should work
-
-# Expose at ELB level as Host nodered.local
-$ kubectl apply -f k3d-demo-node-red-ingress-1880.yml 
-ingress.networking.k8s.io/node-red created
-
-# Provided nodered.local points to 127.0.0.1 (/etc/hosts), then browse at http://nodered.local:1880 should open Node-RED
-----
-
-.Yaml Service Node-red + forward
+.Service Node-red + forward as Yaml
 [source,bash]
 ----
 # Create a Namespace
@@ -301,6 +268,23 @@ Connecting to k3d-demo-node-red:1880 (10.43.25.80:1880)
   ETag: W/"5ee-AirVrUCVQ7l0Iw0Je44W/Rjqgqg"
   Date: Sun, 13 Dec 2020 16:05:16 GMT
 ...
+
+# Check Service (optional)
+$ kubectl describe service k3d-demo-node-red --namespace=k3d-demo-node-red
+Name:              k3d-demo-node-red
+Namespace:         k3d-demo-node-red
+Labels:            <none>
+Annotations:       <none>
+Selector:          app=k3d-demo-node-red
+Type:              ClusterIP
+IP Families:       <none>
+IP:                10.43.25.80
+IPs:               <none>
+Port:              http  1880/TCP
+TargetPort:        1880/TCP
+Endpoints:         10.42.3.3:1880
+Session Affinity:  None
+Events:            <none>
 
 # Provided nodered.local points to 127.0.0.1 (/etc/hosts), then browse at http://nodered.local:1880 should open Node-RED
 ----
