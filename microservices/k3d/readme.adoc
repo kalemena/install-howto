@@ -273,11 +273,36 @@ ingress.networking.k8s.io/node-red created
 # Provided nodered.local points to 127.0.0.1 (/etc/hosts), then browse at http://nodered.local:1880 should open Node-RED
 ----
 
+.Yaml Service Node-red + forward
+[source,bash]
 ----
+# Create a Namespace
+$ kubectl create namespace k3d-demo-node-red
+namespace/k3d-demo-node-red created
 
+$ kubectl  apply -f k3d-demo-service-node-red.yml 
+deployment.apps/k3d-demo-node-red-deployment created
+service/k3d-demo-node-red created
+ingress.networking.k8s.io/node-red created
 
+# Watch the ongoing deployment of service
+$ watch kubectl get pods -n k3d-demo-node-red
+...
 
+# Try (optional)
+$ kubectl --namespace=k3d-demo-node-red run -it --image=alpine helper-container
+/ # wget -SO- k3d-demo-node-red:1880
+Connecting to k3d-demo-node-red:1880 (10.43.25.80:1880)
+  HTTP/1.1 200 OK
+  X-Powered-By: Express
+  Access-Control-Allow-Origin: *
+  Content-Type: text/html; charset=utf-8
+  Content-Length: 1518
+  ETag: W/"5ee-AirVrUCVQ7l0Iw0Je44W/Rjqgqg"
+  Date: Sun, 13 Dec 2020 16:05:16 GMT
+...
 
+# Provided nodered.local points to 127.0.0.1 (/etc/hosts), then browse at http://nodered.local:1880 should open Node-RED
 ----
 
 == Resources
