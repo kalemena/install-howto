@@ -34,11 +34,12 @@ $ curl --request POST 'http://localhost:5005/webhooks/rest/webhook' --data '{"se
 .Generate the missing parts
 * copy missing parts from *projects/template* into the new *helloworld* folder
 
-
-
 == Resources
 
 * link:https://rasa.com/docs/rasa/installation/[]
 * link:https://rasa.com/docs/rasa/playground/[]
 * link:https://rasa.com/docs/rasa/command-line-interface[]
 * link:https://rasa.com/docs/rasa/custom-actions[]
+
+* link:https://rasa.com/docs/rasa/pages/action-server-api#operation/call_action[API Action]
+* link:https://rasa.com/docs/rasa/pages/http-api#operation/parseModelMessage[API Rasa]
