@@ -1,0 +1,10 @@
+= Install Ubuntu 20.04
+
+* [Download NetInstall](http://archive.ubuntu.com/ubuntu/dists/focal-updates/main/installer-amd64/current/legacy-images/netboot/mini.iso)
+* Flash the iso to USB key (using UNetBootIn for example)
+* Reboot from the USB key
+* Follow the install up to disk management, and select *use full disk*
+* When asked for distribution, pick
+** ubuntu desktop
+** ubuntu SSH server
+
