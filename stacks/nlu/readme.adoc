@@ -15,6 +15,14 @@
 ** link:http://doc.tock.ai/tock/api/#/Nlp/parse[Tock NLP API]
 ** link:http://doc.tock.ai/tock/api/admin[Tock Admin API]
 
+=== Linto
+
+* link:https://doc.linto.ai/#/stack/stack[Linto]
+* link:https://doc.linto.ai/#/client/rpi_quickstart[Linot Quickstart]
+* link:https://github.com/linto-ai/linto-skill-welcome[Linto GitHub]
+* link:https://github.com/linto-ai?q=node-red&type=&language=[Linto + Node-Red]
+
+
 === NLP.JS
 
 * link:https://github.com/rodrigopivi/Chatito[Chatito]
