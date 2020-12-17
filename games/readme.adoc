@@ -104,8 +104,10 @@ Then start Minecraft and register your account.
 = Links
 
 * link:http://www.jeuxlinux.fr/[Jeux Linux]
+* link:https://www.lebottindesjeuxlinux.tuxfamily.org/fr/home/[Le Bottin des Jeux Linux]
 * link:https://www.reddit.com/r/linux_gaming/comments/edaq0s/guide_migrating_to_linux_in_2020/[Guide to games in linux]
 * link:https://www.gamingonlinux.com/[Gaming on Linux]
 * link:https://doc.ubuntu-fr.org/steam[Steam for Linux]
+* link:https://linuxconfig.org/how-to-install-and-use-retroarch-on-linux[RetroArch]
 
 
