@@ -15,6 +15,11 @@
 ** link:http://doc.tock.ai/tock/api/#/Nlp/parse[Tock NLP API]
 ** link:http://doc.tock.ai/tock/api/admin[Tock Admin API]
 
+=== Compromise
+
+* link:https://github.com/spencermountain/compromise/wiki[]
+* link:https://observablehq.com/@spencermountain/compromise-making-a-bot[]
+
 === Linto
 
 * link:https://doc.linto.ai/#/stack/stack[Linto]
