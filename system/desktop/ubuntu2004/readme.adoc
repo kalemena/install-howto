@@ -1,4 +1,5 @@
 = Install Ubuntu 20.04
+:hardbreaks:
 
 * link:http://archive.ubuntu.com/ubuntu/dists/focal-updates/main/installer-amd64/current/legacy-images/netboot/mini.iso[Download NetInstall]
 * Flash the iso to USB key (using UNetBootIn for example)
@@ -14,8 +15,16 @@
 [source, bash]
 ----
 # Base stuffs
-$ sudo apt-get install gparted synaptic cifs-utils kdiff3 p7zip krename krusader
-$ sudo apt-get install build-essential
+$ sudo apt install gparted synaptic cifs-utils kdiff3 p7zip krename krusader
+$ sudo apt install build-essential
+
+# Security
+$ sudo apt install gufw
+$ gufw
+
+# Display (because default police is far too big and can't be reduced by standard menus !!!)
+$ sudo apt install gnome-tweaks
+$ gnome-tweaks
 
 # Java 11
 $ sudo apt install openjdk-11-jre
@@ -91,3 +100,29 @@ $ sudo apt-get install vlc audacity digikam
 
 
 
+
+
+== Tips
+
+=== Printer
+
+[IMPORTANT]
+====
+Switch on your printer ... that's it !
+A popup appears to tell you printer was detected on network.
+====
+
+=== Shortcuts
+
+link:https://help.ubuntu.com/stable/ubuntu-help/shell-keyboard-shortcuts.html.en[Official shortcuts]
+
+* *Ctrl+Alt+T*: Ubuntu terminal shortcut
+* *Super+L or Ctrl+Alt+L*: Locks the screen
+* *Super+D or Ctrl+Alt+D*: Show desktop
+* *Super+A*: Shows the application menu
+* *Super+Tab or Alt+Tab*: Switch between running applications
+* *Super+Arrow keys*: Snap windows
+* *Super+M*: Toggle notification tray
+* *Alt+F2*: Run console
+* *Ctrl+Q*: Close an application window
+* *Ctrl+Alt+arrow*: Move between workspaces
