@@ -16,6 +16,9 @@
 # Base stuffs
 $ sudo apt-get install gparted synaptic cifs-utils kdiff3 p7zip krename krusader
 $ sudo apt-get install build-essential
+
+# Java 11
+$ sudo apt install openjdk-11-jre
 ----
 
 .Install NAS mounted drives
@@ -79,5 +82,12 @@ $ sudo apt update
 $ sudo apt install codium
 $ sudo ln -s /usr/bin/codium /usr/bin/code
 ----
+
+.Medias
+[source,bash]
+----
+$ sudo apt-get install vlc audacity digikam
+----
+
 
 
