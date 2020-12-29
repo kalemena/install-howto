@@ -1,9 +1,14 @@
 
 # Video
 
+## Reviews
+
+* link:https://itsfoss.com/best-video-editing-software-linux/[Video Tools Review]
+* link:https://itsfoss.com/linux-photo-management-software/[Photo Tools Review]
+
 ## Tools
 
-link:https://doc.ubuntu-fr.org/montage_video[Montage Vidéo]
+* link:https://doc.ubuntu-fr.org/montage_video[Montage Vidéo]
 
 ## Commands
 
