@@ -1,0 +1,89 @@
+
+= Hardware
+
+== Beelink GT1 Ultimate
+
+link:https://www.gearbest.com/tv-box-mini-pc/pp_607542.html[Beelink GT1 Ultimate @ Gearbest]
+
+    Beelink GT1 Ultimate TV Box - Black EU Plug Without Voice Control
+    Amlogic S912 / 3GB DDR4 RAM + 32GB ROM / 2.4G 5G WiFi / 1000Mbps / HDMI 2.0 / VP9 / H.265 / Supports HDR10
+
+    Description:
+    The Beelink GT1 Ultimate featuring the latest processor. It is equipped with the Amlogic S912 CPU which enables you to have a smooth entertainment experience. It also has a 3D noise reduction filter.
+
+    Main Features:
+    ● Amlogic S912 CPU with octa core is rapid and stable, it can give you a high-speed feedback and smooth response.
+    ● Android 7.1: comparing to the former version, people can easily install or uninstall applications and games.
+    ● Dual Band WiFi: 2.4G plus 5.8G can improve the speed which can implement multi-task. 
+    ● 1000Mbps LAN can improve the net speed and the performance to a large extent.
+    ● H.265 and VP9-10 Profile-2 decoding will offer you high definition pictures and movies.
+    ● It owns the 3D noise reduction filter which is convenient for you to enjoy the high-quality entertainment.
+    ●Note: the product supports , but you need to install it by yourself. This product doesn't support above iOS 9.0 systems miracast function.
+    ●Note: the "Media Center" key on the remote control is merely decorative key, no function.
+    Specification
+
+    General
+        Brand: Beelink
+    Model: GT1 Ultimate
+    Type: TV Box
+    GPU: ARM Mali-T820MP3
+    System: Android 7.1
+    CPU: Amlogic S912
+    Core: 1.5GHz,Octa Core
+    RAM: 3G RAM
+    RAM Type: DDR4
+    ROM: 32G ROM
+    Max. Extended Capacity: 64G
+
+    Media Supported
+        Support 5.1 Surround Sound Output: Yes
+
+    Product Details
+        5G WiFi: Yes
+    Bluetooth: Bluetooth4.0
+    Power Supply: Charge Adapter
+    Interface: DC 5V,HDMI,LAN,Micro SD Card Slot,SPDIF,USB2.0
+    Language: Multi-language
+    HDMI Version: 2.0
+    Other Functions: DLNA,ISO Files,Miracast
+
+    Firmware Information
+        System Bit: 32Bit
+
+    Power Requirement
+        Power Type: External Power Adapter Mode
+
+    Battery Information
+        Remote Controller Battery: 2 x AAA Battery ( not included )
+
+    Dimensions and Weight
+        Product weight: 0.1930 kg
+    Package weight: 0.5100 kg
+    Product size (L x W x H): 9.60 x 9.60 x 1.60 cm / 3.78 x 3.78 x 0.63 inches
+    Package size (L x W x H): 17.30 x 13.90 x 5.40 cm / 6.81 x 5.47 x 2.13 inches
+
+    Package Contents
+        Package Contents: 1 x Beelink GT1 Ultimate TV Box, 1 x Remote Control, 1 x HDMI Cable, 1 x Power Adapter, 1 x English Manual 
+
+= Links
+
+link:https://www.bxnxg.com/tutoriel-comment-passer-sa-box-tv-vers-android-tv/[Switch to Android TV]
+
+Beelink GT1 Ultimate *Android*:
+
+* link:https://forum.freaktab.com/forum/tv-player-support/beelink-aa/beelink-android-tv-box/gt1-ultimate/firmware-roms-tools-ch/778507-rom-beelink-gt1-ultimate-android-7-1-2-alvatech-some-newer-boxes[Guide]
+
+* link:https://forum.freaktab.com/forum/tv-player-support/beelink-aa/beelink-android-tv-box/gt1/firmware-roms-tools-cg/778500-rom-beelink-gt1-standard-ultimate-android-7-1-2-alvatech-both-6255-9377[Guide]
+
+Beelink GT1 Ultimate *Android TV*:
+
+* link:https://forum.freaktab.com/forum/tv-player-support/beelink-aa/beelink-android-tv-box/gt1-ultimate/firmware-roms-tools-ch/637148-rom-beelink-gt1-ultimate-scv2-atv-android-tv-ddr4[Guide Android TV]
+
+Tools:
+
+* link:https://chinagadgetsreviews.com/download-amlogic-usb-burning-tool-v2-1-7-0.html[Burning Tool]
+
+Repair:
+
+* link:https://thesimplicitypost.com/restore-bricked-gt1-ultimate/[Restore Beelink GT1 ROM]
+* link:http://www.bee-link.com/forum.php?mod=viewthread&tid=42179[Beelink links]
