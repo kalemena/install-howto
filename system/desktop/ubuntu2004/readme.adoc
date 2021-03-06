@@ -22,7 +22,7 @@ $ sudo apt install build-essential
 $ sudo apt install gufw
 $ gufw
 
-# Display (because default police is far too big and can't be reduced by standard menus !!!)
+# Display (because default police is far too big and can't be reduced from standard menus !!!)
 $ sudo apt install gnome-tweaks
 $ gnome-tweaks
 
@@ -100,6 +100,25 @@ $ sudo apt-get install vlc audacity digikam
 
 
 
+
+
+
+# Configuration tuning
+$ sudo apt install dconf-tools
+$ gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+$ gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+$ gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode FIXED
+$ gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 16
+$ gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items false
+$ sudo apt-get install fonts-symbola # fixing bug
+$ sudo apt-get install powertop
+$ echo 1 | sudo tee /sys/module/snd_hda_intel/parameters/power_save
+
+# Programming
+$ sudo apt install ubuntu-restricted-extras
+$ sudo snap install pycharm-community --classic
+$ sudo apt install virtualbox
+$ sudo apt install vagrant
 
 
 == Tips
