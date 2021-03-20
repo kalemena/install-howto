@@ -82,6 +82,13 @@ $ sudo curl -L https://github.com/docker/compose/releases/download/1.27.3/docker
 $ sudo chmod +x /usr/local/bin/docker-compose
 ----
 
+.VirtualBox
+[source,bash]
+----
+$ sudo apt update
+$ sudo apt install virtualbox virtualbox-ext-pack
+----
+
 .VS Code https://doc.ubuntu-fr.org/visual_studio_code
 [source, bash]
 ----
