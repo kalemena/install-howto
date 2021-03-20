@@ -106,12 +106,9 @@ $ sudo ln -s /usr/bin/codium /usr/bin/code
 $ sudo apt-get install vlc audacity digikam
 ----
 
-
-
-
-
-
-# Configuration tuning
+.Configuration tuning
+[source,bash]
+----
 $ sudo apt install dconf-tools
 $ gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
 $ gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
@@ -121,13 +118,14 @@ $ gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items fals
 $ sudo apt-get install fonts-symbola # fixing bug
 $ sudo apt-get install powertop
 $ echo 1 | sudo tee /sys/module/snd_hda_intel/parameters/power_save
+----
 
-# Programming
+.Programming
+[source,bash]
+----
 $ sudo apt install ubuntu-restricted-extras
 $ sudo snap install pycharm-community --classic
-$ sudo apt install virtualbox
-$ sudo apt install vagrant
-
+----
 
 == Tips
 
