@@ -82,11 +82,12 @@ $ sudo curl -L https://github.com/docker/compose/releases/download/1.27.3/docker
 $ sudo chmod +x /usr/local/bin/docker-compose
 ----
 
-.VirtualBox
+.VirtualBox & Vagrant
 [source,bash]
 ----
 $ sudo apt update
 $ sudo apt install virtualbox virtualbox-ext-pack
+$ sudo apt install vagrant
 ----
 
 .VS Code https://doc.ubuntu-fr.org/visual_studio_code
