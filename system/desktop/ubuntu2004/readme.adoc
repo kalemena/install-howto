@@ -137,6 +137,15 @@ Password Managers:
 - KeePass
 - Buttercup
 - OneLogin
+- DashLane
+
+.KeePassXC
+[source,bash]
+----
+$ sudo add-apt-repository ppa:phoerious/keepassxc
+$ sudo apt-get update
+$ sudo apt-get install keepassxc
+----
 
 == Tips
 
