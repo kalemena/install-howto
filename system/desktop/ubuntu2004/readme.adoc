@@ -127,6 +127,17 @@ $ sudo apt install ubuntu-restricted-extras
 $ sudo snap install pycharm-community --classic
 ----
 
+== Security
+
+Password Managers:
+
+- BitWarden
+- link:https://keepassxc.org/docs/[KeePassXC]
+- LastPass
+- KeePass
+- Buttercup
+- OneLogin
+
 == Tips
 
 === Printer
