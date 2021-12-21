@@ -1,0 +1,21 @@
+= Rubik's Cube
+:hardbreaks:
+
+Tips to solve various flavors of Rubik's Cube.
+
+== 3x3
+
+* link:https://www.theologeek.ch/rubiks-cube/[3x3]
+
+== Megaminx
+
+This is 12 faces flavor while sticking to edge of 3 rubik's.
+
+Megaminx uses somewhat same rules as 3x3.
+Reason is that when you look at it, this flavor in fact keeps same principles:
+
+- 3 rubik's per edge
+- 3 edges from angles
+
+* link:http://janus.free.fr/rubikslike/megaminx/megaminx.htm[Megaminx]
+* link:http://a.gerard4.free.fr/cubes/megaminx/megaminx.html[Megaminx]
