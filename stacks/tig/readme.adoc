@@ -58,7 +58,32 @@ name: databases
 name
 SensorData
 telegraf
-> 
+
+> use telegraf
+
+> show measurements
+name: measurements
+name
+----
+cpu
+disk
+diskio
+docker
+docker_container_blkio
+docker_container_cpu
+docker_container_mem
+docker_container_net
+docker_container_status
+kernel
+mem
+processes
+swap
+system
+
+> SHOW RETENTION POLICIES on telegraf
+name    duration shardGroupDuration replicaN default
+----    -------- ------------------ -------- -------
+autogen 0s       168h0m0s           1        true
 ----
 
 * Test InfluxDB as curl:
