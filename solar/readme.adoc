@@ -1,0 +1,7 @@
+= Solar
+
+This section contains notes on solar, mostly used to study sun power.
+
+== Links
+
+* link:https://re.jrc.ec.europa.eu/pvg_tools/fr/tools.html[PHOTOVOLTAIC GEOGRAPHICAL INFORMATION SYSTEM]
