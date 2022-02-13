@@ -15,3 +15,10 @@ var
 .config*.json
 settings.js
 #package.json
+
+# Docs
+*.private
+build
+.asciidoctor
+**/assets/*.png
+assets-*
