@@ -1,9 +1,10 @@
-# Install-howto
+= Notes
+
+ifdef::env-github[:outfilesuffix: .adoc]
+ifdef::env-github[]
+image:https://github.com/kalemena/notes/workflows/Pipeline/badge.svg[GitHub Build] 
+endif::[]
 
 This repository contains notes used to install various things and help cheatsheets.
 
-* link:/games[]
-* link:/git[]
-* link:/monitoring[]
-* link:/system[]
-* link:/video[]
+See link:https://kalemena.github.io/notes/[notes doc] for details.
