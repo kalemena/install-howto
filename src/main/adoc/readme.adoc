@@ -17,5 +17,25 @@ ifdef::env-github[]
 endif::[]
 toc::[]
 
+This repository contains notes used to install various things and help cheatsheets.
 
+<<<
+
+== Categories
+
+ifdef::env-github[]
+
+* link:/src/main/adoc/categories/sky/readme.adoc[Sky Projects]
+
+endif::[]
+
+ifndef::env-github[]
+
+:leveloffset: +2
+
+include::categories/sky/readme.adoc[Sky Projects]
+
+:leveloffset: -2
+
+endif::[]
 
