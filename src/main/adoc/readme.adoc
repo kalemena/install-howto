@@ -25,6 +25,7 @@ This repository contains notes used to install various things and help cheatshee
 
 ifdef::env-github[]
 
+* link:/src/main/adoc/categories/alarm/readme.adoc[Alarm Projects]
 * link:/src/main/adoc/categories/sky/readme.adoc[Sky Projects]
 
 endif::[]
@@ -34,6 +35,8 @@ ifndef::env-github[]
 :leveloffset: +2
 
 include::categories/sky/readme.adoc[Sky Projects]
+
+include::categories/alarm/readme.adoc[Alarm Projects]
 
 :leveloffset: -2
 

@@ -1,6 +1,6 @@
 = Sky
 :hardbreaks:
 
-== Info
+== Links
 
 * link:https://www.instructables.com/All-Sky-Camera-Enclosures[AllSky]
