@@ -1,0 +1,13 @@
+= Solar
+:hardbreaks:
+
+This chapter contains notes on solar, mostly used to study sun power.
+
+== Links
+
+.Producing Electricity
+* link:https://re.jrc.ec.europa.eu/pvg_tools/fr/tools.html[PHOTOVOLTAIC GEOGRAPHICAL INFORMATION SYSTEM]
+* link:https://www.youtube.com/watch?v=-IyKLz1RsMg[Installation sauvage]
+
+.Fun Projects
+* link:https://www.instructables.com/Happy-Birds-a-World-of-Connected-Bird-Feeders-Conn[Bird Cam]
