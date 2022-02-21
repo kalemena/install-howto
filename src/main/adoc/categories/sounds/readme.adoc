@@ -1,17 +1,17 @@
-
 = Sounds
+:hardbreaks:
 
-== Sound As Code
+== Links
 
 * link:https://sonic-pi.net/[Sonic Pi]
 * link:https://github.com/samaaron/sonic-pi[Sonic Pi Source]
 * link:https://github.com/jaromil/sonic-pi-docker[Sonic Pi Docker]
 
-=== Installation under Ubuntu 18.04
+== Installation
 
     $ apt-get install sonicpi
 
-=== Tutorial
+== Tutorial
 
 * link:http://sonic-pi.mehackit.org/[]
 * link:http://sonic-pi.mehackit.org/exercises/en/10-cheatsheet/01-cheatsheet.html[Cheatsheet]
