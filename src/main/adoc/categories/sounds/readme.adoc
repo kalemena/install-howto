@@ -13,6 +13,6 @@
 
 == Tutorial
 
-* link:http://sonic-pi.mehackit.org/[]
-* link:http://sonic-pi.mehackit.org/exercises/en/10-cheatsheet/01-cheatsheet.html[Cheatsheet]
+* link:http://sonic-pi.mehackit.org/[Sonic Pi Tutorial]
+* link:http://sonic-pi.mehackit.org/exercises/en/10-cheatsheet/01-cheatsheet.html[Sonic Pi Cheatsheet]
 

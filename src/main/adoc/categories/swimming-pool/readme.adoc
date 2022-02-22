@@ -1,0 +1,11 @@
+= Swimming pools
+:hardbreaks:
+
+These are links to understand pool and maintenance.
+
+== Links
+
+* link:https://www.swimuniversity.com/wp-content/uploads/2015/04/pool-care-cheat-sheet.jpg[Cheat Sheet]
+* link:https://www.swimuniversity.com/pool-maintenance/[Great Pool maintenance info]
+* link:https://www.swimuniversity.com/baking-soda-in-pool/[Increase alkalinity]
+
