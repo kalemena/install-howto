@@ -27,6 +27,7 @@ ifdef::env-github[]
 
 * link:/src/main/adoc/categories/alarm/readme.adoc[Alarm Projects]
 * link:/src/main/adoc/categories/drawing/readme.adoc[Drawing Projects]
+* link:/src/main/adoc/categories/gardening/readme.adoc[Gardening Projects]
 * link:/src/main/adoc/categories/sky/readme.adoc[Sky Projects]
 * link:/src/main/adoc/categories/solar/readme.adoc[Solar Projects]
 * link:/src/main/adoc/categories/sounds/readme.adoc[Sound Projects]
@@ -42,6 +43,8 @@ ifndef::env-github[]
 include::categories/alarm/readme.adoc[Alarm Projects]
 
 include::categories/drawing/readme.adoc[Drawing Projects]
+
+include::categories/gardening/readme.adoc[Gardening Projects]
 
 include::categories/sky/readme.adoc[Sky Projects]
 
