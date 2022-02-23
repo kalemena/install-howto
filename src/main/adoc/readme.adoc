@@ -31,6 +31,7 @@ ifdef::env-github[]
 * link:/src/main/adoc/categories/solar/readme.adoc[Solar Projects]
 * link:/src/main/adoc/categories/sounds/readme.adoc[Sound Projects]
 * link:/src/main/adoc/categories/swimming-pool/readme.adoc[Swimming Pool Projects]
+* link:/src/main/adoc/categories/git/readme.adoc[Coding Tips - Git]
 
 endif::[]
 
@@ -49,6 +50,8 @@ include::categories/solar/readme.adoc[Solar Projects]
 include::categories/sounds/readme.adoc[Sound Projects]
 
 include::categories/swimming-pool/readme.adoc[Swimming Pool Projects]
+
+include::categories/git/readme.adoc[Coding Tips - Git]
 
 :leveloffset: -2
 

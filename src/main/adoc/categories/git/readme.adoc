@@ -1,40 +1,50 @@
-# GIT tips
+= GIT tips
+:hardbreaks:
 
 * link:https://help.github.com/en/github/using-git/changing-author-info[GIT Commit rewrite]
 
 See link:git-rewrite-commits.sh[git-rewrite-commits.sh]
 
-## Commit
+== Commit
 
-Date fun tips
+.Date fun tips
+[source,bash]
+----
+$ git commit -m "Blabla" --date "$(date --date='-2 day')"
+----
 
-    $ git commit -m "Blabla" --date "$(date --date='-2 day')"
-
-## Sync from forked repo
+== Sync from forked repo
 
 * link:https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork[Configure a fork]
 * link:https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork[Sync a fork]
 
-List the current configured remote repository for your fork.
-
+.List the current configured remote repository for your fork.
+[source,bash]
+----
     $ git remote -v
     > origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
     > origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
+----
 
-Specify a new remote upstream repository that will be synced with the fork.
-
+.Specify a new remote upstream repository that will be synced with the fork.
+[source,bash]
+----
     $ git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+----
 
-Verify the new upstream repository you've specified for your fork.
-
+.Verify the new upstream repository you've specified for your fork.
+[source,bash]
+----
     $ git remote -v
     > origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
     > origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
     > upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (fetch)
     > upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (push)
+----
 
-Fetch the branches and their respective commits from the upstream repository. Commits to master will be stored in a local branch, upstream/master.
-
+.Fetch the branches and their respective commits from the upstream repository. Commits to master will be stored in a local branch, upstream/master.
+[source,bash]
+----
     $ git fetch upstream
     > remote: Counting objects: 75, done.
     > remote: Compressing objects: 100% (53/53), done.
@@ -42,14 +52,18 @@ Fetch the branches and their respective commits from the upstream repository. Co
     > Unpacking objects: 100% (62/62), done.
     > From https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY
     >  * [new branch]      master     -> upstream/master
+----
 
-Check out your fork's local master branch.
-
+.Check out your fork's local master branch.
+[source,bash]
+----
     $ git checkout master
     > Switched to branch 'master'
+----
 
-Merge the changes from upstream/master into your local master branch. This brings your fork's master branch into sync with the upstream repository, without losing your local changes.
-
+.Merge the changes from upstream/master into your local master branch. This brings your fork's master branch into sync with the upstream repository, without losing your local changes.
+[source,bash]
+----
     $ git merge upstream/master
     > Updating a422352..5fdff0f
     > Fast-forward
@@ -58,4 +72,4 @@ Merge the changes from upstream/master into your local master branch. This bring
     >  2 files changed, 7 insertions(+), 9 deletions(-)
     >  delete mode 100644 README
     >  create mode 100644 README.md
-
+----
