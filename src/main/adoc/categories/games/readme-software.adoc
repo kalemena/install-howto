@@ -1,5 +1,5 @@
-
-= Games
+= Games - Software
+:hardbreaks:
 
 Linux games installation & links.
 
@@ -84,13 +84,13 @@ link:https://doc.ubuntu-fr.org/arcade[Arcade Ubuntu]
 
 * link:https://shrimpworks.za.net/2018/02/19/ut-on-linux-2/[Unreal Tournament]
 
-= Game pads
+== Game pads
 
 NOTE: Tested OK on Android TV Box (Asphalt 8) and on Ubuntu 18.04 (SuperTux)
 
 * link:https://gamesir.hk/products/gamesir-g4s[GameSir G4s]
 
-= Minecraft
+== Minecraft
 
 Create account at minecraft website.
 
@@ -101,7 +101,7 @@ Then install:
 
 Then start Minecraft and register your account.
 
-= Links
+== Links
 
 * link:http://www.jeuxlinux.fr/[Jeux Linux]
 * link:https://www.lebottindesjeuxlinux.tuxfamily.org/fr/home/[Le Bottin des Jeux Linux]
