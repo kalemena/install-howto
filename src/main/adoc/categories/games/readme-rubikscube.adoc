@@ -1,4 +1,4 @@
-= Rubik's Cube
+= Games - Rubik's Cube
 :hardbreaks:
 
 Tips to solve various flavors of Rubik's Cube.
