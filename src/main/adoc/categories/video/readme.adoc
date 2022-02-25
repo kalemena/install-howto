@@ -1,45 +1,42 @@
+= Video - Editing
 
-# Video
+Below are few applications, links and tips for linux video editing.
 
-## Reviews
+== Reviews
 
 * link:https://itsfoss.com/best-video-editing-software-linux/[Video Tools Review]
 * link:https://itsfoss.com/linux-photo-management-software/[Photo Tools Review]
 * link:https://github.com/leandromoreira/ffmpeg-libav-tutorial[FFMpeg tutorial]
 
-## Tools
+== Tools
 
 * link:https://doc.ubuntu-fr.org/montage_video[Montage Vidéo]
 * link:https://github.com/konradit/gopro-linux[GoPro tools]
 * link:https://github.com/KonradIT/gopro-py-api[GoPro Python API]
+* OpenShot: Install using AppImage
 
-### OpenShot
-
-Use AppImage on linux.
-
-
-## FUN
+== FUN
 
 * link:https://elder.dev/posts/open-source-virtual-background/[Virtual WebCam]
 * link:https://github.com/alyssaq/face_morpher[Face morphing]
 
-## Command lines cheatsheet
+== Command lines cheatsheet
 
-### Resize
+=== Resize
 
 link:https://trac.ffmpeg.org/wiki/Scaling%20(resizing)%20with%20ffmpeg[FFMpeg info]
 
     $ ffmpeg -i input.avi -vf scale=320:240 output.avi
 
-### Crop
+=== Crop
 
     $ ffmpeg -i /video/Perso/GoPro/GOPR0035.MP4 -strict -2 -vf "crop=1920:1080:150:150" after.mp4
 
-### Cut From/To
+=== Cut From/To
 
     $ ffmpeg -i input.mkv -ss 00:01:00 -to 00:02:00 -c:v copy -c:a copy output.mp4
 
-### Stabilize
+=== Stabilize
 
 Basic stabilization:
 
@@ -54,14 +51,14 @@ Advanced Stabilization:
 
     $ docker run -v $(pwd):/tmp/workdir -v /video/Perso/GoPro:/tmp/video jrottenberg/ffmpeg:alpine -i /tmp/video/GOPR0032.MP4 -vf vidstabtransform=input=transform_vectors.trf:zoom=1:smoothing=30,unsharp=5:5:0.8:3:3:0.4 -vcodec libx264 -preset slow -tune film -crf 18 -acodec copy /tmp/workdir/SMOOTH_OUTPUT_VIDEO.mp4
 
-### convert to GIF
+=== Convert to GIF
 
 Convert video to animated GIF:
 
     $ sudo apt-get install ffmpeg imagemagick
     $ ffmpeg -i input.mp4 -vf scale=480:-1 -r 3 -f image2pipe -vcodec ppm - | convert -delay 20 -loop 0 - output.gif
 
-### concat
+=== concat
 
 Concat multiple video (useful when kids want to see a bunch of episodes and playlists are not available)
 
