@@ -34,6 +34,7 @@ ifdef::env-github[]
 * link:/src/main/adoc/categories/solar/readme.adoc[Solar Projects]
 * link:/src/main/adoc/categories/sounds/readme.adoc[Sound Projects]
 * link:/src/main/adoc/categories/swimming-pool/readme.adoc[Swimming Pool Projects]
+* link:/src/main/adoc/categories/system/desktop/ubuntu1604/readme.adoc[System - Desktop - Ubuntu 16.04]
 * link:/src/main/adoc/categories/system/cubieboard/readme.adoc[System - Cubieboard]
 * link:/src/main/adoc/categories/video/readme.adoc[Video Tips]
 * link:/src/main/adoc/categories/git/readme.adoc[Coding Tips - Git]
@@ -65,6 +66,14 @@ include::categories/swimming-pool/readme.adoc[Swimming Pool Projects]
 = System
 
 This section contains many system setup tips.
+
+== Desktop
+
+:leveloffset: +2
+
+include::categories/system/desktop/ubuntu1604/readme.adoc[System - Desktop - Ubuntu 16.04]
+
+:leveloffset: -2
 
 :leveloffset: +1
 
