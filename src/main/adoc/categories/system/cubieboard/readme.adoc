@@ -1,0 +1,37 @@
+= Cubieboard
+
+This section gives few links to setup Cubieboard
+
+== Links
+
+* link:https://www.armbian.com/cubieboard-2/[Armbian Debian Jessy]
+* link:https://forum.armbian.com/index.php/topic/744-cubieboard2-gpio-help/[Cubieboard GPiOs]
+
+== System
+
+System installed with link:https://docs.armbian.com/User-Guide_Getting-Started/[ArmBian Debian Jessie]
+
+First login uses *root / 1234*
+
+Requires to change at first boot and create user account also.
+
+[source,bash]
+----
+$ ssh root@<ip>
+----
+
+== Installation 
+
+Here are few things to install to run Cubieboard as a small garage server.
+
+[source,bash]
+----
+$ apt-get update
+$ apt-get upgrade
+$ apt-get install -y vim build-essential screen nodejs npm git
+$ nodejs --version
+$ ln -s /usr/bin/nodejs /usr/bin/node
+$ npm install forever -g
+----
+
+ 
