@@ -5,11 +5,11 @@
 * Flash the iso to USB key (using UNetBootIn for example)
 * Reboot from the USB key
 * Follow the install up to disk management, and do manual
- * Split disk in at least 3 partitions:
-  * System mapped on / (reformat)
-  * User Home on /home, this way to ensure next install keeps all files and properties from users
-  * Swap
- * When asked for distribution, pick ubuntu desktop (may as well select from the plenty other flavors!)
+** Split disk in at least 3 partitions:
+*** System mapped on / (reformat)
+*** User Home on /home, this way to ensure next install keeps all files and properties from users
+*** Swap
+** When asked for distribution, pick ubuntu desktop (may as well select from the plenty other flavors!)
 
 .For the very minimal set of tools, install below:
 [source,bash]
