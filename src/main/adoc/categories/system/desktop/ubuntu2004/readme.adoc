@@ -1,0 +1,171 @@
+= Install Ubuntu 20.04
+:hardbreaks:
+
+* link:http://archive.ubuntu.com/ubuntu/dists/focal-updates/main/installer-amd64/current/legacy-images/netboot/mini.iso[Download NetInstall]
+* Flash the iso to USB key (using UNetBootIn for example)
+* Reboot from the USB key
+* Follow the install up to disk management, and select *use full disk*
+* When asked for distribution, pick
+** ubuntu desktop
+** ubuntu SSH server
+
+.Basics
+[source, bash]
+----
+# Base stuffs
+$ sudo apt install gparted synaptic cifs-utils kdiff3 p7zip krename krusader
+$ sudo apt install build-essential
+
+# Security
+$ sudo apt install gufw
+$ gufw
+
+# Display (because default police is far too big and can't be reduced from standard menus !!!)
+$ sudo apt install gnome-tweaks
+$ gnome-tweaks
+
+# Java 11
+$ sudo apt install openjdk-11-jre
+----
+
+.Install NAS mounted drives
+[source,bash]
+----
+# Install CIFS
+$ sudo apt-get install cifs-utils
+$ sudo vi /etc/fstab
+
+# Add something like below:
+//mynas/home /media/nas215/home cifs _netdev,vers=1.0,users,credentials=/home/user/.cifspwd,iocharset=utf8,uid=1000,gid=1000,sec=ntlm 0 0
+
+# Edit password in /home/<user>/.cifspwd
+$ sudo vi /home/user/.cifspwd
+
+# such as below
+username=xxx
+password=yyy
+
+# Ensure file is not usable by others:
+
+$ sudo chown root:root .cifspwd
+$ sudo chmod 0600 .cifspwd
+
+# Mount
+$ sudo mount -a
+----
+
+.Docker with link:https://docs.docker.com/engine/install/ubuntu/[Docker Installation]
+[source,bash]
+----
+# docker
+$ sudo apt-get update
+$ sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+$ sudo apt-key fingerprint 0EBFCD88
+$ sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+$ sudo apt-get update
+$ sudo apt-get install docker-ce docker-ce-cli containerd.io
+$ sudo usermod -aG docker <your-user>
+
+# docker-compose
+$ sudo curl -L https://github.com/docker/compose/releases/download/1.27.3/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+$ sudo chmod +x /usr/local/bin/docker-compose
+----
+
+.VirtualBox & Vagrant
+[source,bash]
+----
+$ sudo apt update
+$ sudo apt install virtualbox virtualbox-ext-pack
+$ sudo apt install vagrant
+----
+
+.VS Code https://doc.ubuntu-fr.org/visual_studio_code
+[source, bash]
+----
+$ wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/etc/apt/trusted.gpg.d/vscodium-archive-keyring.gpg
+$ echo 'deb [signed-by=/etc/apt/trusted.gpg.d/vscodium-archive-keyring.gpg] https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main' | sudo tee /etc/apt/sources.list.d/vscodium.list
+$ sudo apt update
+$ sudo apt install codium
+$ sudo ln -s /usr/bin/codium /usr/bin/code
+----
+
+.Medias
+[source,bash]
+----
+$ sudo apt-get install vlc audacity digikam
+----
+
+.Configuration tuning
+[source,bash]
+----
+$ sudo apt install dconf-tools
+$ gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+$ gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+$ gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode FIXED
+$ gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 16
+$ gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items false
+$ sudo apt-get install fonts-symbola # fixing bug
+$ sudo apt-get install powertop
+$ echo 1 | sudo tee /sys/module/snd_hda_intel/parameters/power_save
+----
+
+.Programming
+[source,bash]
+----
+$ sudo apt install ubuntu-restricted-extras
+$ sudo snap install pycharm-community --classic
+----
+
+== Security
+
+Password Managers:
+
+- BitWarden
+- link:https://keepassxc.org/docs/[KeePassXC]
+- LastPass
+- KeePass
+- Buttercup
+- OneLogin
+- DashLane
+
+.KeePassXC
+[source,bash]
+----
+$ sudo add-apt-repository ppa:phoerious/keepassxc
+$ sudo apt-get update
+$ sudo apt-get install keepassxc
+----
+
+== Tips
+
+=== Printer
+
+[IMPORTANT]
+====
+Switch on your printer ... that's it !
+A popup appears to tell you printer was detected on network.
+====
+
+=== Shortcuts
+
+link:https://help.ubuntu.com/stable/ubuntu-help/shell-keyboard-shortcuts.html.en[Official shortcuts]
+
+* *Ctrl+Alt+T*: Ubuntu terminal shortcut
+* *Super+L or Ctrl+Alt+L*: Locks the screen
+* *Super+D or Ctrl+Alt+D*: Show desktop
+* *Super+A*: Shows the application menu
+* *Super+Tab or Alt+Tab*: Switch between running applications
+* *Super+Arrow keys*: Snap windows
+* *Super+M*: Toggle notification tray
+* *Alt+F2*: Run console
+* *Ctrl+Q*: Close an application window
+* *Ctrl+Alt+arrow*: Move between workspaces
