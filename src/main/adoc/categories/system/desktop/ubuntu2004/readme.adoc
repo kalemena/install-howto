@@ -9,9 +9,13 @@
 ** ubuntu desktop
 ** ubuntu SSH server
 
+.All Installs
+[%collapsible]
+=====
+
 .Basics
 [source, bash]
-----
+-----
 # Base stuffs
 $ sudo apt install gparted synaptic cifs-utils kdiff3 p7zip krename krusader
 $ sudo apt install build-essential
@@ -26,7 +30,7 @@ $ gnome-tweaks
 
 # Java 11
 $ sudo apt install openjdk-11-jre
-----
+-----
 
 .Install NAS mounted drives
 [source,bash]
@@ -125,8 +129,7 @@ $ sudo apt install ubuntu-restricted-extras
 $ sudo snap install pycharm-community --classic
 ----
 
-== Security
-
+.Security
 Password Managers:
 
 - BitWarden
@@ -145,18 +148,14 @@ $ sudo apt-get update
 $ sudo apt-get install keepassxc
 ----
 
-== Tips
-
-=== Printer
-
+.Tips : Printer
 [IMPORTANT]
 ====
 Switch on your printer ... that's it !
 A popup appears to tell you printer was detected on network.
 ====
 
-=== Shortcuts
-
+.Shortcuts
 link:https://help.ubuntu.com/stable/ubuntu-help/shell-keyboard-shortcuts.html.en[Official shortcuts]
 
 * *Ctrl+Alt+T*: Ubuntu terminal shortcut
@@ -169,3 +168,5 @@ link:https://help.ubuntu.com/stable/ubuntu-help/shell-keyboard-shortcuts.html.en
 * *Alt+F2*: Run console
 * *Ctrl+Q*: Close an application window
 * *Ctrl+Alt+arrow*: Move between workspaces
+
+=====

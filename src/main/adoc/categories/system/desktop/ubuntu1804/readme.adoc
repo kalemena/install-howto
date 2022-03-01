@@ -12,7 +12,11 @@
 *** /var (for docker images mainly)
 ** When asked for distribution, pick ubuntu desktop (may as well select from the plenty other flavors!)
 
-.Custom install
+.All Installs
+[%collapsible]
+=====
+
+.Basics
 [source,bash]
 ----
 # Base stuffs
@@ -107,3 +111,5 @@ $ sudo apt-get install docker-ce
 $ sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 $ sudo chmod +X /usr/local/bin/docker-compose
 ----
+
+=====
