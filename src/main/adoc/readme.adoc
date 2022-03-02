@@ -25,7 +25,7 @@ This repository contains notes used to install various things and help cheatshee
 
 ifdef::env-github[]
 
-* link:/src/main/adoc/categories/alarm/readme.adoc[Alarm Projects]
+// * link:/src/main/adoc/categories/alarm/readme.adoc[Alarm Projects]
 * link:/src/main/adoc/categories/drawing/readme.adoc[Drawing Projects]
 * link:/src/main/adoc/categories/games/readme-software.adoc[Games Software]
 * link:/src/main/adoc/categories/games/readme-rubikscube.adoc[Games Rubikscube]
@@ -47,7 +47,7 @@ ifndef::env-github[]
 
 :leveloffset: +2
 
-include::categories/alarm/readme.adoc[Alarm Projects]
+// include::categories/alarm/readme.adoc[Alarm Projects]
 
 include::categories/drawing/readme.adoc[Drawing Projects]
 
