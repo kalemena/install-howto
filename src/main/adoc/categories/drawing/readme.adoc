@@ -1,12 +1,16 @@
 = Drawing
 :hardbreaks:
 
+Links, tips to drawing, with graphical tablet.
+
+.Software
+* Krita
+* OpenToonz?
+
 == Links
 
 .Fun Animating
-* link:https://sketch.metademolab.com/canvas[Animating with AI]
+* link:https://sketch.metademolab.com/canvas[Animating with AI with Metalab]
 
 .Advance Tools
 * link:https://www.xp-pen.fr/forum-1737.html[12 best drawing tools for Graphical Tablets]
-
-OpenToonz?
