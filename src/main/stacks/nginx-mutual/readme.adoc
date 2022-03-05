@@ -1,0 +1,6 @@
+
+$ bash ./env-init.sh
+
+$ docker-compose up -d
+
+$ curl -v -k --key workspace/user.key --cert workspace/user.crt https://localhost
