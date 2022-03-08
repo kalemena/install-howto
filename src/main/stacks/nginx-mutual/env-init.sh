@@ -24,7 +24,8 @@ cat ca.crt >> ca.pem
 # openssl genrsa -des3 -out user.key 4096
 # openssl req -new -key user.key -out user.csr -subj '/CN=user'
 # openssl x509 -req -days 365 -in user.csr -CA ca.crt -CAkey ca.key -set_serial 01 -out user.crt
-# openssl pkcs12 -export -out user.pfx -inkey user.key -in user.crt -certfile ca.crt
+# openssl pkcs12 -export -out user.p12 -inkey user.key -in user.crt -certfile ca.crt
+# openssl pkcs12 -info -in user.p12
 
 # Certificate Key
 openssl genrsa -out client.key 2048
@@ -33,7 +34,7 @@ openssl genrsa -out client.key 2048
 openssl req -new \
  -key client.key \
  -out client.csr \
- -subj "/CN=client" \
+ -subj "/C=FR/ST=France/L=Paris/O=Company Name/OU=Org/CN=client" \
  -sha256
 
 # Certificate Signing
@@ -63,7 +64,7 @@ openssl genrsa -out server.key 2048
 openssl req -new \
  -key server.key \
  -out server.csr \
- -subj "/CN=server" \
+ -subj "/C=FR/ST=France/L=Paris/O=Company Name/OU=Org/CN=localhost" \
  -sha256
 
 # Certificate Signing
@@ -74,4 +75,8 @@ openssl x509 -req \
  -CAcreateserial \
  -out server.crt \
  -days 1024
+
+
+# Java 
+# keytool -import -alias KalemenaGlobalCA -keystore <Path to JKS (TrustStore) file> -file ca.crt
 
