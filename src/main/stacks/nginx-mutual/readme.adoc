@@ -1,6 +1,21 @@
+= Stack mutual-TLS
 
-$ bash ./env-init.sh
+This is a very basic stack showing mutual-TLS and various client sampples.
 
-$ docker-compose up -d
+== How-To
 
-$ curl -v -k --key workspace/client.key --cert workspace/client.crt https://localhost
+.Setup the certificates self-signed
+    $ bash ./env-init.sh
+
+.Start NginX with both Server and Client config
+    $ docker-compose up -d
+
+.Try cURL query - fails without client key
+    $ curl -v -k https://localhost
+
+.Try cURL query - success with client key
+    $ curl -v -k --key workspace/client.key --cert workspace/client.crt https://localhost
+
+== Links
+
+* link:https://mtls.dev/[Sample client with code generator]
