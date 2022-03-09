@@ -16,6 +16,16 @@ This is a very basic stack showing mutual-TLS and various client sampples.
 .Try cURL query - success with client key
     $ curl -v -k --key workspace/client.key --cert workspace/client.crt https://localhost
 
+== Client examples
+
+TIP: see content of docker-compose.yml
+
+.Python
+    $ make test.python
+
+
+
+
 == Links
 
 * link:https://mtls.dev/[Sample client with code generator]

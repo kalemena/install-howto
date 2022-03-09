@@ -64,7 +64,7 @@ openssl genrsa -out server.key 2048
 openssl req -new \
  -key server.key \
  -out server.csr \
- -subj "/C=FR/ST=France/L=Paris/O=Company Name/OU=Org/CN=localhost" \
+ -subj "/C=FR/ST=France/L=Paris/O=Company Name/OU=Org/CN=hello.service.local" \
  -sha256
 
 # Certificate Signing

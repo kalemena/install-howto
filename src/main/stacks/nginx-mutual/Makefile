@@ -2,21 +2,24 @@ THIS_FILE := $(lastword $(MAKEFILE_LIST))
 
 SHELL := /bin/bash
 
-.PHONY: build
+.PHONY: init
 
-all: build
+all: init
 
-build:
+init:
 	bash ./env-init.sh
 
 start:
-	docker-compose up -d
+	docker-compose up -d nginx
 
 clean:
 	docker-compose down
 	rm -rf workspace
 
 test.cURL:
-	curl -v -k --key workspace/client.key --cert workspace/client.crt https://localhost
+	curl -v -k --key workspace/client.key --cert workspace/client.crt -H "Host: hello.service.local" https://localhost
 test.cURL.fail:
-	curl -v -k https://localhost
+	curl -v -k -H "Host: hello.service.local" https://localhost
+
+test.python:
+	docker-compose up client-python

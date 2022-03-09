@@ -3,9 +3,9 @@ import requests.packages.urllib3
 requests.packages.urllib3.disable_warnings()
 
 resp = requests.get(
-    'https://localhost/',
-    cert=('/security/workspace/client.crt', '/security/workspace/client.key'),
-    verify='/security/workspace/ca.crt',
+    'https://hello.service.local/',
+    cert=('/security/client.crt', '/security/client.key'),
+    verify='/security/ca.crt',
 )
 
 if resp.status_code != 200:

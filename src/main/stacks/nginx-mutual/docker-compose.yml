@@ -4,6 +4,10 @@ services:
 
   nginx:
     image: nginx:latest
+    networks:
+      default:
+        aliases:
+          - hello.service.local
     ports:
       - 80:80
       - 443:443
@@ -12,3 +16,9 @@ services:
       - ./index.html:/usr/share/nginx/index.html:ro
       - ./workspace:/etc/nginx/certs/
 
+  client-python:
+    image: python:3
+    volumes:
+      - ./clients/client.py:/opt/client.py:ro
+      - ./workspace:/security/
+    command: "bash -c 'cd /opt/; pip install requests; python client.py'"
