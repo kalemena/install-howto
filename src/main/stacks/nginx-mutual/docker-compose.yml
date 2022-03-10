@@ -22,3 +22,10 @@ services:
       - ./clients/client.py:/opt/client.py:ro
       - ./workspace:/security/
     command: "bash -c 'cd /opt/; pip install requests; python client.py'"
+
+  client-js:
+    image: node:15
+    volumes:
+      - ./clients/client.js:/opt/client.js:ro
+      - ./workspace:/security/
+    command: "bash -c 'cd /opt/; node client.js'"

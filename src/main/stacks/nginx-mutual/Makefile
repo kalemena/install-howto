@@ -23,3 +23,6 @@ test.cURL.fail:
 
 test.python:
 	docker-compose up client-python
+
+test.js:
+	docker-compose up client-js

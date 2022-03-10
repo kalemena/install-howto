@@ -23,9 +23,9 @@ TIP: see content of docker-compose.yml
 .Python
     $ make test.python
 
-
-
+.Node JS
+    $ make test.js
 
 == Links
 
-* link:https://mtls.dev/[Sample client with code generator]
+* link:https://mtls.dev/[Sample clients with code generator]
