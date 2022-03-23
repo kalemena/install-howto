@@ -1,4 +1,4 @@
-= Hardware
+= TV-box
 :hardbreaks:
 
 == Beelink GT1 Ultimate
@@ -76,20 +76,15 @@ link:https://www.gearbest.com/tv-box-mini-pc/pp_607542.html[Beelink GT1 Ultimate
 * link:https://www.bxnxg.com/tutoriel-comment-passer-sa-box-tv-vers-android-tv/[Switch to Android TV]
 
 .Beelink GT1 Ultimate *Android*:
-
-* link:https://forum.freaktab.com/forum/tv-player-support/beelink-aa/beelink-android-tv-box/gt1-ultimate/firmware-roms-tools-ch/778507-rom-beelink-gt1-ultimate-android-7-1-2-alvatech-some-newer-boxes[Guide]
-
-* link:https://forum.freaktab.com/forum/tv-player-support/beelink-aa/beelink-android-tv-box/gt1/firmware-roms-tools-cg/778500-rom-beelink-gt1-standard-ultimate-android-7-1-2-alvatech-both-6255-9377[Guide]
+* link:https://forum.freaktab.com/forum/tv-player-support/beelink-aa/beelink-android-tv-box/gt1-ultimate/firmware-roms-tools-ch/778507-rom-beelink-gt1-ultimate-android-7-1-2-alvatech-some-newer-boxes[Guide #1]
+* link:https://forum.freaktab.com/forum/tv-player-support/beelink-aa/beelink-android-tv-box/gt1/firmware-roms-tools-cg/778500-rom-beelink-gt1-standard-ultimate-android-7-1-2-alvatech-both-6255-9377[Guide #2]
 
 .Beelink GT1 Ultimate *Android TV*:
-
 * link:https://forum.freaktab.com/forum/tv-player-support/beelink-aa/beelink-android-tv-box/gt1-ultimate/firmware-roms-tools-ch/637148-rom-beelink-gt1-ultimate-scv2-atv-android-tv-ddr4[Guide Android TV]
 
 .Tools:
-
 * link:https://chinagadgetsreviews.com/download-amlogic-usb-burning-tool-v2-1-7-0.html[Burning Tool]
 
 .Repair:
-
 * link:https://thesimplicitypost.com/restore-bricked-gt1-ultimate/[Restore Beelink GT1 ROM]
 * link:http://www.bee-link.com/forum.php?mod=viewthread&tid=42179[Beelink links]
