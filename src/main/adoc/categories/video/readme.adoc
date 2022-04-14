@@ -58,6 +58,12 @@ Convert video to animated GIF:
     $ sudo apt-get install ffmpeg imagemagick
     $ ffmpeg -i input.mp4 -vf scale=480:-1 -r 3 -f image2pipe -vcodec ppm - | convert -delay 20 -loop 0 - output.gif
 
+=== Convert to MP3
+
+Convert video from Webm to MP3:
+
+    $ ffmpeg -i Some-music.webm -vn -ab 128k -ar 44100 -y Some-music.mp3
+
 === concat
 
 Concat multiple video (useful when kids want to see a bunch of episodes and playlists are not available)
