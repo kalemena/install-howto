@@ -3,4 +3,5 @@
 
 == Links
 
+* link:https://www.instructables.com/Astrophotography-for-Beginners[Astrophotography for Beginners]
 * link:https://www.instructables.com/All-Sky-Camera-Enclosures[AllSky]
