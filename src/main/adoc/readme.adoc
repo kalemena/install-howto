@@ -59,6 +59,8 @@ include::categories/games/readme-rubikscube.adoc[Games Rubikscube]
 
 include::categories/gardening/readme.adoc[Gardening Projects]
 
+include::categories/security/readme.adoc[Security Projects]
+
 include::categories/sky/readme.adoc[Sky Projects]
 
 include::categories/solar/readme.adoc[Solar Projects]
