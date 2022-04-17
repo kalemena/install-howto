@@ -1,0 +1,16 @@
+= Android
+:hardbreaks:
+
+== Reset
+
+Reset by pressing <main button> + power + <volume plus sign>
+
+First boot asks plenty question like setup WiFi. Just respond.
+
+Then go in AppStore and perform a full update.
+
+== Dev/Test
+
+Here are few tools:
+
+- Packet Capture
