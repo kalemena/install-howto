@@ -14,3 +14,10 @@ Then go in AppStore and perform a full update.
 Here are few tools:
 
 - Packet Capture
+
+
+== Security
+
+* link:https://bismobaruno.medium.com/inspecting-android-traffic-using-proxyman-apk-mitm-a3e1fa6308c8[Tutorial inspecting using MITM]
+* link:https://www.eff.org/fr/deeplinks/2022/04/mobile-mitm-intercepting-your-android-app-traffic-go[Tutorial spy apps]
+* link:https://github.com/shroudedcode/apk-mitm[Instrument HTTPS apps]
