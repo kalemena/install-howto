@@ -1024,6 +1024,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#cut_fromto">Cut From/To</a></li>
 <li><a href="#stabilize">Stabilize</a></li>
 <li><a href="#convert_to_gif">Convert to GIF</a></li>
+<li><a href="#convert_to_mp3">Convert to MP3</a></li>
 <li><a href="#concat">concat</a></li>
 </ul>
 </li>
@@ -1093,19 +1094,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h3 id="games_software">1.2. Games - Software</h3>
 <div class="paragraph">
 <p>Linux games installation &amp; links.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://doc.ubuntu-fr.org/jeu">Ubuntu Games</a></p>
-</li>
-<li>
-<p><a href="https://doc.ubuntu-fr.org/jeu_plus">Other Ubuntu Games</a></p>
-</li>
-<li>
-<p><a href="https://help.ubuntu.com/community/Games/NativeFreeUbuntuGames">Other Ubuntu Games</a></p>
-</li>
-</ul>
 </div>
 <div class="sect3">
 <h4 id="gcompris">1.2.1. GCompris</h4>
@@ -1314,6 +1302,15 @@ $ sudo snap install mc-installer</pre>
 <div class="ulist">
 <ul>
 <li>
+<p><a href="https://doc.ubuntu-fr.org/jeu">Ubuntu Games</a></p>
+</li>
+<li>
+<p><a href="https://doc.ubuntu-fr.org/jeu_plus">Ubuntu Games - Additional</a></p>
+</li>
+<li>
+<p><a href="https://help.ubuntu.com/community/Games/NativeFreeUbuntuGames">Ubuntu Games - Additional Native games</a></p>
+</li>
+<li>
 <p><a href="http://www.jeuxlinux.fr/">Jeux Linux</a></p>
 </li>
 <li>
@@ -1453,7 +1450,16 @@ Reason is that when you look at it, this flavor in fact keeps same principles:</
 <div class="ulist">
 <ul>
 <li>
+<p><a href="https://www.instructables.com/Astrophotography-for-Beginners">Astrophotography for Beginners</a></p>
+</li>
+<li>
 <p><a href="https://www.instructables.com/All-Sky-Camera-Enclosures">AllSky</a></p>
+</li>
+<li>
+<p><a href="https://www.instructables.com/How-to-Squeeze-the-Max-Out-of-Entry-level-Telescop">How to Squeeze the Max Out of Entry-level Telescope</a></p>
+</li>
+<li>
+<p><a href="https://docs.google.com/document/d/1SW5kwl66491iCT86lEx5U0TMMKoGaCXJ17FPE6d9pY0">Beginners Guide to Astrophotography with the OAT</a></p>
 </li>
 </ul>
 </div>
@@ -2391,6 +2397,17 @@ $ ffmpeg -i input.mp4 -vf scale=480:-1 -r 3 -f image2pipe -vcodec ppm - | conver
 </div>
 </div>
 <div class="sect4">
+<h5 id="convert_to_mp3">Convert to MP3</h5>
+<div class="paragraph">
+<p>Convert video from Webm to MP3:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ ffmpeg -i Some-music.webm -vn -ab 128k -ar 44100 -y Some-music.mp3</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
 <h5 id="concat">concat</h5>
 <div class="paragraph">
 <p>Concat multiple video (useful when kids want to see a bunch of episodes and playlists are not available)</p>
@@ -2505,7 +2522,7 @@ $ git commit -m "Blabla" --date "27 Mar 2022 20:19"</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-04-04 19:09:21 UTC
+Last updated 2022-05-18 07:02:39 UTC
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
