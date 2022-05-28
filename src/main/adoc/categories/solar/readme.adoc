@@ -3,6 +3,15 @@
 
 This chapter contains notes on solar, mostly used to study sun power.
 
+== Example
+
+Computing example.
+
+* Look at solar map showing your kWh/kWc per year
+** e.g. 1000-1100 kWh/kWc
+* Solar panel gives 370 Wc and you have 12 which makes 370 x 12 = 4440 Wc
+* With ratio, you can produce between 4440 kWh and 4884 kWh
+
 == Links
 
 .Producing Electricity
