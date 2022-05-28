@@ -5,6 +5,15 @@
 
 See link:git-rewrite-commits.sh[git-rewrite-commits.sh]
 
+
+== Search
+
+.Search for when a keyword appears first time in a set of files
+[source,bash]
+----
+$ git log --color -p -S "a-keyword" "a-file-or-pattern"
+----
+
 == Commit
 
 .Date fun tips
