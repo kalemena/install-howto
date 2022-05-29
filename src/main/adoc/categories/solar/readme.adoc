@@ -24,3 +24,6 @@ Computing example.
 
 .Fun Projects
 * link:https://www.instructables.com/Happy-Birds-a-World-of-Connected-Bird-Feeders-Conn[Bird Cam]
+
+.Kit
+* link:https://kitsolaire-discount.com/fr/12-kits-autonomes-sites-isoles[Kits]
