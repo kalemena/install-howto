@@ -16,6 +16,10 @@ Computing example.
 
 .Producing Electricity
 * link:https://re.jrc.ec.europa.eu/pvg_tools/fr/tools.html[PHOTOVOLTAIC GEOGRAPHICAL INFORMATION SYSTEM]
+* link:https://conseils-thermiques.org/contenu/outil-calcul-production-solaire.php[Tools]
+
+
+.Examples
 * link:https://www.youtube.com/watch?v=-IyKLz1RsMg[Installation sauvage]
 
 .Fun Projects
