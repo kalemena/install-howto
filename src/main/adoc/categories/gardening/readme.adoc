@@ -1,6 +1,19 @@
 = Astuces Jardin
 :hardbreaks:
 
+== Plantes
+
+* Menthes:
+** Sauvage x
+** Marocaine x
+** Poivrée x
+** Odorante x
+** Mojito x
+** Coréenne
+** Fraise x
+** Pomme
+** Chocolat
+** Glaciale
 == Liens
 
 Voici des liens intéressants.
