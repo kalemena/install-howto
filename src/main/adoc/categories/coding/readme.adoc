@@ -1,4 +1,7 @@
+= Coding tips
 :hardbreaks:
+
+== GIT
 
 * link:https://help.github.com/en/github/using-git/changing-author-info[GIT Commit rewrite]
 
@@ -10,6 +13,7 @@ See link:git-rewrite-commits.sh[git-rewrite-commits.sh]
 $ git log --color -p -S "a-keyword" "a-file-or-pattern"
 ----
 
+.Commit Date fun tips
 [source,bash]
 ----
 $ git commit -m "Blabla" --date "$(date --date='-2 day')"
@@ -17,6 +21,7 @@ $ git commit -m "Blabla" --date "$(date --date='-2 day')"
 $ git commit -m "Blabla" --date "27 Mar 2022 20:19"
 ----
 
+.Sync from forked repo
 * link:https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork[Configure a fork]
 * link:https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork[Sync a fork]
 
@@ -75,3 +80,7 @@ $ git commit -m "Blabla" --date "27 Mar 2022 20:19"
     >  delete mode 100644 README
     >  create mode 100644 README.md
 ----
+
+== GitHub Actions
+
+* link:https://hanxiao.io/2021/01/24/Speedup-CI-Workflow-in-Github-Actions-via-Strategy-Matrix/[GHA tips]
