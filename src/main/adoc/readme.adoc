@@ -42,7 +42,7 @@ ifdef::env-github[]
 * link:/src/main/adoc/categories/system/android-tv/readme.adoc[System - Android TV]
 * link:/src/main/adoc/categories/system/cubieboard/readme.adoc[System - Cubieboard]
 * link:/src/main/adoc/categories/video/readme.adoc[Video Tips]
-* link:/src/main/adoc/categories/git/readme.adoc[Coding Tips - Git]
+* link:/src/main/adoc/categories/coding/readme.adoc[Coding Tips]
 
 endif::[]
 
@@ -98,7 +98,7 @@ include::categories/system/cubieboard/readme.adoc[System - Cubieboard]
 
 include::categories/video/readme.adoc[Video Tips]
 
-include::categories/git/readme.adoc[Coding Tips - Git]
+include::categories/coding/readme.adoc[Coding Tips]
 
 :leveloffset: -2
 
