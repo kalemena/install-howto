@@ -1,6 +1,11 @@
 = Coding tips
 :hardbreaks:
 
+== Shell
+
+
+* link:https://www.baeldung.com/linux/recursively-delete-files-with-extension[Examples delete recursive]
+
 == GIT
 
 * link:https://help.github.com/en/github/using-git/changing-author-info[GIT Commit rewrite]
