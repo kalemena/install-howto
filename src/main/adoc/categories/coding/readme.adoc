@@ -3,6 +3,17 @@
 
 == Shell
 
+.Find files belong to a group (case insensitive)
+[source,bash]
+----
+$ find /project -group developers -iname "*.java"
+----
+
+.Find files belong to user
+[source,bash]
+----
+$ find /project -user kalemena -name "*.class"
+----
 
 * link:https://www.baeldung.com/linux/recursively-delete-files-with-extension[Examples delete recursive]
 
