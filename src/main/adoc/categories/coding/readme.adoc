@@ -15,6 +15,15 @@ $ find /project -group developers -iname "*.java"
 $ find /project -user kalemena -name "*.class"
 ----
 
+.Find and delete
+[source,bash]
+----
+# basic
+$ find . -type f -name '*.txt~' -print -delete
+# advanced
+$ find . -type f -name '*.txt~' -exec rm -f {} \;
+----
+
 * link:https://www.baeldung.com/linux/recursively-delete-files-with-extension[Examples delete recursive]
 
 == GIT
