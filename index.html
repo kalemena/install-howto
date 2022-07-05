@@ -961,7 +961,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#megaminx">1.3.2. Megaminx</a></li>
 </ul>
 </li>
-<li><a href="#astuces_jardin">1.4. Astuces Jardin</a>
+<li><a href="#jardin">1.4. Jardin</a>
 <ul class="sectlevel3">
 <li><a href="#plantes">1.4.1. Plantes</a></li>
 <li><a href="#liens">1.4.2. Liens</a></li>
@@ -1044,13 +1044,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#concat">concat</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#git_tips">1.12. GIT tips</a>
-<ul class="sectlevel3">
-<li><a href="#search">1.12.1. Search</a></li>
-<li><a href="#commit">1.12.2. Commit</a></li>
-<li><a href="#sync_from_forked_repo">1.12.3. Sync from forked repo</a></li>
 </ul>
 </li>
 </ul>
@@ -1396,7 +1389,7 @@ Reason is that when you look at it, this flavor in fact keeps same principles:</
 </div>
 </div>
 <div class="sect2">
-<h3 id="astuces_jardin">1.4. Astuces Jardin</h3>
+<h3 id="jardin">1.4. Jardin</h3>
 <div class="sect3">
 <h4 id="plantes">1.4.1. Plantes</h4>
 <div class="ulist">
@@ -2651,107 +2644,8 @@ $ ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.mp4</pre>
 <div class="paragraph">
 <p><a href="https://trac.ffmpeg.org/wiki/Concatenate">Source docs</a></p>
 </div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="git_tips">1.12. GIT tips</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://help.github.com/en/github/using-git/changing-author-info">GIT Commit rewrite</a></p>
-</li>
-</ul>
-</div>
 <div class="paragraph">
-<p>See <a href="git-rewrite-commits.sh">git-rewrite-commits.sh</a></p>
-</div>
-<div class="sect3">
-<h4 id="search">1.12.1. Search</h4>
-<div class="listingblock">
-<div class="title">Search for when a keyword appears first time in a set of files</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git log --color -p -S "a-keyword" "a-file-or-pattern"</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="commit">1.12.2. Commit</h4>
-<div class="listingblock">
-<div class="title">Date fun tips</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git commit -m "Blabla" --date "$(date --date='-2 day')"
-...
-$ git commit -m "Blabla" --date "27 Mar 2022 20:19"</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="sync_from_forked_repo">1.12.3. Sync from forked repo</h4>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork">Configure a fork</a></p>
-</li>
-<li>
-<p><a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork">Sync a fork</a></p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="title">List the current configured remote repository for your fork.</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">    $ git remote -v
-    &gt; origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
-    &gt; origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Specify a new remote upstream repository that will be synced with the fork.</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">    $ git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Verify the new upstream repository you&#8217;ve specified for your fork.</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">    $ git remote -v
-    &gt; origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
-    &gt; origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
-    &gt; upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (fetch)
-    &gt; upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (push)</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Fetch the branches and their respective commits from the upstream repository. Commits to master will be stored in a local branch, upstream/master.</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">    $ git fetch upstream
-    &gt; remote: Counting objects: 75, done.
-    &gt; remote: Compressing objects: 100% (53/53), done.
-    &gt; remote: Total 62 (delta 27), reused 44 (delta 9)
-    &gt; Unpacking objects: 100% (62/62), done.
-    &gt; From https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY
-    &gt;  * [new branch]      master     -&gt; upstream/master</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Check out your fork&#8217;s local master branch.</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">    $ git checkout master
-    &gt; Switched to branch 'master'</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Merge the changes from upstream/master into your local master branch. This brings your fork&#8217;s master branch into sync with the upstream repository, without losing your local changes.</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">    $ git merge upstream/master
-    &gt; Updating a422352..5fdff0f
-    &gt; Fast-forward
-    &gt;  README                    |    9 -------
-    &gt;  README.md                 |    7 ++++++
-    &gt;  2 files changed, 7 insertions(+), 9 deletions(-)
-    &gt;  delete mode 100644 README
-    &gt;  create mode 100644 README.md</code></pre>
+<p>Unresolved directive in readme.adoc - include::categories/git/readme.adoc[Coding Tips - Git]</p>
 </div>
 </div>
 </div>
@@ -2761,7 +2655,7 @@ $ git commit -m "Blabla" --date "27 Mar 2022 20:19"</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-07-04 06:22:19 UTC
+Last updated 2022-07-05 20:14:44 UTC
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
