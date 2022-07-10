@@ -7,13 +7,13 @@ Here are few links and samples around cars.
 
 === data.gouv.fr
 
-.French Help
-* link:https://carbubu.fr/[data.gouv.fr application Carbubu]
-* link:https://www.data.gouv.fr/fr/posts/[data.gouv.fr posts]
 
 === Gaz Station
 
-Prices of Gaz:
+* link:https://carbubu.fr/[data.gouv.fr application Carbubu]
+* link:https://www.data.gouv.fr/fr/posts/[data.gouv.fr posts]
+
+==== Prices of Gaz
 
 * link:https://transport.data.gouv.fr/datasets/prix-des-carburants-en-france-flux-quotidien/[data.gouv.fr Gaz Station]
 
