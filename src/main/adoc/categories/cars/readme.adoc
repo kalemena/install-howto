@@ -7,6 +7,11 @@ Here are few links and samples around cars.
 
 === data.gouv.fr
 
+* link:https://github.com/etalab/data.gouv.fr[data.gouv.fr github]
+* link:https://doc.data.gouv.fr/api/intro/[data.gouv.fr api intro]
+* link:https://doc.data.gouv.fr/api/dataset-workflow/#gestion-dun-jeu-de-donn%C3%A9es-par-lapi[data.gouv.fr api datasets]
+
+
 
 === Gaz Station
 
