@@ -3,6 +3,10 @@
 
 == Links
 
+.Astrophotography
+* link:https://www.nasa.gov/stem-ed-resources/guide-to-smartphone-astronomy.html[Nasa Guide to Smartphone Astronomy]
+* link:https://nightsky.jpl.nasa.gov/news-display.cfm?News_ID=954[Nasa News]
+* link:https://photoswithphones.com/complete-guide-smartphone-astrophotography/[]
 * link:https://www.instructables.com/Astrophotography-for-Beginners[Astrophotography for Beginners]
 * link:https://www.instructables.com/All-Sky-Camera-Enclosures[AllSky]
 * link:https://www.instructables.com/How-to-Squeeze-the-Max-Out-of-Entry-level-Telescop[How to Squeeze the Max Out of Entry-level Telescope]
