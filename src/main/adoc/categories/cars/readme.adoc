@@ -160,3 +160,7 @@ $ curl -X 'GET' \
   "uri": "https://www.data.gouv.fr/api/1/datasets/irve/"
 }
 ----
+
+== Utilities
+
+* link:https://github.com/tmcw/awesome-geojson[GeoJSON Tools]
