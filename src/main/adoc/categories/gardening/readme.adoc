@@ -30,6 +30,7 @@
 Voici des liens intéressants.
 
 * Arrosage:
+** link:https://www.instructables.com/DIY-Low-Cost-Floating-Valve-for-Low-Tech-Irrigatio[Ollas Irrigation]
 ** link:https://fr.wikihow.com/fabriquer-un-goutte-%C3%A0-goutte-%C3%A0-partir-d%27une-bouteille-en-plastique[Goutte à goutte]
 ** link:https://www.gardening4joy.com/diy-wick-watering-system/[goutte à goutte par capilarité]
 
