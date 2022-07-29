@@ -164,8 +164,10 @@ $ curl -X 'GET' \
 === Stellantis
 
 * link:https://developer.groupe-psa.io/webapi/b2c/overview/about/[Stellantis B2C Developper API]
-
 * link:https://developer.groupe-psa.io/webportal/v1/overview/about/#article[PSA Embedded Webportal]
+* link:https://github.com/GroupePSA/groupepsa.github.io[Github Groupe PSA]
+
+
 
 == Utilities
 
