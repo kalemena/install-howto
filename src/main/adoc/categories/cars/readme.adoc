@@ -37,12 +37,7 @@ Electric car stations:
 .Other sites
 * link:https://fr.chargemap.com[ChargeMap]
 * link:https://chargefinder.com/fr[ChargeFinder]
-
-
-
-
-
-
+* link:https://fr.chargeprice.app/[Chargeprice]
 
 === data.gouv.fr - examples
 
