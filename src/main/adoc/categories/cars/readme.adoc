@@ -1,10 +1,32 @@
 = Cars
 :hardbreaks:
 
+== Electric Consumption
+
+.Costs:
+- Base: 0,174 €
+- Heures Pleines: 0,1841 €
+- Heures Creuses: 0,1470 €
+
+.Assuming:
+- 50kWh battery
+- Low speed charging at 1,4kW or 3,7kW
+- 30kWh / week (for about 200km)
+
+.HC versus HP costs hours
+* HP: 30 kWh x 0,1841€ = 5,5 € / week = 287 € / year
+* Base: 30 kWh x 0,174€ = 5,22 € / week = 271 € / year
+* HC: 30 kWh x 0,1470€ = 4,4 € / week = 229 € / year
+=> diff 58 € / year
+
+.1,4kW versus 3,7kW charging
+* 30 kWh => 1,4kW x 21,5h
+* 30 kWh => 3,7kW x 8h
+=> to match HC timeframe, 1,4kW requires charging 3 times a week, and is so slow that just in case, we need to charge before reaching < 60%
+
 == Data and APIs
 
 Here are few links and samples around cars.
-
 
 === data.gouv.fr
 
