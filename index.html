@@ -1048,8 +1048,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#coding_tips">1.12. Coding tips</a>
 <ul class="sectlevel3">
-<li><a href="#git">1.12.1. GIT</a></li>
-<li><a href="#github_actions">1.12.2. GitHub Actions</a></li>
+<li><a href="#shell">1.12.1. Shell</a></li>
+<li><a href="#git">1.12.2. GIT</a></li>
+<li><a href="#github_actions">1.12.3. GitHub Actions</a></li>
 </ul>
 </li>
 </ul>
@@ -2656,7 +2657,38 @@ $ ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.mp4</pre>
 <div class="sect2">
 <h3 id="coding_tips">1.12. Coding tips</h3>
 <div class="sect3">
-<h4 id="git">1.12.1. GIT</h4>
+<h4 id="shell">1.12.1. Shell</h4>
+<div class="listingblock">
+<div class="title">Find files belong to a group (case insensitive)</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ find /project -group developers -iname "*.java"</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Find files belong to user</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ find /project -user kalemena -name "*.class"</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Find and delete</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># basic
+$ find . -type f -name '*.txt~' -print -delete
+# advanced
+$ find . -type f -name '*.txt~' -exec rm -f {} \;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.baeldung.com/linux/recursively-delete-files-with-extension">Examples delete recursive</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="git">1.12.2. GIT</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2750,7 +2782,7 @@ $ git commit -m "Blabla" --date "27 Mar 2022 20:19"</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="github_actions">1.12.2. GitHub Actions</h4>
+<h4 id="github_actions">1.12.3. GitHub Actions</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2765,7 +2797,7 @@ $ git commit -m "Blabla" --date "27 Mar 2022 20:19"</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-07-09 21:21:40 UTC
+Last updated 2022-08-24 20:33:17 UTC
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
