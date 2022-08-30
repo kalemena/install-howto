@@ -947,6 +947,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#charge_station">Charge Station</a></li>
 </ul>
 </li>
+<li><a href="#data_gouv_fr_examples">data.gouv.fr - examples</a></li>
 </ul>
 </li>
 </ul>
@@ -1138,7 +1139,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Electric car stations:</p>
 </div>
 <div class="ulist">
-<div class="title">French Data</div>
+<div class="title">French data.gouv.fr</div>
+<ul>
+<li>
+<p><a href="https://odre.opendatasoft.com/explore/dataset/bornes-irve">data.gouv.fr map</a></p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">French data.gouv.fr dataset</div>
 <ul>
 <li>
 <p><a href="https://www.data.gouv.fr/fr/datasets/fichier-consolide-des-bornes-de-recharge-pour-vehicules-electriques/">data.gouv.fr dataset</a></p>
@@ -1150,6 +1159,139 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><a href="https://www.data.gouv.fr/fr/datasets/r/7eee8f09-5d1b-4f48-a304-5e99e8da1e26">data.gouv.fr dataset Geo JSON</a></p>
 </li>
 </ul>
+</div>
+<div class="ulist">
+<div class="title">Other sites</div>
+<ul>
+<li>
+<p><a href="https://fr.chargemap.com">ChargeMap</a></p>
+</li>
+<li>
+<p><a href="https://chargefinder.com/fr">ChargeFinder</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="data_gouv_fr_examples">data.gouv.fr - examples</h5>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://doc.data.gouv.fr/api/reference/#">data.gouv.fr API</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">$ curl -X 'GET' \
+  'https://www.data.gouv.fr/api/1/datasets/irve/' \
+  -H 'accept: application/json'
+
+
+{
+  "acronym": null,
+  "archived": null,
+  "badges": [],
+  "created_at": "2022-05-17T16:45:18.974000",
+  "deleted": null,
+  "description": "IRVE",
+  "extras": {
+    "recommendations": [
+      {
+        "id": "5448d3e0c751df01f85d0572",
+        "score": 50,
+        "source": "schemas"
+      }
+    ],
+    "recommendations:sources": [
+      "schemas"
+    ]
+  },
+  "frequency": "unknown",
+  "frequency_date": null,
+  "id": "6283b4feafb1d09cd7e0003c",
+  "last_modified": "2022-08-27T08:32:20.066000",
+  "last_update": "2022-05-17T16:45:31",
+  "license": "notspecified",
+  "metrics": {
+    "discussions": 0,
+    "followers": 0,
+    "reuses": 0,
+    "views": 0
+  },
+  "organization": {
+    "acronym": "ELEC eCONNECT",
+    "badges": [],
+    "class": "Organization",
+    "id": "6283b10049c84cd2cae23c0c",
+    "logo": "https://static.data.gouv.fr/avatars/e8/a5603fa9ca4223944ffee3e9b4a8ae-original.jpg",
+    "logo_thumbnail": "https://static.data.gouv.fr/avatars/e8/a5603fa9ca4223944ffee3e9b4a8ae-100.jpg",
+    "name": "ELEC eCONNECT",
+    "page": "https://www.data.gouv.fr/fr/organizations/elec-econnect/",
+    "slug": "elec-econnect",
+    "uri": "https://www.data.gouv.fr/api/1/organizations/elec-econnect/"
+  },
+  "owner": null,
+  "page": "https://www.data.gouv.fr/fr/datasets/irve/",
+  "private": false,
+  "quality": {
+    "all_resources_available": true,
+    "dataset_description_quality": false,
+    "has_open_format": true,
+    "has_resources": true,
+    "license": true,
+    "resources_documentation": false,
+    "score": 0.3333333333333333,
+    "spatial": false,
+    "temporal_coverage": false,
+    "update_frequency": false
+  },
+  "resources": [
+    {
+      "checksum": {
+        "type": "sha1",
+        "value": "e2bfbbccc1bdd5eb4a226eb2ebd64683c0c81b40"
+      },
+      "created_at": "2022-05-17T16:45:31.614000",
+      "description": null,
+      "extras": {
+        "consolidation_schema:add_schema": "etalab/schema-irve",
+        "validation-report:errors": [],
+        "validation-report:nb_errors": 0,
+        "validation-report:schema_name": "etalab/schema-irve",
+        "validation-report:schema_type": "tableschema",
+        "validation-report:schema_version": "2.0.2",
+        "validation-report:valid_resource": true,
+        "validation-report:validation_date": "2022-08-27 05:18:54.362433",
+        "validation-report:validator": "validata"
+      },
+      "filesize": 1221,
+      "filetype": "file",
+      "format": "csv",
+      "id": "1d33f87a-5383-4a85-be31-1e5a3d7f590c",
+      "last_modified": "2022-08-27T08:32:20.053000",
+      "latest": "https://www.data.gouv.fr/fr/datasets/r/1d33f87a-5383-4a85-be31-1e5a3d7f590c",
+      "metrics": {},
+      "mime": "text/csv",
+      "preview_url": "/tabular/preview/?url=https%3A%2F%2Fstatic.data.gouv.fr%2Fresources%2Firve%2F20220517-164531%2Fmonfichier.csv",
+      "published": "2022-05-17T16:45:31",
+      "schema": {
+        "name": "etalab/schema-irve",
+        "version": "2.0.2"
+      },
+      "title": "monfichier.csv",
+      "type": "main",
+      "url": "https://static.data.gouv.fr/resources/irve/20220517-164531/monfichier.csv"
+    }
+  ],
+  "slug": "irve",
+  "spatial": null,
+  "tags": [],
+  "temporal_coverage": null,
+  "title": "IRVE",
+  "uri": "https://www.data.gouv.fr/api/1/datasets/irve/"
+}</code></pre>
 </div>
 </div>
 </div>
@@ -1641,18 +1783,33 @@ Reason is that when you look at it, this flavor in fact keeps same principles:</
 <div class="sect3">
 <h4 id="links_4">1.7.1. Links</h4>
 <div class="ulist">
+<div class="title">Astrophotography</div>
 <ul>
+<li>
+<p><a href="https://www.nasa.gov/stem-ed-resources/guide-to-smartphone-astronomy.html">Nasa Guide to Smartphone Astronomy</a></p>
+</li>
+<li>
+<p><a href="https://nightsky.jpl.nasa.gov/news-display.cfm?News_ID=954">Nasa News</a></p>
+</li>
+<li>
+<p><a href="https://photoswithphones.com/complete-guide-smartphone-astrophotography/" class="bare">https://photoswithphones.com/complete-guide-smartphone-astrophotography/</a></p>
+</li>
 <li>
 <p><a href="https://www.instructables.com/Astrophotography-for-Beginners">Astrophotography for Beginners</a></p>
 </li>
+<li>
+<p><a href="https://docs.google.com/document/d/1SW5kwl66491iCT86lEx5U0TMMKoGaCXJ17FPE6d9pY0">Beginners Guide to Astrophotography with the OAT</a></p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Others</div>
+<ul>
 <li>
 <p><a href="https://www.instructables.com/All-Sky-Camera-Enclosures">AllSky</a></p>
 </li>
 <li>
 <p><a href="https://www.instructables.com/How-to-Squeeze-the-Max-Out-of-Entry-level-Telescop">How to Squeeze the Max Out of Entry-level Telescope</a></p>
-</li>
-<li>
-<p><a href="https://docs.google.com/document/d/1SW5kwl66491iCT86lEx5U0TMMKoGaCXJ17FPE6d9pY0">Beginners Guide to Astrophotography with the OAT</a></p>
 </li>
 </ul>
 </div>
@@ -2881,7 +3038,7 @@ $ git commit -m "Blabla" --date "27 Mar 2022 20:19"</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-28 09:49:57 UTC
+Last updated 2022-08-30 19:02:10 UTC
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
