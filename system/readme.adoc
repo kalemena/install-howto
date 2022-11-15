@@ -13,6 +13,10 @@ Installation How-To (ubuntu, docker, etc)
 .Spot binary files and list them by size
   $ find . -type f | xargs file | grep -v text | grep -v empty | grep -v postscript |  sed "s/:.*//g" | xargs ll | sed -e "s/.*cas\(.*\) ... .. ..... \.\/\(.*\)/\1 \2/g" | sort -r
 
+.Count files recursively with excluding some
+  $ sudo find homes -type f | grep -iv '@eaDir' | grep -iv '#recycle'  | wc -l
+
+
 == BASH
 
 link:https://devhints.io/bash[BASH cheatsheet]
