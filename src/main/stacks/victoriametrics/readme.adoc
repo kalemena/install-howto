@@ -1,0 +1,5 @@
+= Victoria Metrics
+
+link:https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html[Doc & Migration Guide]
+
+.Tips:
