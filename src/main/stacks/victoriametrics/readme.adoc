@@ -3,3 +3,8 @@
 link:https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html[Doc & Migration Guide]
 
 .Tips:
+* link:https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html#how-to-work-with-snapshots[How to work with snapshots]
+
+- In -storageDataPath directory. 
+- Navigate to http://<victoriametrics-addr>:8428/snapshot/create
+- List with /snapshot/list
