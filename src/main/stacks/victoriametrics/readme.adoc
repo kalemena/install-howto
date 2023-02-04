@@ -8,3 +8,5 @@ link:https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html[Doc & M
 - In -storageDataPath directory. 
 - Navigate to http://<victoriametrics-addr>:8428/snapshot/create
 - List with /snapshot/list
+
+* link:https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html#how-to-export-time-series[How to export timeseries]
