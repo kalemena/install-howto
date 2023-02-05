@@ -10,3 +10,6 @@ link:https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html[Doc & M
 - List with /snapshot/list
 
 * link:https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html#how-to-export-time-series[How to export timeseries]
+
+* link:https://docs.victoriametrics.com/vmctl.html[VMCtl - Migration Tool]
+
