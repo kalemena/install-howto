@@ -17,4 +17,13 @@ link:https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html[Doc & M
 
 * link:https://promlabs.com/promql-cheat-sheet/[PromQL Cheat Sheet]
 
+== Examples
+
+[source,bash]
+----
+# cache cleanups
+$ curl 'http://localhost:8428/internal/resetRollupResultCache'
+----
+
+
 
