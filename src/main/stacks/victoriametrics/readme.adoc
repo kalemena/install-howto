@@ -25,5 +25,8 @@ link:https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html[Doc & M
 $ curl 'http://localhost:8428/internal/resetRollupResultCache'
 ----
 
+.Import/Export
+* link:https://docs.victoriametrics.com/#how-to-import-data-in-json-line-format[Doc Export/Import]
+
 
 
