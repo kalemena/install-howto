@@ -19,6 +19,7 @@ link:https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html[Doc & M
 
 == Examples
 
+.Maintenance
 [source,bash]
 ----
 # cache cleanups
