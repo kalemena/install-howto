@@ -28,5 +28,12 @@ $ curl 'http://localhost:8428/internal/resetRollupResultCache'
 .Import/Export
 * link:https://docs.victoriametrics.com/#how-to-import-data-in-json-line-format[Doc Export/Import]
 
+[source,bash]
+----
+# Export
+$ curl http://localhost:8428/api/v1/export -d 'match[]={__name__="sensors_zigbee_energy_l1"}' -d 'start=2023-04-24T06:25:48' -d 'end=2023-04-24T06:26:07' | jq .
+
+----
+
 
 
