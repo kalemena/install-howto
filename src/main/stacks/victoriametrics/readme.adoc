@@ -34,6 +34,26 @@ $ curl 'http://localhost:8428/internal/resetRollupResultCache'
 # Export
 $ curl http://localhost:8428/api/v1/export -d 'match[]={__name__="sensors_zigbee_energy_l1"}' -d 'start=2023-04-24T06:25:48' -d 'end=2023-04-24T06:26:07' | jq .
 
+{
+  "metric": {
+    "__name__": "sensors_zigbee_energy_l1",
+    "db": "sensors",
+    "location": "C01~Garage~PowerMeter"
+  },
+  "values": [
+    1282.078,
+    1282.078,
+    1282.078,
+    1282.078
+  ],
+  "timestamps": [
+    1682317553059,
+    1682317553844,
+    1682317554769,
+    1682317555720
+  ]
+}
+
 ----
 
 
