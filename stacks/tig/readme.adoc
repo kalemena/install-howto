@@ -88,7 +88,7 @@ autogen 0s       168h0m0s           1        true
 
 * Test InfluxDB as curl:
 
-[source,bash]
+[source]
 ----
 $ curl -G http://localhost:8086/query --data-urlencode "q=SHOW DATABASES"
 {"results":[{"statement_id":0,"series":[{"name":"databases","columns":["name"],"values":[["telegraf"],["SensorData"]]}]}]}
@@ -98,7 +98,7 @@ $ curl -G http://localhost:8086/query --data-urlencode "q=SHOW DATABASES"
 
 Plugins:
 
-[source,bash]
+[source]
 ----
 bash-5.0$ grafana-cli plugins install grafana-worldmap-panel
 installing grafana-worldmap-panel @ 0.3.2
