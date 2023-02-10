@@ -54,6 +54,11 @@ $ curl http://localhost:8428/api/v1/export -d 'match[]={__name__="sensors_zigbee
   ]
 }
 
+# Import
+# File contains same as above (but flat line)
+$ curl -X POST http://localhost:8428/api/v1/import -T json.import
+
+# WARNING: look at VM logs to see errors because response is always 204 OK
 ----
 
 
