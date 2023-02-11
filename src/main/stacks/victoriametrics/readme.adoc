@@ -23,6 +23,8 @@ link:https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html[Doc & M
 # Example with modifier specifiying a diff
 ((sensors_teleinfo_HCHC{} @ 1672552800 - (sensors_teleinfo_HCHC{} @ 1672466400)) / 1000)
 
+# Example with offset to diff relatively 1d
+((sensors_teleinfo_HCHP{} - (sensors_teleinfo_HCHP{} offset 1d)) / 1000)
 ----
 
 == Examples
