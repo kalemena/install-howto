@@ -44,8 +44,8 @@ Then:
 
 * Manually create more database:
 
-[source,bash]
-----
+[source]
+-----
 $ docker-compose exec influxdb influx
 Visit https://enterprise.influxdata.com to register for updates, InfluxDB server management, and monitoring.
 Connected to http://localhost:8086 version 0.9.6.1
@@ -64,7 +64,7 @@ telegraf
 > show measurements
 name: measurements
 name
-----
+...
 cpu
 disk
 diskio
@@ -84,15 +84,15 @@ system
 name    duration shardGroupDuration replicaN default
 ----    -------- ------------------ -------- -------
 autogen 0s       168h0m0s           1        true
-----
+-----
 
 * Test InfluxDB as curl:
 
 [source]
-----
+-----
 $ curl -G http://localhost:8086/query --data-urlencode "q=SHOW DATABASES"
 {"results":[{"statement_id":0,"series":[{"name":"databases","columns":["name"],"values":[["telegraf"],["SensorData"]]}]}]}
-----
+-----
 
 == Grafana
 
