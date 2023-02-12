@@ -82,8 +82,14 @@ system
 
 > SHOW RETENTION POLICIES on telegraf
 name    duration shardGroupDuration replicaN default
-----    -------- ------------------ -------- -------
+-
 autogen 0s       168h0m0s           1        true
+
+# Range queries
+> select * from sensors WHERE time > now() - 10m AND type='teleinfo-HCHP'
+
+> select * from sensors WHERE type='teleinfo-HCHP' AND time > '2023-05-01T18:07:00Z'
+
 -----
 
 * Test InfluxDB as curl:
