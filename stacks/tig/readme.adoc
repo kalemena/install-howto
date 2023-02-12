@@ -90,6 +90,10 @@ autogen 0s       168h0m0s           1        true
 
 > select * from sensors WHERE type='teleinfo-HCHP' AND time > '2023-05-01T18:07:00Z'
 
+> select * from sensors WHERE type='teleinfo-HCHP' AND time > '2023-05-01T18:57:28Z' AND time < '2023-05-01T18:58:38Z' 
+
+# Range query onto continuous query
+> select * from five_years.sensors_1h WHERE type='teleinfo-HCHP' AND time > '2023-04-10T18:57:28Z' AND time < '2023-04-24T18:58:38Z'
 -----
 
 * Test InfluxDB as curl:
