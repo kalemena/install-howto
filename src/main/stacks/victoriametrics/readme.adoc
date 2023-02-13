@@ -34,6 +34,15 @@ link:https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html[Doc & M
 ----
 # cache cleanups
 $ curl 'http://localhost:8428/internal/resetRollupResultCache'
+
+# Backups
+# - stop victoriametrics
+# - setup backup folder
+$ mkdir -p /backup/victoriametrics
+# - get file snapshot
+$ cd /victoria-metrics-data
+$ tar czvf /backup/vm.tar.gz .
+# - restart victoriametrics
 ----
 
 .Import/Export
