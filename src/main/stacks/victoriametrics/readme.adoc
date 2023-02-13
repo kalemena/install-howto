@@ -50,9 +50,8 @@ $ tar czvf /backup/vm.tar.gz .
 
 [source,bash]
 ----
-# Export
+# Export JSONL
 $ curl http://localhost:8428/api/v1/export -d 'match[]={__name__="sensors_zigbee_energy_l1"}' -d 'start=2023-04-24T06:25:48' -d 'end=2023-04-24T06:26:07' | jq .
-
 {
   "metric": {
     "__name__": "sensors_zigbee_energy_l1",
@@ -73,11 +72,16 @@ $ curl http://localhost:8428/api/v1/export -d 'match[]={__name__="sensors_zigbee
   ]
 }
 
-# Import
+# Import JSONL
 # File contains same as above (but flat line)
 $ curl -X POST http://localhost:8428/api/v1/import -T json.import
 
 # WARNING: look at VM logs to see errors because response is always 204 OK
+
+# Export CSV
+$ curl http://localhost:8428/api/v1/export/csv -d 'format=__name__,__timestamp__:unix_ns,__value__' -d 'match[]={__name__="sensors_teleinfo_HCHC"}' -d 'start=2023-04-24T06:25:48' -d 'end=2023-04-24T06:26:07'
+sensors_teleinfo_HCHC,1682317561243000000,43084886
+
 ----
 
 
