@@ -82,8 +82,11 @@ $ curl -X POST http://localhost:8428/api/v1/import -T json.import
 $ curl http://localhost:8428/api/v1/export/csv -d 'format=__name__,__timestamp__:unix_ns,__value__' -d 'match[]={__name__="sensors_teleinfo_HCHC"}' -d 'start=2023-04-24T06:25:48' -d 'end=2023-04-24T06:26:07'
 sensors_teleinfo_HCHC,1682317561243000000,43084886
 
+# Import CSV (https://docs.victoriametrics.com/#how-to-import-csv-data)
+$ curl -d '1682317561243,43084886,main' http://localhost:8428/api/v1/import/csv?format=1:time,2:metric:sensors_teleinfo_HCHC,3:label:location
 
-# Import prometheus format
+
+# Import prometheus format (https://docs.victoriametrics.com/#how-to-import-data-in-prometheus-exposition-format)
 $ curl -d 'sensors_teleinfo_HCHC{location="main"} 48033313' -X POST 'http://localhost:8428/api/v1/import/prometheus?timestamp=1668088800000'
 ----
 
