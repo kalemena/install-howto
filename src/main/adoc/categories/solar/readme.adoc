@@ -18,6 +18,9 @@ Computing example.
 
 == Links
 
+.France specific
+* link:https://particulier.edf.fr/fr/accueil/gestion-contrat/options/tempo.html#/selection-bp[Tempo days]
+
 .Producing Electricity
 * link:https://re.jrc.ec.europa.eu/pvg_tools/fr/tools.html[PHOTOVOLTAIC GEOGRAPHICAL INFORMATION SYSTEM]
 * link:https://conseils-thermiques.org/contenu/outil-calcul-production-solaire.php[Tools]
