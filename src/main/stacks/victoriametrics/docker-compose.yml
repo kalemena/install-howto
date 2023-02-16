@@ -1,0 +1,21 @@
+version: '3.7'
+
+networks:
+  default:
+
+volumes:
+  victoria-metrics-data:
+  grafana-data:
+
+services:
+
+  victoriametrics:
+    image: victoriametrics/victoria-metrics:v1.87.5
+    restart: always
+    ports:
+      - 4428:8428
+    volumes:
+      - victoria-metrics-data:/victoria-metrics-data
+    command:
+      - "--retentionPeriod=3y"
+      # - "--storageDataPath=/storage"
