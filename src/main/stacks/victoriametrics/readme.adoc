@@ -29,7 +29,9 @@ link:https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html[Doc & M
 
 == Examples
 
-.Maintenance
+=== Maintenance
+
+.File backup
 [source,bash]
 ----
 # cache cleanups
@@ -44,6 +46,9 @@ $ cd /victoria-metrics-data
 $ tar czvf /backup/vm.tar.gz .
 # - restart victoriametrics
 ----
+
+.Update metrics (KO)
+* link:https://docs.victoriametrics.com/guides/guide-delete-or-replace-metrics.html#how-to-delete-metrics[Guide update metrics]
 
 .Import/Export
 * link:https://docs.victoriametrics.com/#how-to-import-data-in-json-line-format[Doc Export/Import]
