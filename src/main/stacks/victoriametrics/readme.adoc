@@ -47,6 +47,11 @@ $ tar czvf /backup/vm.tar.gz .
 # - restart victoriametrics
 ----
 
+.Built-in tools
+* link:https://hub.docker.com/u/victoriametrics[Docker containers tools]
+* link:https://github.com/VictoriaMetrics/VictoriaMetrics/blob/master/app/vmbackup/README.md[vmbackup]
+* link:https://github.com/VictoriaMetrics/VictoriaMetrics/blob/master/app/vmrestore/README.md[vmrestore]
+
 .Update metrics (KO)
 * link:https://docs.victoriametrics.com/guides/guide-delete-or-replace-metrics.html#how-to-delete-metrics[Guide update metrics]
 
