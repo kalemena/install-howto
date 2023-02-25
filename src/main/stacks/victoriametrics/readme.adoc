@@ -55,6 +55,13 @@ $ tar czvf /backup/vm.tar.gz .
 .Update metrics (KO)
 * link:https://docs.victoriametrics.com/guides/guide-delete-or-replace-metrics.html#how-to-delete-metrics[Guide update metrics]
 
+.Delete metrics
+[source,bash]
+----
+# WARNING: this deletes the full serie
+$ curl -s 'http://localhost:8428/api/v1/admin/tsdb/delete_series?match[]=sensors_BBRHPJB'
+----
+
 .Import/Export
 * link:https://docs.victoriametrics.com/#how-to-import-data-in-json-line-format[Doc Export/Import]
 
