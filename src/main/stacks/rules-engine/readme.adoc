@@ -1,0 +1,8 @@
+= Rules Engine
+
+.References
+* link:https://www.drools.org/learn/dmn.html[DMN]
+* link:https://www.youtube.com/watch?v=66vnlOwRamM[Red-Hat tools and concepts]
+* link:https://www.youtube.com/watch?v=0hQEMMRVHjA[BMN various types of Rules (Scoring, Classification, etc)]
+
+
