@@ -12,6 +12,8 @@ services:
     ports:
       - 8080:8080
       - 8001:8001
+    volumes:
+      - ./workspace/logs/business-central/:/opt/jboss/wildfly/standalone/log/
 
   # https://quay.io/repository/kiegroup/kie-server-showcase
   # open http://localhost:8180/kie-server (kieserver / kieserver1!)
@@ -28,3 +30,7 @@ services:
       KIE_SERVER_LOCATION: http://kie-server:8080/kie-server/services/rest/server
       KIE_SERVER_CONTROLLER: http://business-central:8080/business-central/rest/controller
       KIE_MAVEN_REPO: http://business-central:8080/business-central/maven2
+    volumes:
+      - ./workspace/logs/kie-server/:/opt/jboss/wildfly/standalone/log/
+    depends_on:
+      - business-central
