@@ -10,7 +10,7 @@ volumes:
 services:
 
   victoriametrics:
-    image: victoriametrics/victoria-metrics:v1.87.5
+    image: victoriametrics/victoria-metrics:v1.87.6
     restart: always
     ports:
       - 4428:8428
