@@ -6,6 +6,10 @@
 * link:https://www.youtube.com/watch?v=0hQEMMRVHjA[BMN various types of Rules (Scoring, Classification, etc)]
 * link:https://dmn.new[DMN Online editor]
 
+* link:https://www.mastertheboss.com/bpm/drools/what-is-jboss-drools/[Drools and KIE]
+
+* link:https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html/developing_decision_services_in_red_hat_decision_manager/drl-rules-con_drl-rules[DRL]
+
 
 
 
