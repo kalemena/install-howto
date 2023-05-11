@@ -22,5 +22,10 @@
 
 
 
-== Environment
+
+
+.Code
+* link:https://github.com/jbossdemocentral/kie-server-client-examples[Java KIE example]
+* link:https://github.com/nheron/droolsonboarding[Drools Onboarding]
+* link:https://github.com/QuickSign/drools-server[Java Drools sample]
 
