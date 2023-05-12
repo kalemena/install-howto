@@ -14,6 +14,11 @@
 * link:https://ducmanhphan.github.io/2020-10-20-how-to-use-drools-language-syntax/[DRL syntax]
 * link:https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html/developing_decision_services_in_red_hat_decision_manager/drl-rules-con_drl-rules[DRL]
 
+.Code
+* link:https://github.com/jbossdemocentral/kie-server-client-examples[Java KIE example]
+* link:https://github.com/nheron/droolsonboarding[Drools Onboarding]
+* link:https://github.com/QuickSign/drools-server[Java Drools sample]
+
 == Environment
 
 .Docker:
