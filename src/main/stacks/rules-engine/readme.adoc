@@ -32,6 +32,13 @@
 
 
 
+== Discoveries
+
+.Steps:
+* Start env using *make up*
+* After ~30s, Open link:localhost:8080/business-central[]
+* Create Space and Project, Import sample *traffic-violation*, Test and Deploy
+
 
 
 .Code
