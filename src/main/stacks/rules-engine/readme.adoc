@@ -13,6 +13,8 @@
 * link:https://docs.drools.org/8.32.0.Final/drools-docs/docs-website/drools/introduction/index.html[Drools user Guide]
 * link:https://ducmanhphan.github.io/2020-10-20-how-to-use-drools-language-syntax/[DRL syntax]
 * link:https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html/developing_decision_services_in_red_hat_decision_manager/drl-rules-con_drl-rules[DRL]
+* Examples:
+** link:https://github.com/kiegroup/drools/blob/main/drools-examples/src/main/java/org/drools/examples/petstore/PetStoreExample.java[PetStore Java Object Data] and link:https://github.com/kiegroup/drools/blob/main/drools-examples/src/main/resources/org/drools/examples/petstore/PetStore.drl[PetStore DRL]
 
 .Code
 * link:https://github.com/jbossdemocentral/kie-server-client-examples[Java KIE example]
