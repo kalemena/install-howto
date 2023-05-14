@@ -42,7 +42,18 @@
 .Refs:
 * General Swagger KIE-Server: link:http://localhost:8180/kie-server/docs/[]
 
+.Example requests
+[source,bash]
+----
+# Check deployed containers
+$ curl -u kieserver:kieserver1! -X GET "http://localhost:8180/kie-server/services/rest/server/containers" -H "accept: application/json"
 
+# Check specific container
+$ curl -u kieserver:kieserver1! -X GET "http://localhost:8180/kie-server/services/rest/server/containers/traffic-violation_1.0.0-SNAPSHOT" -H "accept: application/json"
+
+# Retrieve the openAPI definition for deployed container
+$ curl -u kieserver:kieserver1! -X GET "http://localhost:8180/kie-server/services/rest/server/containers/traffic-violation_1.0.0-SNAPSHOT/dmn/openapi.json" -H "accept: application/json" -o openapi.json
+----
 
 .Code
 * link:https://github.com/jbossdemocentral/kie-server-client-examples[Java KIE example]
