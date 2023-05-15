@@ -79,4 +79,30 @@ Open API did not contain Basic Auth, thus was not working.
      ...
 ====
 
+.Example deployed files as a jar file
+[source,bash]
+----
+# /opt/jboss/.m2/repository/traffic-violation/traffic-violation/1.0.0-SNAPSHOT/
+[jboss@kie-server 1.0.0-SNAPSHOT]$ unzip traffic-violation-1.0.0-SNAPSHOT.jar 
+Archive:  traffic-violation-1.0.0-SNAPSHOT.jar
+   creating: META-INF/
+   creating: META-INF/maven/
+   creating: META-INF/maven/traffic-violation/
+   creating: META-INF/maven/traffic-violation/traffic-violation/
+  inflating: META-INF/maven/traffic-violation/traffic-violation/pom.xml  
+  inflating: META-INF/maven/traffic-violation/traffic-violation/pom.properties  
+  inflating: META-INF/kmodule.info   
+  inflating: META-INF/kmodule.xml    
+   creating: META-INF/defaultKieBase/
+  inflating: META-INF/defaultKieBase/kbase.cache  
+   creating: org/
+   creating: org/kie/
+   creating: org/kie/example/
+   creating: org/kie/example/traffic/
+   creating: org/kie/example/traffic/traffic_violation/
+  inflating: org/kie/example/traffic/traffic_violation/Traffic Violation.dmn  
+   creating: testscenario/
+  inflating: testscenario/ScenarioJunitActivatorTest.class  
+----
+
 
