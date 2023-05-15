@@ -55,8 +55,28 @@ $ curl -u kieserver:kieserver1! -X GET "http://localhost:8180/kie-server/service
 $ curl -u kieserver:kieserver1! -X GET "http://localhost:8180/kie-server/services/rest/server/containers/traffic-violation_1.0.0-SNAPSHOT/dmn/openapi.json" -H "accept: application/json" -o openapi.json
 ----
 
-.Code
-* link:https://github.com/jbossdemocentral/kie-server-client-examples[Java KIE example]
-* link:https://github.com/nheron/droolsonboarding[Drools Onboarding]
-* link:https://github.com/QuickSign/drools-server[Java Drools sample]
+[IMPORTANT]
+====
+Open API did not contain Basic Auth, thus was not working.
+
+# https://support.smartbear.com/swaggerhub/docs/tutorials/openapi-3-tutorial.html
+# fix URL
+  "servers": [ {
+    "url" : "http://localhost:8180/kie-server/services/rest"
+  } ],
+  "security": [
+    "BasicAuth": []
+  ],
+  ...
+# fix basic auth
+"components" : {
+    "securitySchemes": {
+      "BasicAuth": {
+        "type": "http",
+        "scheme": "basic"
+       }
+     },
+     ...
+====
+
 
