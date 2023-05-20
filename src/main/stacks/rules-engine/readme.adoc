@@ -30,6 +30,10 @@
 * link:https://quay.io/repository/kiegroup/kie-server[KIE Server] or link:https://quay.io/repository/kiegroup/kie-server-showcase[KIE Server Showcase]
 * link:https://github.com/jboss-dockerfiles/business-central/tree/main/docker-compose-examples[Full set of deployment] (includes prometheus and grafana)
 
+.Coding Examples
+* KJar
+** link:https://github.com/sunil-samuel/BRMS-Rules-KJar[Rules KJar]
+** link:https://github.com/sunil-samuel/KieServer-KJar-Deployment[Kie-Server KJar Deployment]
 
 
 
