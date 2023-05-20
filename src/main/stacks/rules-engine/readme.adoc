@@ -16,6 +16,9 @@
 * Examples:
 ** link:https://github.com/kiegroup/drools/blob/main/drools-examples/src/main/java/org/drools/examples/petstore/PetStoreExample.java[PetStore Java Object Data] and link:https://github.com/kiegroup/drools/blob/main/drools-examples/src/main/resources/org/drools/examples/petstore/PetStore.drl[PetStore DRL]
 
+.Docs
+* link:https://docs.drools.org/8.32.0.Final/drools-docs/docs-website/drools/introduction/index.html[Drools introduction]
+
 .Code
 * link:https://github.com/jbossdemocentral/kie-server-client-examples[Java KIE example]
 * link:https://github.com/nheron/droolsonboarding[Drools Onboarding]
@@ -30,10 +33,7 @@
 * link:https://quay.io/repository/kiegroup/kie-server[KIE Server] or link:https://quay.io/repository/kiegroup/kie-server-showcase[KIE Server Showcase]
 * link:https://github.com/jboss-dockerfiles/business-central/tree/main/docker-compose-examples[Full set of deployment] (includes prometheus and grafana)
 
-.Coding Examples
-* KJar
-** link:https://github.com/sunil-samuel/BRMS-Rules-KJar[Rules KJar]
-** link:https://github.com/sunil-samuel/KieServer-KJar-Deployment[Kie-Server KJar Deployment]
+
 
 
 
