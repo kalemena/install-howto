@@ -20,9 +20,10 @@
 * link:https://docs.drools.org/8.32.0.Final/drools-docs/docs-website/drools/introduction/index.html[Drools introduction]
 
 .Code
-* link:https://github.com/jbossdemocentral/kie-server-client-examples[Java KIE example]
-* link:https://github.com/nheron/droolsonboarding[Drools Onboarding]
-* link:https://github.com/QuickSign/drools-server[Java Drools sample]
+* Training
+** link:https://github.com/aasaru/drools-training[Drools Training]
+** link:https://github.com/nheron/droolscourse[Drools Course]
+** link:https://github.com/nheron/droolsonboarding[Drools Onboarding]
 
 * link:https://github.com/signavio/dmn-and-drools-execution-examples/tree/master/src/main/resources[]
 
