@@ -24,6 +24,9 @@
 ** link:https://github.com/aasaru/drools-training[Drools Training]
 ** link:https://github.com/nheron/droolscourse[Drools Course]
 ** link:https://github.com/nheron/droolsonboarding[Drools Onboarding]
+** link:https://github.com/QuickSign/drools-server[Java Drools sample]
+** link:https://github.com/tarilabs/20221109nprentza-quarkus-drools[Drools Quarkus sample project]
+** link:https://github.com/kiegroup/kogito-examples/tree/stable/kogito-quarkus-examples[Kogito Quarkus Examples]
 
 * link:https://github.com/signavio/dmn-and-drools-execution-examples/tree/master/src/main/resources[]
 
