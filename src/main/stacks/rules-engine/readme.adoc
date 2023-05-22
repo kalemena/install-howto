@@ -27,6 +27,9 @@
 ** link:https://github.com/QuickSign/drools-server[Java Drools sample]
 ** link:https://github.com/tarilabs/20221109nprentza-quarkus-drools[Drools Quarkus sample project]
 ** link:https://github.com/kiegroup/kogito-examples/tree/stable/kogito-quarkus-examples[Kogito Quarkus Examples]
+* KJar
+** link:https://github.com/sunil-samuel/BRMS-Rules-KJar[Rules KJar]
+** link:https://github.com/sunil-samuel/KieServer-KJar-Deployment[Kie-Server KJar Deployment]
 
 * link:https://github.com/signavio/dmn-and-drools-execution-examples/tree/master/src/main/resources[]
 
