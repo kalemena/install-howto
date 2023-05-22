@@ -30,6 +30,11 @@
 * KJar
 ** link:https://github.com/sunil-samuel/BRMS-Rules-KJar[Rules KJar]
 ** link:https://github.com/sunil-samuel/KieServer-KJar-Deployment[Kie-Server KJar Deployment]
+* Conversion
+** link:https://github.com/kiegroup/drools/pull/5198/files[DRL to Yaml]
+* Other
+** link:https://github.com/jbossdemocentral/kie-server-client-examples[Java KIE example]
+** link:https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.2/html/designing_a_decision_service_using_drl_rules/drl-rules-other-con[RedHat docs - Creating and executing DRL rules]
 
 * link:https://github.com/signavio/dmn-and-drools-execution-examples/tree/master/src/main/resources[]
 
