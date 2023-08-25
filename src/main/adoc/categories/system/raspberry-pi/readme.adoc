@@ -4,3 +4,12 @@
 
 .Download proper IMG file matching model
 link:https://openwrt.org/toh/raspberry_pi_foundation/raspberry_pi[]
+
+.Flash SD card with tools like Balena or standard commands
+[source,bash]
+----
+gzip -d imagename-factory.img.gz
+dd if=imagename-factory.img of=/dev/sdX bs=2M conv=fsync
+sync
+----
+
