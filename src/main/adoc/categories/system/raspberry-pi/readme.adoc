@@ -13,3 +13,20 @@ dd if=imagename-factory.img of=/dev/sdX bs=2M conv=fsync
 sync
 ----
 
+
+
+.Disconnect from network cable, boot RPi with screen and keyboard
+
+.Initial boot (commands local)
+[source,bash]
+----
+# once booted, there is local prompt for command lines
+
+# Force Static IP address of your choice
+$ ifconfig br-lan 192.168.1.10 netmak 255.255.255.0
+
+# Set your WAN gateway
+$ route add default gw 192.168.1.1
+----
+
+
