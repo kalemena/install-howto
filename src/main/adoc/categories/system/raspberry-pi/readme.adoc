@@ -30,3 +30,11 @@ $ route add default gw 192.168.1.1
 ----
 
 
+
+.Connect the Network cable RJ45 to RPi
+
+.Open Browser to chosen IP Address link:http://192.168.1.10[]
+
+.Setup DNS if necessary
+image:image-openwrt-admin-network-dns.png[]
+
