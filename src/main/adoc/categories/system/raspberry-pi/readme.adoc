@@ -38,3 +38,29 @@ $ route add default gw 192.168.1.1
 .Setup DNS if necessary
 image:image-openwrt-admin-network-dns.png[]
 
+.SSH installation (commands remote)
+[source,bash]
+----
+# SSH connect using root/(empty)
+
+$ ssh root@192.168.1.10
+
+BusyBox v1.36.1 (2023-10-09 21:45:35 UTC) built-in shell (ash)
+
+  _______                     ________        __
+ |       |.-----.-----.-----.|  |  |  |.----.|  |_
+ |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+ |_______||   __|_____|__|__||________||__|  |____|
+          |__| W I R E L E S S   F R E E D O M
+ -----------------------------------------------------
+ OpenWrt 23.05.0, r23497-6637af95aa
+ -----------------------------------------------------
+=== WARNING! =====================================
+There is no root password defined on this device!
+Use the "passwd" command to set up a new password
+in order to prevent unauthorized SSH logins.
+--------------------------------------------------
+
+----
+
+[TIP]
