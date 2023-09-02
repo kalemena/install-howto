@@ -71,14 +71,14 @@ root@OpenWrt:~# ip addr show
     inet6 ::1/128 scope host 
        valid_lft forever preferred_lft forever
 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel master br-lan state UP qlen 1000
-    link/ether b8:27:eb:b3:ae:52 brd ff:ff:ff:ff:ff:ff
+    link/ether b8:37:eb:b9:ae:45 brd ff:ff:ff:ff:ff:ff
 3: br-lan: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP qlen 1000
-    link/ether b8:27:eb:b3:ae:52 brd ff:ff:ff:ff:ff:ff
+    link/ether b8:37:eb:b9:ae:45 brd ff:ff:ff:ff:ff:ff
     inet 192.168.1.10/24 brd 192.168.1.255 scope global br-lan
        valid_lft forever preferred_lft forever
-    inet6 fd7d:95c8:c0ec::1/60 scope global noprefixroute 
+    inet6 fd7d:55c8:c0ec::1/60 scope global noprefixroute 
        valid_lft forever preferred_lft forever
-    inet6 fe80::ba27:ebff:feb3:ae52/64 scope link 
+    inet6 fe80::ba45:ebff:feb3:ae45/64 scope link 
        valid_lft forever preferred_lft forever
 
 # Check Internet connection
@@ -89,6 +89,45 @@ PING google.com (142.250.74.238): 56 data bytes
 64 bytes from 142.250.74.238: seq=1 ttl=110 time=38.932 ms
 ----
 
+[TIP]
+====
+# Update packages
+$ opkg update
+
+# Upgrade all packages
+$ opkg list-upgradable | cut -f 1 -d ' ' | xargs -r opkg upgrade 
+====
+
+.SSH installation - Update packages
+[source,bash,collapsible=true]
+----
+# Update packages
+
+root@OpenWrt:~# opkg update
+Downloading https://downloads.openwrt.org/releases/23.05.0/targets/bcm27xx/bcm2709/packages/Packages.gz
+Updated list of available packages in /var/opkg-lists/openwrt_core
+Downloading https://downloads.openwrt.org/releases/23.05.0/targets/bcm27xx/bcm2709/packages/Packages.sig
+Signature check passed.
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/base/Packages.gz
+Updated list of available packages in /var/opkg-lists/openwrt_base
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/base/Packages.sig
+Signature check passed.
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/luci/Packages.gz
+Updated list of available packages in /var/opkg-lists/openwrt_luci
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/luci/Packages.sig
+Signature check passed.
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/packages/Packages.gz
+Updated list of available packages in /var/opkg-lists/openwrt_packages
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/packages/Packages.sig
+Signature check passed.
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/routing/Packages.gz
+Updated list of available packages in /var/opkg-lists/openwrt_routing
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/routing/Packages.sig
+Signature check passed.
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/telephony/Packages.gz
+Updated list of available packages in /var/opkg-lists/openwrt_telephony
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/telephony/Packages.sig
+Signature check passed.
 ----
 
 [TIP]
