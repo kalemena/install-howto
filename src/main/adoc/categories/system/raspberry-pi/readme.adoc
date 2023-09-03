@@ -131,3 +131,89 @@ Signature check passed.
 ----
 
 [TIP]
+====
+# Install Packages for USB
+$ opkg install kmod-usb-storage kmod-usb-uhci kmod-usb2 kmod-usb3
+
+# Install Packages for iPhone
+$ opkg install kmod-usb-net-ipheth usbmuxd libimobiledevice usbutils
+====
+
+.SSH installation - Install packages (USB, iPhone, Android)
+[source,bash,collapsible=true]
+----
+# Install Packages for USB
+
+root@OpenWrt:~# opkg install kmod-usb-storage kmod-usb-uhci kmod-usb2 kmod-usb3
+Installing kmod-usb-storage (5.15.134-1) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/targets/bcm27xx/bcm2709/packages/kmod-usb-storage_5.15.134-1_arm_cortex-a7_neon-vfpv4.ipk
+Installing kmod-scsi-core (5.15.134-1) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/targets/bcm27xx/bcm2709/packages/kmod-scsi-core_5.15.134-1_arm_cortex-a7_neon-vfpv4.ipk
+Configuring kmod-scsi-core.
+Configuring kmod-usb-storage.
+Installing kmod-usb-uhci (5.15.134-1) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/targets/bcm27xx/bcm2709/packages/kmod-usb-uhci_5.15.134-1_arm_cortex-a7_neon-vfpv4.ipk
+Configuring kmod-usb-uhci.
+Installing kmod-usb2 (5.15.134-1) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/targets/bcm27xx/bcm2709/packages/kmod-usb2_5.15.134-1_arm_cortex-a7_neon-vfpv4.ipk
+Installing kmod-usb-ehci (5.15.134-1) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/targets/bcm27xx/bcm2709/packages/kmod-usb-ehci_5.15.134-1_arm_cortex-a7_neon-vfpv4.ipk
+Configuring kmod-usb-ehci.
+Configuring kmod-usb2.
+Installing kmod-usb3 (5.15.134-1) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/targets/bcm27xx/bcm2709/packages/kmod-usb3_5.15.134-1_arm_cortex-a7_neon-vfpv4.ipk
+Installing kmod-usb-xhci-hcd (5.15.134-1) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/targets/bcm27xx/bcm2709/packages/kmod-usb-xhci-hcd_5.15.134-1_arm_cortex-a7_neon-vfpv4.ipk
+Configuring kmod-usb-xhci-hcd.
+Configuring kmod-usb3.
+
+# Install Packages for iPhone
+
+root@OpenWrt:~# opkg install kmod-usb-net-ipheth usbmuxd libimobiledevice usbutils
+Installing kmod-usb-net-ipheth (5.15.134-1) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/targets/bcm27xx/bcm2709/packages/kmod-usb-net-ipheth_5.15.134-1_arm_cortex-a7_neon-vfpv4.ipk
+Installing kmod-mii (5.15.134-1) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/targets/bcm27xx/bcm2709/packages/kmod-mii_5.15.134-1_arm_cortex-a7_neon-vfpv4.ipk
+Installing kmod-usb-net (5.15.134-1) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/targets/bcm27xx/bcm2709/packages/kmod-usb-net_5.15.134-1_arm_cortex-a7_neon-vfpv4.ipk
+Configuring kmod-mii.
+Configuring kmod-usb-net.
+Configuring kmod-usb-net-ipheth.
+Installing usbmuxd (1.1.1-1) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/packages/usbmuxd_1.1.1-1_arm_cortex-a7_neon-vfpv4.ipk
+Installing libatomic1 (12.3.0-4) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/targets/bcm27xx/bcm2709/packages/libatomic1_12.3.0-4_arm_cortex-a7_neon-vfpv4.ipk
+Installing libusb-1.0-0 (1.0.26-3) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/base/libusb-1.0-0_1.0.26-3_arm_cortex-a7_neon-vfpv4.ipk
+Installing zlib (1.2.13-1) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/base/zlib_1.2.13-1_arm_cortex-a7_neon-vfpv4.ipk
+Installing libxml2 (2.11.4-1) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/base/libxml2_2.11.4-1_arm_cortex-a7_neon-vfpv4.ipk
+Installing libplist (2.2.0-3) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/packages/libplist_2.2.0-3_arm_cortex-a7_neon-vfpv4.ipk
+Installing libusbmuxd (2.0.2-1) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/packages/libusbmuxd_2.0.2-1_arm_cortex-a7_neon-vfpv4.ipk
+Installing libopenssl3 (3.0.12-1) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/base/libopenssl3_3.0.12-1_arm_cortex-a7_neon-vfpv4.ipk
+Installing libimobiledevice (1.3.0-2) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/packages/libimobiledevice_1.3.0-2_arm_cortex-a7_neon-vfpv4.ipk
+Configuring libatomic1.
+Configuring libopenssl3.
+Configuring libusb-1.0-0.
+Configuring zlib.
+Configuring libxml2.
+Configuring libplist.
+Configuring libusbmuxd.
+Configuring libimobiledevice.
+Configuring usbmuxd.
+Package libimobiledevice (1.3.0-2) installed in root is up to date.
+Installing usbutils (014-1) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/packages/usbutils_014-1_arm_cortex-a7_neon-vfpv4.ipk
+Installing libevdev (1.13.0-1) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/packages/libevdev_1.13.0-1_arm_cortex-a7_neon-vfpv4.ipk
+Installing libudev-zero (1.0.1-1) to root...
+Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a7_neon-vfpv4/packages/libudev-zero_1.0.1-1_arm_cortex-a7_neon-vfpv4.ipk
+Configuring libevdev.
+Configuring libudev-zero.
+Configuring usbutils.
+
