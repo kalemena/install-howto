@@ -217,3 +217,12 @@ Configuring libevdev.
 Configuring libudev-zero.
 Configuring usbutils.
 
+----
+
+.Android Device
+
+== References
+
+* link:https://openwrt.org/toh/raspberry_pi_foundation/raspberry_pi#installation[]
+* link:https://www.robinosborne.co.uk/2021/03/08/creating-a-4g-router-using-a-raspberry-pi-and-a-mobile-phone/[Android - specific]
+* link:https://openwrt.org/docs/guide-user/network/wan/smartphone.usb.tethering[]
