@@ -92,9 +92,11 @@ PING google.com (142.250.74.238): 56 data bytes
 [TIP]
 ====
 # Update packages
+
 $ opkg update
 
 # Upgrade all packages
+
 $ opkg list-upgradable | cut -f 1 -d ' ' | xargs -r opkg upgrade 
 ====
 
@@ -217,6 +219,8 @@ Configuring libevdev.
 Configuring libudev-zero.
 Configuring usbutils.
 
+# Install Package for Android
+root@OpenWrt:~# opkg install kmod-usb-net-rndis
 ----
 
 .Android Device
