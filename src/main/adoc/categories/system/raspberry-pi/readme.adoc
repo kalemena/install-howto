@@ -141,11 +141,9 @@ $ opkg install kmod-usb-storage kmod-usb-uhci kmod-usb2 kmod-usb3
 $ opkg install kmod-usb-net-ipheth usbmuxd libimobiledevice usbutils
 ====
 
-.SSH installation - Install packages (USB, iPhone, Android)
+.SSH installation - Install packages USB
 [source,bash,collapsible=true]
 ----
-# Install Packages for USB
-
 root@OpenWrt:~# opkg install kmod-usb-storage kmod-usb-uhci kmod-usb2 kmod-usb3
 Installing kmod-usb-storage (5.15.134-1) to root...
 Downloading https://downloads.openwrt.org/releases/23.05.0/targets/bcm27xx/bcm2709/packages/kmod-usb-storage_5.15.134-1_arm_cortex-a7_neon-vfpv4.ipk
@@ -168,9 +166,12 @@ Installing kmod-usb-xhci-hcd (5.15.134-1) to root...
 Downloading https://downloads.openwrt.org/releases/23.05.0/targets/bcm27xx/bcm2709/packages/kmod-usb-xhci-hcd_5.15.134-1_arm_cortex-a7_neon-vfpv4.ipk
 Configuring kmod-usb-xhci-hcd.
 Configuring kmod-usb3.
+----
 
-# Install Packages for iPhone
 
+.SSH installation - Install packages iPhone
+[source,bash,collapsible=true]
+----
 root@OpenWrt:~# opkg install kmod-usb-net-ipheth usbmuxd libimobiledevice usbutils
 Installing kmod-usb-net-ipheth (5.15.134-1) to root...
 Downloading https://downloads.openwrt.org/releases/23.05.0/targets/bcm27xx/bcm2709/packages/kmod-usb-net-ipheth_5.15.134-1_arm_cortex-a7_neon-vfpv4.ipk
@@ -218,8 +219,25 @@ Downloading https://downloads.openwrt.org/releases/23.05.0/packages/arm_cortex-a
 Configuring libevdev.
 Configuring libudev-zero.
 Configuring usbutils.
+----
 
-# Install Package for Android
+.Enable interface -> Trust prompt should appear on Phone
+[source,bash]
+----
+/usr/sbin/usbmuxd -v
+----
+
+.iPhone setup interface
+* Plug iPhone to RPi
+* on OpenWRT web UI
+** go to *Network > Interfaces*
+** Click *Add New Interface*
+** selected the new *eth1* option as interface
+** In Firewall tab, add this interface to WAN
+
+.SSH installation - Install packages Android
+[source,bash,collapsible=true]
+----
 root@OpenWrt:~# opkg install kmod-usb-net-rndis
 ----
 
