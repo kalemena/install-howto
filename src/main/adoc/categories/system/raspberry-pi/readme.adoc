@@ -245,6 +245,7 @@ root@OpenWrt:~# opkg install kmod-usb-net-rndis
 
 == References
 
-* link:https://openwrt.org/toh/raspberry_pi_foundation/raspberry_pi#installation[]
-* link:https://www.robinosborne.co.uk/2021/03/08/creating-a-4g-router-using-a-raspberry-pi-and-a-mobile-phone/[Android - specific]
-* link:https://openwrt.org/docs/guide-user/network/wan/smartphone.usb.tethering[]
+* link:https://openwrt.org/toh/raspberry_pi_foundation/raspberry_pi#installation[Official - Install OpenWRT on Raspberry Pi]
+* link:https://openwrt.org/docs/guide-user/network/wan/smartphone.usb.tethering[Official - Setup USB Smartphone Tethering]
+* link:https://benisnous.com/openwrt-4g-lte-smartphone-usb-tether/[Video - details on Manual Configuration (same as above, in a video)]
+
