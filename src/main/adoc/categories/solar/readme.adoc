@@ -18,7 +18,7 @@ Computing example.
 
 == Links
 
-.France specific
+.France specifics
 * link:https://particulier.edf.fr/fr/accueil/gestion-contrat/options/tempo.html#/selection-bp[Tempo days]
 
 .Producing Electricity
@@ -34,3 +34,6 @@ Computing example.
 
 .Kit
 * link:https://kitsolaire-discount.com/fr/12-kits-autonomes-sites-isoles[Kits]
+
+.Wiring
+* link:https://www.youtube.com/watch?v=tZ-uQKEWe6M[Solar and Water heating optimization]
