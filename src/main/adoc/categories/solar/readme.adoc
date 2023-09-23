@@ -37,3 +37,7 @@ Computing example.
 
 .Wiring
 * link:https://www.youtube.com/watch?v=tZ-uQKEWe6M[Solar and Water heating optimization]
+
+.Mathematics
+* link:https://pvlib-python.readthedocs.io/en/v0.10.2/index.html[Library to compute solar efficiency]
+
