@@ -41,3 +41,5 @@ Computing example.
 .Mathematics
 * link:https://pvlib-python.readthedocs.io/en/v0.10.2/index.html[Library to compute solar efficiency]
 
+.Monitoring PV
+* link:https://docs.google.com/document/d/e/2PACX-1vRaGy2E91kmr014nAi-rfvNxdpZqR6lFIXln1kMKg_T6_YWh72ZNLnwXHxUjQQexczNPZR3GftG7w-r/pub[OpenDTU gist]
