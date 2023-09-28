@@ -46,7 +46,7 @@ Then:
 
 [source]
 -----
-$ docker-compose exec influxdb influx
+$ docker-compose exec influxdb influx -precision rfc3339 -database sensors
 Visit https://enterprise.influxdata.com to register for updates, InfluxDB server management, and monitoring.
 Connected to http://localhost:8086 version 0.9.6.1
 InfluxDB shell 0.9.6.1
@@ -93,7 +93,7 @@ autogen 0s       168h0m0s           1        true
 > select * from sensors WHERE type='teleinfo-HCHP' AND time > '2023-05-01T18:57:28Z' AND time < '2023-05-01T18:58:38Z' 
 
 # Range query onto continuous query
-> select * from five_years.sensors_1h WHERE type='teleinfo-HCHP' AND time > '2023-04-10T18:57:28Z' AND time < '2023-04-24T18:58:38Z'
+> select * from five_years.sensors_1h WHERE (type='teleinfo-HCHP' OR type='teleinfo-HCHC') AND time > '2023-04-10T18:57:28Z' AND time < '2023-04-24T18:58:38Z'
 -----
 
 * Test InfluxDB as curl:
