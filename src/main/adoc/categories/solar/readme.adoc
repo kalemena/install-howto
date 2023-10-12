@@ -44,6 +44,7 @@ Computing example.
 .Monitoring PV
 * OpenDTU
 ** link:https://github.com/tbnobody/OpenDTU[OpenDTU GitHub Project]
+** link:https://tbnobody.github.io/OpenDTU-docs/[OpenDTU official docs]
 ** link:https://www.youtube.com/watch?v=ctBlQoErfX8[OpenDTU explanations video]
 ** link:https://docs.google.com/document/d/e/2PACX-1vRaGy2E91kmr014nAi-rfvNxdpZqR6lFIXln1kMKg_T6_YWh72ZNLnwXHxUjQQexczNPZR3GftG7w-r/pub[OpenDTU gist]
 ** link:https://binary-kitchen.github.io/SolderingTutorial/OpenDTU_Breakout/manual/OpenDTU_Breakout_en.pdf[OpenDTU PDF instructions]
