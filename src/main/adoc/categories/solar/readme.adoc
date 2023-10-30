@@ -50,6 +50,7 @@ Computing example.
 ** link:https://binary-kitchen.github.io/SolderingTutorial/OpenDTU_Breakout/manual/OpenDTU_Breakout_en.pdf[OpenDTU PDF instructions]
 ** link:https://theo-beaudenon.fr/tutoriel-dinstallation-de-opendtu-pour-le-suivi-des-onduleurs-solaires/[OpenDTU Flash instructions]
 ** link:https://github.com/tbnobody/OpenDTU/blob/master/docs/MQTT_Topics.md[OpenDTU MQTT topics]
+** link:https://tbnobody.github.io/OpenDTU-docs/firmware/web_api/#list-of-urls[OpenDTU API]
 
 .Routeur PV
 * link:https://ard-tek.com/index.php/documents/22-m-sunpv/47-msun-pv-md-routeur-photovoltaique-2[Routeur PV]
