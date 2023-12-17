@@ -1,5 +1,22 @@
 = Cooking
 
+.Meringue
+* 1h15 à 110°C + laisser au four
+* 60g de blanc d'oeuf (2 oeufs)
+* 60g (120g ?) de sucre poudre blanc
+* 1 pincée de sel
+* 6 gouttes de jus de citron
+
+* Préchauffer le four, chaleur tournante
+* Fouetter à vitesse moyenne jusqu'à ce que cela commence à mousser: Blancs+pincée de sel+jus de citron
+* Ajouter la moitier de sucre, et fouetter à vitesse rapide
+* Quand le mélange et blanc et brillant, ajouter le reste de sucre
+* Fouetter à vitesse rapide jusqu'à ce que le mélange soit ferme et brillant (4-5min)
+* Mettre dans une poche à douille, et dresser les meringues sur une plaque avec un peu de farine
+
+
+== Laits végétaux
+
 
 .Lait d'avoine maison
 * Blender
