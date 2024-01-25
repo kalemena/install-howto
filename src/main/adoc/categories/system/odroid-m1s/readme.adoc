@@ -15,3 +15,13 @@ link:https://www.hardkernel.com/shop/odroid-m1s-with-8gbyte-ram/[Odroid M1S]
 
 * link:https://wiki.odroid.com/odroid-m1s/odroid-m1s[Odroid M1S Wiki]
 ** link:https://wiki.odroid.com/accessory/power_supply_battery/m1s_ups[Odroid M1S - UPS]
+
+
+== Install
+
+.Post-install - Upgrade
+[source,bash]
+----
+$ apt-get update
+$ apt-get upgrade
+----
