@@ -25,3 +25,52 @@ link:https://www.hardkernel.com/shop/odroid-m1s-with-8gbyte-ram/[Odroid M1S]
 $ apt-get update
 $ apt-get upgrade
 ----
+
+.Post Install - Check-up
+[source,bash]
+----
+# 
+root@server:/home/odroid# cat /etc/lsb-release
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=20.04
+DISTRIB_CODENAME=focal
+DISTRIB_DESCRIPTION="Ubuntu 20.04.6 LTS"
+
+#
+root@server:/home/odroid# free -m
+              total        used        free      shared  buff/cache   available
+Mem:           7678          85        6817          24         776        7489
+Swap:             0           0           0
+
+#
+root@server:/home/odroid# fdisk -l
+Disk /dev/ram0: 4 MiB, 4194304 bytes, 8192 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+
+
+Disk /dev/mmcblk0: 58.25 GiB, 62537072640 bytes, 122142720 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x8cdbf051
+
+Device         Boot  Start       End   Sectors  Size Id Type
+/dev/mmcblk0p1        6144    530431    524288  256M 83 Linux
+/dev/mmcblk0p2      530432 122142719 121612288   58G 83 Linux
+
+# 
+root@server:/home/odroid# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev            3.8G     0  3.8G   0% /dev
+tmpfs           768M  956K  767M   1% /run
+/dev/mmcblk0p2   58G  1.4G   54G   3% /
+tmpfs           3.8G     0  3.8G   0% /dev/shm
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           3.8G     0  3.8G   0% /sys/fs/cgroup
+/dev/mmcblk0p1  240M   65M  163M  29% /boot
+tmpfs           768M     0  768M   0% /run/user/1000
+----
+
