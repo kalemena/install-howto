@@ -27,6 +27,7 @@ Below are few applications, links and tips for linux video editing.
 link:https://trac.ffmpeg.org/wiki/Scaling%20(resizing)%20with%20ffmpeg[FFMpeg info]
 
     $ ffmpeg -i input.avi -vf scale=320:240 output.avi
+    $ ffmpeg -i input.MOV -c:a copy -s 854x480 output.mkv
 
 === Crop
 
