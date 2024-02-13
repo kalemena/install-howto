@@ -13,8 +13,14 @@ link:https://www.hardkernel.com/shop/odroid-m1s-with-8gbyte-ram/[Odroid M1S]
 
 == Links
 
+.Hardware Devices
 * link:https://wiki.odroid.com/odroid-m1s/odroid-m1s[Odroid M1S Wiki]
 ** link:https://wiki.odroid.com/accessory/power_supply_battery/m1s_ups[Odroid M1S - UPS]
+
+.Images
+* link:https://dn.odroid.com/RK3566/ODROID-M1S/[OS Images Odroid]
+* link:https://ppa.linuxfactory.or.kr/images/raw/arm64[OS Images linuxfactory] (search for M1S images)
+* link:https://github.com/home-assistant/operating-system/blob/dev/Documentation/boards/hardkernel/odroid-m1s.md[OS Image - Home Assistant]
 
 
 == Install
