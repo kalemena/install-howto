@@ -22,6 +22,16 @@ link:https://www.hardkernel.com/shop/odroid-m1s-with-8gbyte-ram/[Odroid M1S]
 * link:https://ppa.linuxfactory.or.kr/images/raw/arm64[OS Images linuxfactory] (search for M1S images)
 * link:https://github.com/home-assistant/operating-system/blob/dev/Documentation/boards/hardkernel/odroid-m1s.md[OS Image - Home Assistant]
 
+== Flash OS
+
+* Download image ODROID-M1S_EMMC2UMS.img (3 MB)
+* Put in SD slot and power-up. Nothing shows on screen, only blue light shows and nothing else happens.
+* Plug USB OTG to computer. Volume should mount like a USB Mass Storage
+* Download image debian-bookworm-server-odroidm1s-20240121.img.xz (268 MB)
+* Open Etcher, select image, select target, flash
+* unplug all, power off, remove SD card
+* plug screen, keyboard, power up. OS should boot
+* next steps can be done through SSH connection
 
 == Install
 
