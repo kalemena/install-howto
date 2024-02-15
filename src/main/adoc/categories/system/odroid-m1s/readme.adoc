@@ -35,6 +35,17 @@ link:https://www.hardkernel.com/shop/odroid-m1s-with-8gbyte-ram/[Odroid M1S]
 
 == Install
 
+.Post-install - password
+[source,bash]
+----
+# with odroid/odroid as default user / password
+$ ssh odroid@<ip addr>
+# change password right away
+$ passwd
+# switch sudo to install packages
+$ sudo -s
+----
+
 .Post-install - Upgrade
 [source,bash]
 ----
