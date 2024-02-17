@@ -49,19 +49,21 @@ $ sudo -s
 .Post-install - Upgrade
 [source,bash]
 ----
-$ apt-get update
-$ apt-get upgrade
+$ apt update
+$ apt list --upgradable
+$ apt upgrade
 ----
 
 .Post Install - Check-up
 [source,bash]
 ----
 # 
-root@server:/home/odroid# cat /etc/lsb-release
-DISTRIB_ID=Ubuntu
-DISTRIB_RELEASE=20.04
-DISTRIB_CODENAME=focal
-DISTRIB_DESCRIPTION="Ubuntu 20.04.6 LTS"
+root@server:/home/odroid# lsb_release -a
+No LSB modules are available.
+Distributor ID: Debian
+Description:    Debian GNU/Linux 12 (bookworm)
+Release:        12
+Codename:       bookworm
 
 #
 root@server:/home/odroid# free -m
@@ -71,18 +73,7 @@ Swap:             0           0           0
 
 #
 root@server:/home/odroid# fdisk -l
-Disk /dev/ram0: 4 MiB, 4194304 bytes, 8192 sectors
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 4096 bytes
-I/O size (minimum/optimal): 4096 bytes / 4096 bytes
-
-
-Disk /dev/mmcblk0: 58.25 GiB, 62537072640 bytes, 122142720 sectors
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disklabel type: dos
-Disk identifier: 0x8cdbf051
+...
 
 Device         Boot  Start       End   Sectors  Size Id Type
 /dev/mmcblk0p1        6144    530431    524288  256M 83 Linux
