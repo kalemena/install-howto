@@ -9,7 +9,7 @@ link:https://www.hardkernel.com/shop/odroid-m1s-with-8gbyte-ram/[Odroid M1S]
 * on-board M.2 NVMe slot
 
 .Specification Power
-* 1.5-3.5 Watt
+* 0.8-3.5 Watt
 
 == Links
 
@@ -129,6 +129,6 @@ $ docker run hello-world
 .Tooling
 [source,bash]
 ----
-$ apt-get install htop
+$ apt install htop
 ----
 
