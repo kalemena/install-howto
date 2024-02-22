@@ -129,6 +129,6 @@ $ docker run hello-world
 .Tooling
 [source,bash]
 ----
-$ apt install htop
+$ apt install htop build-essential cifs-utils
 ----
 
