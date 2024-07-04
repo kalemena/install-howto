@@ -22,6 +22,9 @@ link:https://www.hardkernel.com/shop/odroid-m1s-with-8gbyte-ram/[Odroid M1S]
 * link:https://ppa.linuxfactory.or.kr/images/raw/arm64[OS Images linuxfactory] (search for M1S images)
 * link:https://github.com/home-assistant/operating-system/blob/dev/Documentation/boards/hardkernel/odroid-m1s.md[OS Image - Home Assistant]
 
+.Building Images
+* link:https://github.com/rockchip-linux/rkbin/tree/master[Rockchip - Loader Binaries Naming Rules]
+
 == Flash OS
 
 * Download image ODROID-M1S_EMMC2UMS.img (3 MB)
