@@ -23,6 +23,7 @@ link:https://www.hardkernel.com/shop/odroid-m1s-with-8gbyte-ram/[Odroid M1S]
 * link:https://github.com/home-assistant/operating-system/blob/dev/Documentation/boards/hardkernel/odroid-m1s.md[OS Image - Home Assistant]
 
 .Building Images
+* link:https://github.com/inindev/odroid-m1[Building Stock Debian for Odroid-M1]
 * link:https://github.com/rockchip-linux/rkbin/tree/master[Rockchip - Loader Binaries Naming Rules]
 
 == Flash OS
