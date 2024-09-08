@@ -29,6 +29,25 @@ $ sudo apt-get install testdisk pv extundelete
 
 ----
 
+.Connect device
+* Connect devices using USB câble
+* Authorize on smartphone
+* List devices
+
+[source, bash]
+----
+# This is the command to start the adb server:
+$ adb start-server 
+
+# Command to check to online adb devices:
+$ adb devices
+...
+
+
+$ adb shell
+----
+
+
 
 == Dev/Test
 
