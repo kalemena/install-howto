@@ -47,6 +47,12 @@ $ adb devices
 $ adb shell
 ----
 
+.Tools
+* link:https://topjohnwu.github.io/Magisk/install.html[Magisk]
+** link:https://topjohnwu.github.io/Magisk/install.html#samsung-devices[Magisk - Samsung]
+
+
+
 
 
 == Dev/Test
