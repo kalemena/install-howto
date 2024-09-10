@@ -10,6 +10,12 @@ Reset by pressing <main button> + power + <volume plus sign>
 First boot asks plenty question like setup WiFi. Just respond.
 Then go in AppStore and perform a full update.
 
+=== Download mode
+
+When off, press <main button> + power + <volume minus sign>
+Confirm with <volume plus sign>
+
+
 == Recovery
 
 .Activate Developer mode
@@ -46,6 +52,10 @@ $ adb devices
 
 $ adb shell
 ----
+
+.Firmwares
+* link:https://desktop.firmware.mobi/device:403/firmware:19686[Samsun Galaxy S6]
+
 
 .Tools
 * link:https://topjohnwu.github.io/Magisk/install.html[Magisk]
