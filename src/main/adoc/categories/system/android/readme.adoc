@@ -3,39 +3,44 @@
 
 == Reset
 
+[TIP]
+====
+Examples are for Samsung Galaxy S6.
+Other phones may have different steps.
+====
 
-=== Hard reset
-
+.Hard reset
 Reset by pressing <main button> + power + <volume plus sign>
 First boot asks plenty question like setup WiFi. Just respond.
 Then go in AppStore and perform a full update.
 
-=== Download mode
+.Download mode
 
 When off, press <main button> + power + <volume minus sign>
 Confirm with <volume plus sign>
+Then follow section below for software download.
 
 
-== Recovery
 
-.Activate Developer mode
+== ADB and Developer mode
+
+.Phone - Activate Developer mode
 * Got to Settings -> About Device
 * Click 7 times on *Build Number*
 * Go back to settings, there should be a new menu for *Developers*
 
-.Activate USB debug mode
+.Phone - Activate USB debug mode
 * Go to settings -> Developer options
 * Activate USB debugging
 
-.Install developer tools
+.Workstation - Install developer tools
 [source, bash]
 ----
 $ sudo apt-get install android-tools-adb android-tools-fastboot
 $ sudo apt-get install testdisk pv extundelete
-
 ----
 
-.Connect device
+.Workstation/Phone - Connect device
 * Connect devices using USB câble
 * Authorize on smartphone
 * List devices
@@ -49,7 +54,7 @@ $ adb start-server
 $ adb devices
 ...
 
-
+# Enter the phone in shell mode
 $ adb shell
 ----
 
