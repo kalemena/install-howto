@@ -20,7 +20,10 @@ When off, press <main button> + power + <volume minus sign>
 Confirm with <volume plus sign>
 Then follow section below for software download.
 
+.Family/Org Controled Reset
 
+Family Link app allows to control remotely the life of Android Phone.
+This is possible to reset phone, with 2 choices: stolen reset which will keep unlock code but delete all content, and reset for re-install.
 
 == ADB and Developer mode
 
