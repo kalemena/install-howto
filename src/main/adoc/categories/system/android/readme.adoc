@@ -56,6 +56,9 @@ $ adb start-server
 # Command to check to online adb devices:
 $ adb devices
 ...
+$ adb reboot recovery  
+$ adb reboot download
+$ fastboot devices  
 
 # Enter the phone in shell mode
 $ adb shell
