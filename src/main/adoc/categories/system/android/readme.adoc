@@ -101,6 +101,9 @@ Here are few tools:
 == Linux
 
 * link:https://github.com/4q-u4/Kali-Linux-Android-noroot[Linux on Phone - Kali]
+* link:https://lmo.framer.website/[Linux on Phone - LibreMobileOS]
+* link:https://github.com/linux-on-droid/[Linux on Phone - Lindroid]
+* link:https://gist.github.com/EduApps-CDG/733e29c28dd53e91128d384c2e879397[Linux Kernel building]
 
 == Security
 
