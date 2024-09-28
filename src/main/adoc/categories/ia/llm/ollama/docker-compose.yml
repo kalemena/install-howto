@@ -1,0 +1,66 @@
+networks:
+  ollama-docker:
+    external: false
+
+volumes:
+  ollama-data:
+  ollama-models:
+  ollama-config:
+  open-webui-config:
+  open-webui-data:
+
+services:
+
+  ollama:
+    container_name: ollama
+    image: ollama/ollama:latest
+    #runtime: nvidia
+    ports:
+      - 0.0.0.0:11434:11434
+    volumes:
+      - ollama-config:/root/.ollama
+      - ollama-models:/models
+    healthcheck:
+      test: ollama ps || exit 1
+      interval: 10s
+    tty: true
+    restart: always
+    environment:
+      - OLLAMA_KEEP_ALIVE=24h
+      - OLLAMA_HOST=0.0.0.0
+      - OLLAMA_FLASH_ATTENTION=0
+    networks:
+      - ollama-docker
+
+    # https://docs.openwebui.com/getting-started/env-configuration#default_models
+  ollama-webui:
+    container_name: open-webui
+    image: ghcr.io/open-webui/open-webui:main
+    volumes:
+      - ollama-data:/data
+      - ollama-models:/models
+      - open-webui-config:/config
+      - open-webui-data:/app/backend/data
+    depends_on:
+      - ollama
+    ports:
+      - 8080:8080
+    environment: 
+      - OLLAMA_API_BASE_URLS=http://ollama:11434
+      - OLLAMA_API_URL=http://ollama:11434
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - MODEL_DOWNLOAD_DIR=/models
+      - LOG_LEVEL=debug
+      # - USE_EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
+      # - USE_RERANKING_MODEL=""
+      # - HF_HUB_OFFLINE=1
+      # - WEBUI_AUTH=False
+      # - WEBUI_NAME=valiantlynx AI
+      # - WEBUI_URL=http://localhost:8080
+      # - WEBUI_SECRET_KEY=t0p-s3cr3t
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    restart: unless-stopped
+    networks:
+      - ollama-docker
+
