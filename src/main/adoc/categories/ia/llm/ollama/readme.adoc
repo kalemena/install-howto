@@ -4,3 +4,22 @@
 * *Ollama* 
 * link:https://github.com/open-webui/open-webui/[Open WebUI] is an extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline. It supports various LLM runners, including Ollama and OpenAI-compatible APIs.
 
+
+== Test
+
+.Verify
+[source,bash]
+----
+$ curl localhost:11434/set verbose
+Ollama is running
+----
+
+.Test Service
+[source,bash]
+----
+$ ollama run qwen2.5:0.5b
+>>> /set verbose
+Set 'verbose' mode.
+>>> Can you write a litle song on a cat named cookie?
+Of course! ...
+----
