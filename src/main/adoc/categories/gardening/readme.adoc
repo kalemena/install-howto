@@ -83,6 +83,31 @@
 |Melon      |   |   | S |   |   |   |   | R |   |   |   |
 |===
 
+.Herbes
+[cols="1,1,1,1,1,1,1,1,1,1,1,1,1"]
+|===
+|
+
+|Janvier
+|Fevrier
+|Mars
+|Avril
+|Mai
+|Juin
+|Juillet
+|Aout
+|Septembre
+|Octobre
+|Novembre
+|Décembre
+
+|Basilic    |   |   |   | S |   |   |   |   |   |   |   |
+|Romarin    |   |   | S |   |   |   |   |   |   |   |   |
+|Thym       |   |   |   | S |   |   |   |   |   |   |   |
+|Lavande    |   |   | S |   |   |   |   |   |   |   |   |
+|Ciboulette |   |   |   | S |   |   |   |   |   |   |   |
+|Aneth      |   |   |   | S |   |   |   |   |   |   |   |
+|Persil     |   | S |   |   |   |   |   |   |   |   |   |
 |===
 
 == Liens
