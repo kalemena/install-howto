@@ -57,3 +57,19 @@ Computing example.
 
 .Routeur PV
 * link:https://ard-tek.com/index.php/documents/22-m-sunpv/47-msun-pv-md-routeur-photovoltaique-2[Routeur PV]
+
+.Batteries
+* link:https://www.revolution-energetique.com/guides/installer-une-batterie-domestique-chez-soi-est-ce-rentable/[Storage - mathemetics]
+
+[source,txt]
+----
+# Kit for 8kWh 
+# - Costs 3000€
+# - DoD = 80%
+# - Cycles = 3000
+# Electicity costs ~0.20€ / kWh
+
+- 3000 cycles x 8 kWh x 0.8 DoD = 19200 kWh
+- 3000 € / 19200 = 0.1563 €/kWh
+----
+
