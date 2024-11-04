@@ -35,8 +35,16 @@
 
 == Cookies
 
+.Cookies flocons d’avoine de base
+
+    1 cuillère à café de levure chimique
+    75 g de farine complète
+    75 g de flocons d’avoine
+    50 g de sucre en poudre
+    75 g de beurre
+    2 cuillères à soupe de lait ou lait végétal
+
 .Cookies flocons d’avoine de base - version okara
-* Ingrédients
 
     2 cuillère à café de levure chimique
     100 g de farine complète
@@ -45,7 +53,7 @@
     50 g de beurre ou huile d'arachide
     60g de pépites de chocolat, ou céréales
 
-* Préparation
+.Préparation
 
     Préchauffez votre four à 180°C/160°C. Recouvrez votre plaque à pâtisserie de papier sulfurisé.
     Dans un bol, tamisez la farine, ajoutez la levure, les flocons d’avoine et le sucre.
