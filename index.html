@@ -1024,6 +1024,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#android">Android</a>
 <ul class="sectlevel5">
 <li><a href="#reset">Reset</a></li>
+<li><a href="#recovery">Recovery</a></li>
 <li><a href="#devtest">Dev/Test</a></li>
 <li><a href="#builders">Builders</a></li>
 <li><a href="#simulators">Simulators</a></li>
@@ -2711,14 +2712,90 @@ A popup appears to tell you printer was detected on network.</p>
 <h5 id="android">Android</h5>
 <div class="sect5">
 <h6 id="reset">Reset</h6>
+<div class="sect6">
+<h7 id="hard_reset">Hard reset</h7>
 <div class="paragraph">
-<p>Reset by pressing &lt;main button&gt; + power + &lt;volume plus sign&gt;</p>
+<p>Reset by pressing &lt;main button&gt; + power + &lt;volume plus sign&gt;<br>
+First boot asks plenty question like setup WiFi. Just respond.<br>
+Then go in AppStore and perform a full update.</p>
 </div>
-<div class="paragraph">
-<p>First boot asks plenty question like setup WiFi. Just respond.</p>
 </div>
-<div class="paragraph">
-<p>Then go in AppStore and perform a full update.</p>
+</div>
+<div class="sect5">
+<h6 id="recovery">Recovery</h6>
+<div class="ulist">
+<div class="title">Activate Developer mode</div>
+<ul>
+<li>
+<p>Got to Settings &#8594; About Device</p>
+</li>
+<li>
+<p>Click 7 times on <strong>Build Number</strong></p>
+</li>
+<li>
+<p>Go back to settings, there should be a new menu for <strong>Developers</strong></p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Activate USB debug mode</div>
+<ul>
+<li>
+<p>Go to settings &#8594; Developer options</p>
+</li>
+<li>
+<p>Activate USB debugging</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Install developer tools</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ sudo apt-get install android-tools-adb android-tools-fastboot
+$ sudo apt-get install testdisk pv extundelete</code></pre>
+</div>
+</div>
+<div class="ulist">
+<div class="title">Connect device</div>
+<ul>
+<li>
+<p>Connect devices using USB câble</p>
+</li>
+<li>
+<p>Authorize on smartphone</p>
+</li>
+<li>
+<p>List devices</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># This is the command to start the adb server:
+$ adb start-server
+
+# Command to check to online adb devices:
+$ adb devices
+...
+
+
+$ adb shell</code></pre>
+</div>
+</div>
+<div class="ulist">
+<div class="title">Tools</div>
+<ul>
+<li>
+<p><a href="https://topjohnwu.github.io/Magisk/install.html">Magisk</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://topjohnwu.github.io/Magisk/install.html#samsung-devices">Magisk - Samsung</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect5">
@@ -3141,7 +3218,7 @@ $ git commit -m "Blabla" --date "27 Mar 2022 20:19"</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-10-07 19:58:27 UTC
+Last updated 2024-11-25 08:27:07 UTC
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
