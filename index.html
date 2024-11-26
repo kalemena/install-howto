@@ -1024,10 +1024,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#android">Android</a>
 <ul class="sectlevel5">
 <li><a href="#reset">Reset</a></li>
-<li><a href="#recovery">Recovery</a></li>
+<li><a href="#adb_and_developer_mode">ADB and Developer mode</a></li>
 <li><a href="#devtest">Dev/Test</a></li>
 <li><a href="#builders">Builders</a></li>
 <li><a href="#simulators">Simulators</a></li>
+<li><a href="#linux">Linux</a></li>
 <li><a href="#security">Security</a></li>
 </ul>
 </li>
@@ -2712,19 +2713,38 @@ A popup appears to tell you printer was detected on network.</p>
 <h5 id="android">Android</h5>
 <div class="sect5">
 <h6 id="reset">Reset</h6>
-<div class="sect6">
-<h7 id="hard_reset">Hard reset</h7>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
 <div class="paragraph">
+<p>Examples are for Samsung Galaxy S6.<br>
+Other phones may have different steps.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<div class="title">Hard reset</div>
 <p>Reset by pressing &lt;main button&gt; + power + &lt;volume plus sign&gt;<br>
 First boot asks plenty question like setup WiFi. Just respond.<br>
 Then go in AppStore and perform a full update.</p>
 </div>
+<div class="paragraph">
+<div class="title">Download mode</div>
+<p>When off, press &lt;main button&gt; + power + &lt;volume minus sign&gt;<br>
+Confirm with &lt;volume plus sign&gt;<br>
+Then follow section below for software download.</p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="recovery">Recovery</h6>
+<h6 id="adb_and_developer_mode">ADB and Developer mode</h6>
 <div class="ulist">
-<div class="title">Activate Developer mode</div>
+<div class="title">Phone - Activate Developer mode</div>
 <ul>
 <li>
 <p>Got to Settings &#8594; About Device</p>
@@ -2738,7 +2758,7 @@ Then go in AppStore and perform a full update.</p>
 </ul>
 </div>
 <div class="ulist">
-<div class="title">Activate USB debug mode</div>
+<div class="title">Phone - Activate USB debug mode</div>
 <ul>
 <li>
 <p>Go to settings &#8594; Developer options</p>
@@ -2749,14 +2769,14 @@ Then go in AppStore and perform a full update.</p>
 </ul>
 </div>
 <div class="listingblock">
-<div class="title">Install developer tools</div>
+<div class="title">Workstation - Install developer tools</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ sudo apt-get install android-tools-adb android-tools-fastboot
 $ sudo apt-get install testdisk pv extundelete</code></pre>
 </div>
 </div>
 <div class="ulist">
-<div class="title">Connect device</div>
+<div class="title">Workstation/Phone - Connect device</div>
 <ul>
 <li>
 <p>Connect devices using USB câble</p>
@@ -2778,9 +2798,17 @@ $ adb start-server
 $ adb devices
 ...
 
-
+# Enter the phone in shell mode
 $ adb shell</code></pre>
 </div>
+</div>
+<div class="ulist">
+<div class="title">Firmwares</div>
+<ul>
+<li>
+<p><a href="https://desktop.firmware.mobi/device:403/firmware:19686">Samsun Galaxy S6</a></p>
+</li>
+</ul>
 </div>
 <div class="ulist">
 <div class="title">Tools</div>
@@ -2842,6 +2870,19 @@ $ adb shell</code></pre>
 </li>
 <li>
 <p><a href="https://github.com/thedrhax-dockerfiles/android-avd">Simulator in Docker</a></p>
+</li>
+<li>
+<p><a href="https://waydro.id/">WayDroid</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="linux">Linux</h6>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/4q-u4/Kali-Linux-Android-noroot">Linux on Phone - Kali</a></p>
 </li>
 </ul>
 </div>
@@ -3218,7 +3259,7 @@ $ git commit -m "Blabla" --date "27 Mar 2022 20:19"</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-11-25 08:27:07 UTC
+Last updated 2024-11-26 19:47:12 UTC
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
