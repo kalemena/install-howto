@@ -2740,6 +2740,11 @@ Then go in AppStore and perform a full update.</p>
 Confirm with &lt;volume plus sign&gt;<br>
 Then follow section below for software download.</p>
 </div>
+<div class="paragraph">
+<div class="title">Family/Org Controled Reset</div>
+<p>Family Link app allows to control remotely the life of Android Phone.<br>
+This is possible to reset phone, with 2 choices: stolen reset which will keep unlock code but delete all content, and reset for re-install.</p>
+</div>
 </div>
 <div class="sect5">
 <h6 id="adb_and_developer_mode">ADB and Developer mode</h6>
@@ -2797,6 +2802,9 @@ $ adb start-server
 # Command to check to online adb devices:
 $ adb devices
 ...
+$ adb reboot recovery
+$ adb reboot download
+$ fastboot devices
 
 # Enter the phone in shell mode
 $ adb shell</code></pre>
@@ -2883,6 +2891,15 @@ $ adb shell</code></pre>
 <ul>
 <li>
 <p><a href="https://github.com/4q-u4/Kali-Linux-Android-noroot">Linux on Phone - Kali</a></p>
+</li>
+<li>
+<p><a href="https://lmo.framer.website/">Linux on Phone - LibreMobileOS</a></p>
+</li>
+<li>
+<p><a href="https://github.com/linux-on-droid/">Linux on Phone - Lindroid</a></p>
+</li>
+<li>
+<p><a href="https://gist.github.com/EduApps-CDG/733e29c28dd53e91128d384c2e879397">Linux Kernel building</a></p>
 </li>
 </ul>
 </div>
@@ -3259,7 +3276,7 @@ $ git commit -m "Blabla" --date "27 Mar 2022 20:19"</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-11-26 19:47:12 UTC
+Last updated 2024-12-07 20:43:46 UTC
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
