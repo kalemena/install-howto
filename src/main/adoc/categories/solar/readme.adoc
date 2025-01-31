@@ -57,7 +57,8 @@ Computing example.
 * OpenDTU triggered modules
 ** link:https://tbnobody.github.io/OpenDTU-docs/3rd_party/related/[3rd party projects]
 ** link:https://github.com/helgeerbe/OpenDTU-OnBattery/wiki[Project On Battery]
-** link:https://github.com/tomquist/HoymilesZeroExport[HoymilesZeroExport]
+** link:https://github.com/tomquist/HoymilesZeroExport[Hoymiles Zero Export]
+** link:https://github.com/reserve85/HoymilesZeroExport[Hoymiles Zero Export]
 
 .Routeur PV
 * link:https://ard-tek.com/index.php/documents/22-m-sunpv/47-msun-pv-md-routeur-photovoltaique-2[Routeur PV]
