@@ -1,4 +1,5 @@
 = Odroid M1S
+:hardbreaks:
 
 link:https://www.hardkernel.com/shop/odroid-m1s-with-8gbyte-ram/[Odroid M1S]
 
@@ -21,6 +22,8 @@ link:https://www.hardkernel.com/shop/odroid-m1s-with-8gbyte-ram/[Odroid M1S]
 * link:https://dn.odroid.com/RK3566/ODROID-M1S/[OS Images Odroid]
 * link:https://ppa.linuxfactory.or.kr/images/raw/arm64[OS Images linuxfactory] (search for M1S images)
 * link:https://github.com/home-assistant/operating-system/blob/dev/Documentation/boards/hardkernel/odroid-m1s.md[OS Image - Home Assistant]
+* link:https://sd-card-images.johang.se/boards/odroid_m1s.html[SD Card Images - johang se]
+* link:https://github.com/jonesthefox/odroid-m1s-arch[Images for Arch Linux]
 
 .Building Images
 * link:https://github.com/inindev/odroid-m1[Building Stock Debian for Odroid-M1]
