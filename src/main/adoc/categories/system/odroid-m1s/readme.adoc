@@ -26,8 +26,13 @@ link:https://www.hardkernel.com/shop/odroid-m1s-with-8gbyte-ram/[Odroid M1S]
 * link:https://github.com/jonesthefox/odroid-m1s-arch[Images for Arch Linux]
 
 .Building Images
+* link:https://wiki.odroid.com/odroid-m1s/board_support/building_u-boot#tab__odroid-m1s[Odroid m1s - official building guide]
 * link:https://github.com/inindev/odroid-m1[Building Stock Debian for Odroid-M1]
 * link:https://github.com/rockchip-linux/rkbin/tree/master[Rockchip - Loader Binaries Naming Rules]
+* link:https://github.com/home-assistant/operating-system/tree/dev/buildroot-external/board/hardkernel/odroid-m1s[Patches for Odroid-M1S]
+* link:https://github.com/darkxst/ha-operating-system/tree/odroid-m1s[Example Odroid-M1S for HA]
+* link:https://github.com/johang/sd-card-images[SD Card Images builder johang se]
+
 
 == Flash OS
 
