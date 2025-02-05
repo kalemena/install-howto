@@ -34,6 +34,11 @@ link:https://www.hardkernel.com/shop/odroid-m1s-with-8gbyte-ram/[Odroid M1S]
 * link:https://github.com/johang/sd-card-images[SD Card Images builder johang se]
 
 
+== OS Downloads
+
+* link:https://dn.odroid.com/RK3566/ODROID-M1S/Installer/[Odroid - Installer]
+* link:https://dl.sd-card-images.johang.se/debians/2025-10-27/debian-trixie-arm64-eekee4.bin.gz[Debian - Trixie]
+
 == Flash OS
 
 * Download image ODROID-M1S_EMMC2UMS.img (3 MB)
