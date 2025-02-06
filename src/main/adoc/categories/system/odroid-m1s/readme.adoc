@@ -42,13 +42,27 @@ link:https://www.hardkernel.com/shop/odroid-m1s-with-8gbyte-ram/[Odroid M1S]
 == Flash OS
 
 * Download image ODROID-M1S_EMMC2UMS.img (3 MB)
-* Put in SD slot and power-up. Nothing shows on screen, only blue light shows and nothing else happens.
-* Plug USB OTG to computer. Volume should mount like a USB Mass Storage
-* Download image debian-bookworm-server-odroidm1s-20240121.img.xz (268 MB)
-* Open Etcher, select image, select target, flash
-* unplug all, power off, remove SD card
-* plug screen, keyboard, power up. OS should boot
-* next steps can be done through SSH connection
+
+* Flash SD card using link:https://etcher.balena.io/#download-etcher[Balena Etcher]
+
+* Put SD card in Odroid M1S SD slot
+
+* Plug power supply (and nothing else)
+Only red light (power) and blue light (status) shows and nothing else happens.
+
+* Plug USB OTG to computer.
+Volume should mount like a USB Mass Storage
+
+* Download image debian-bookworm-server-odroidm1s-20240121.img.xz (268 MB) or other image
+
+* Flash through USB OTG device using Etcher
+
+* Unplug all, power off, remove SD card
+
+* Plug screen, keyboard, network, power up.
+OS should boot
+
+* Next steps can be done through SSH connection
 
 == Install
 
