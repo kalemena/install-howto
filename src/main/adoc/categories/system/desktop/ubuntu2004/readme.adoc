@@ -129,6 +129,16 @@ $ sudo apt install ubuntu-restricted-extras
 $ sudo snap install pycharm-community --classic
 ----
 
+.SSH Server
+[source,bash]
+----
+$ sudo apt install openssh-server
+$ service ssh status
+$ sudo systemctl status ssh
+$ sudo systemctl enable --now ssh
+$ sudo ufw allow ssh
+----
+
 .Security
 Password Managers:
 
