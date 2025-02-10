@@ -139,25 +139,6 @@ $ sudo systemctl enable --now ssh
 $ sudo ufw allow ssh
 ----
 
-.Security
-Password Managers:
-
-- BitWarden
-- link:https://keepassxc.org/docs/[KeePassXC]
-- LastPass
-- KeePass
-- Buttercup
-- OneLogin
-- DashLane
-
-.KeePassXC
-[source,bash]
-----
-$ sudo add-apt-repository ppa:phoerious/keepassxc
-$ sudo apt-get update
-$ sudo apt-get install keepassxc
-----
-
 .Tips : Printer
 [IMPORTANT]
 ====
