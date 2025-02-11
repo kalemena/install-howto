@@ -1,0 +1,12 @@
+= Install Ubuntu 24.04
+:hardbreaks:
+
+.SSH Server
+[source,bash]
+----
+$ sudo apt install openssh-server
+$ service ssh status
+$ sudo systemctl status ssh
+$ sudo systemctl enable --now ssh
+$ sudo ufw allow ssh
+----
