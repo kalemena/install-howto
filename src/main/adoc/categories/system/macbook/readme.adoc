@@ -1,0 +1,22 @@
+= Macbook
+:hardbreaks:
+
+.First boot:
+
+- Follow standard procedure of Mac install
+
+.Setup Manual:
+
+- System -> Apple Account Id
+- System -> WallPaper
+- System -> Screensaver
+- System -> Trackpad
+    - Change “natural sliding”
+- System -> Bluetooth
+    - Keyboards
+    - Trackpad
+    - Jabra
+- Network
+    - DNS
+
+
