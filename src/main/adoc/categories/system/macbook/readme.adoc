@@ -5,7 +5,7 @@
 
 - Follow standard procedure of Mac install
 
-.Setup Manual:
+.Setup Principal:
 
 - System -> Apple Account Id
 - System -> WallPaper
@@ -18,5 +18,14 @@
     - Jabra
 - Network
     - DNS
+
+.Command lines installation
+
+[source,bash]
+----
+# Xcode
+> xcode-select --install
+----
+
 
 
