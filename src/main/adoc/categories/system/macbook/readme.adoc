@@ -7,17 +7,17 @@
 
 .Setup Principal:
 
-- System -> Apple Account Id
-- System -> WallPaper
-- System -> Screensaver
-- System -> Trackpad
-    - Change “natural sliding”
-- System -> Bluetooth
-    - Keyboards
-    - Trackpad
-    - Jabra
-- Network
-    - DNS
+* System -> Apple Account Id
+* System -> WallPaper
+* System -> Screensaver
+* System -> Trackpad
+** Change “natural sliding”
+* System -> Bluetooth
+** Keyboards
+** Trackpad
+** Headphone
+* Network
+** DNS
 
 .Command lines installation
 
