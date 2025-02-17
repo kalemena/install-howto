@@ -25,7 +25,26 @@
 ----
 # Xcode
 > xcode-select --install
+
+# Brew
+> /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Applications
+
+> brew install rectangle
+# Set rectangle to open on session start
+
+> brew install --cask firefox
+
+# Open “about:config”
+# Set:
+# - browser.sessionstore.resume_from_crash=true
+# - browser.sessionstore.max_tabs_undo = 50
+# - browser.sessionstore.enabled=true
+
 ----
+
+
 
 
 
