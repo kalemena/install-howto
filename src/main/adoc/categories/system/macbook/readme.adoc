@@ -42,6 +42,14 @@
 # - browser.sessionstore.max_tabs_undo = 50
 # - browser.sessionstore.enabled=true
 
+
+# VSCode
+> brew install --cask visual-studio-code
+
+# Extentions
+# - Remote-SSH
+# - Asciidoc
+
 ----
 
 
