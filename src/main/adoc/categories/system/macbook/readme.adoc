@@ -48,10 +48,6 @@
 > brew install --cask proton-pass
 > brew install --cask telegram
 
-# Ollama
-> brew install ollama
-> brew services start ollama
-
 # VSCode
 > brew install --cask visual-studio-code
 
@@ -61,6 +57,24 @@
 
 ----
 
+.Docker
+
+[source,bash]
+----
+> brew install docker colima
+> colima start --cpu 8 --memory 8 --vm-type=vz --vz-rosetta
+----
+
+.Ollama
+
+[source,bash]
+----
+> brew install ollama
+> brew services start ollama
+
+# Example for Ollama web UI
+> docker run -d -p 3000:8080 -e WEBUI_AUTH=False -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
+----
 
 
 
