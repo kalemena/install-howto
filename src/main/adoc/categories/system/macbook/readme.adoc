@@ -76,6 +76,30 @@
 > docker run -d -p 3000:8080 -e WEBUI_AUTH=False -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
 ----
 
+.Java & tools
+
+[source,bash]
+----
+> brew install openjdk@21
+> sudo ln -sfn /opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-21.jdk
+# Setup JDK
+
+> brew install jenv
+> echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.zshrc
+> eval "$(jenv init -)"
+> jenv add /Library/Java/JavaVirtualMachines/openjdk-21.jdk/Contents/Home
+
+%% https://sdkman.io/usage/
+> curl -s "https://get.sdkman.io" | bash
+> source "$HOME/.sdkman/bin/sdkman-init.sh"
+> sdk version
+> sdk list java
+> sdk install java 17.0.15-zulu
+> sdk use java 17.0.15-zulu 
+----
+
+
+
 
 
 
