@@ -43,10 +43,11 @@
 # - browser.sessionstore.enabled=true
 
 > brew install --cask thunderbird
-> brew install --cask gimp
 > brew install --cask calibre
 > brew install --cask proton-pass
 > brew install --cask telegram
+> brew install --cask fork
+> brew install --cask vlc
 
 # VSCode
 > brew install --cask visual-studio-code
@@ -98,6 +99,15 @@
 > sdk use java 17.0.15-zulu 
 ----
 
+.Office
+[source,bash]
+----
+> brew install --cask libreoffice
+> brew install --cask libreoffice-language-pack
+
+> brew install --cask gimp
+> brew install --cask drawio
+----
 
 
 
