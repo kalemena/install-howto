@@ -6,7 +6,6 @@
 - Follow standard procedure of Mac install
 
 .Setup Principal:
-
 * System -> Apple Account Id
 * System -> WallPaper
 * System -> Screensaver
@@ -20,7 +19,6 @@
 ** DNS
 
 .Command lines installation
-
 [source,bash]
 ----
 # Xcode
@@ -46,16 +44,7 @@
 > brew install --cask calibre
 > brew install --cask proton-pass
 > brew install --cask telegram
-> brew install --cask fork
 > brew install --cask vlc
-
-# VSCode
-> brew install --cask visual-studio-code
-
-# Extentions
-# - Remote-SSH
-# - Asciidoc
-
 ----
 
 .Docker
@@ -67,7 +56,6 @@
 ----
 
 .Ollama
-
 [source,bash]
 ----
 > brew install ollama
@@ -78,7 +66,6 @@
 ----
 
 .Java & tools
-
 [source,bash]
 ----
 > brew install openjdk@21
@@ -109,6 +96,23 @@
 > brew install --cask drawio
 ----
 
+.Development
+[source,bash]
+----
+# Git
+> ssh-keygen -t ed25519 -b 256
+> cat .ssh/id_ed25519.pub 
+
+# UI
+> brew install --cask fork
+
+# VSCode
+> brew install --cask visual-studio-code
+
+# Extentions
+# - Remote-SSH
+# - Asciidoc
+----
 
 
 
