@@ -114,6 +114,21 @@
 # - Asciidoc
 ----
 
+.Mounts Synology
+[source,bash]
+----
+# edit /etc/auto_master
+# add lines:
+> vi /etc/auto_master
+## ...
+## /Volumes/mnt/synology       auto_synology
 
+# Create the file /etc/auto_synology with the following content:
+> vi /etc/auto_synology
 
+## syn_music         -fstype=smbfs ://username:password@SynologyNAS-1/music
+## syn_photos.       -fstype=smbfs ://username:password@SynologyNAS-1/photos
 
+# Mount All
+> sudo automount -vc
+---- 
