@@ -132,3 +132,22 @@
 # Mount All
 > sudo automount -vc
 ---- 
+
+.Tips
+* Shortcuts: https://support.apple.com/en-us/102650
+
+.Screenshots
+[source,bash]
+----
+# Change format of screenshots:
+> defaults write com.apple.screencapture type jpg|png|...
+
+# Change destination of screenshots:
+> defaults write com.apple.screencapture location /Users/[username]/Pictures/Screenshots/
+
+# Remove shadow on screenshots:
+defaults write com.apple.screencapture disable-shadow -bool true
+
+# script the screenshot:
+> screencapture -c -x -R1,135,1271,1244
+----
