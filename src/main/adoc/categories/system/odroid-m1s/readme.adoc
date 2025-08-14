@@ -19,6 +19,7 @@ link:https://www.hardkernel.com/shop/odroid-m1s-with-8gbyte-ram/[Odroid M1S]
 ** link:https://wiki.odroid.com/accessory/power_supply_battery/m1s_ups[Odroid M1S - UPS]
 
 .Images
+* link:https://armbian.com/fr/boards/odroidm1s[Armbian]
 * link:https://dn.odroid.com/RK3566/ODROID-M1S/[OS Images Odroid]
 * link:https://ppa.linuxfactory.or.kr/images/raw/arm64[OS Images linuxfactory] (search for M1S images)
 * link:https://github.com/home-assistant/operating-system/blob/dev/Documentation/boards/hardkernel/odroid-m1s.md[OS Image - Home Assistant]
@@ -36,10 +37,13 @@ link:https://www.hardkernel.com/shop/odroid-m1s-with-8gbyte-ram/[Odroid M1S]
 
 == OS Downloads
 
+* link:https://armbian.com/fr/boards/odroidm1s[Armbian]
 * link:https://dn.odroid.com/RK3566/ODROID-M1S/Installer/[Odroid - Installer]
 * link:https://dl.sd-card-images.johang.se/debians/2025-10-27/debian-trixie-arm64-eekee4.bin.gz[Debian - Trixie]
 
 == Flash OS
+
+=== Official images
 
 * Download image ODROID-M1S_EMMC2UMS.img (3 MB)
 
