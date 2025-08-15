@@ -68,6 +68,29 @@ OS should boot
 
 * Next steps can be done through SSH connection
 
+=== Armbian Installer
+
+* From *Armbian Imager*, select board, and Debian Trixie image, Flash on SD-card
+* On Board:
+** insert SD-card
+** connect keyboard,screen,network,power
+* Boot shows on screen
+* Set root password when asked
+* Create user and set password when asked
+* Run configuration:
+
+.Install - armbian
+[source,bash]
+----
+$ armbian-config
+
+# Select System and enter menus to flash on internal disk eMMC (64G)
+
+# Reboot
+
+# Run again the config tool, and change keyboard layout, local, etc
+----
+
 == Install
 
 .Post-install - password
