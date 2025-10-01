@@ -78,3 +78,8 @@ Computing example.
 - 3000 € / 19200 = 0.1563 €/kWh
 ----
 
+== Orchestrate Solar
+
+* link:https://flows.nodered.org/search?term=victron[Node-Red - Victron Energy flows]
+
+
