@@ -83,3 +83,19 @@ Computing example.
 * link:https://flows.nodered.org/search?term=victron[Node-Red - Victron Energy flows]
 
 
+== Use solar
+
+=== Water Heating
+
+* link:https://docplayer.fr/75284929-Viesmann-notice-de-montage-et-de-maintenance-vitocal-060-a.html[Doc - Viessmann Vitocal - p51-56]
+* ref link:https://forum-photovoltaique.fr/viewtopic.php?t=60716&sid=6022a5b5fa2a769c788d15a860f79858&start=20[Forum - Solar trigger - Vitocal]
+
+[source,txt]
+----
+- l'option PV du vitocal s'active par simple contact des 2 pins de droite de la nappe prévue pour le PV (le branchement 4 pins sur le dessus du boitier)
+- ce n'est pas la résistance mais uniquement la PAC qui s'active, et sa consommation dépendra de la chaleur déjà accumulée dans le ballon : de 400wtt pour un ballon froid, jusqu'à 600Wtt pour une eau déjà à plus de 55°c.
+- il faut d'abord activer l'option PV dans la config, la mettre sur x minutes. X représente le temps avant lequel le ballon se mettra en route une fois le contact effectué. Par exemple, si vous configurez à 5, le ballon s'activera après 5 minutes de contact ininterrompu.
+- si le ballon était en fonctionnement et qu'au moment d’arriver à sa température de consigne le contact est déjà fermé, il ne s’arrête pas et continuera tant que le contact reste fermé. Sinon il faudra attendre les x minutes paramétrées avant le démarrage.
+- une fois le contact fermé, le ballon est lancé en mode PV, et chauffe tant que le contact est maintenu. Dès que le contact est coupé, le ballon s'arrête immédiatement.
+- dans tous les cas, le ballon s’arrêtera à la température maximum.
+----
