@@ -1,0 +1,37 @@
+= Switch
+
+== Backup/Restore
+
+[TIP]
+====
+SD Cards is used to download dematerialized games and save game progress.
+SD Cards end up always too small because games are growing and require more and more space.
+
+Following is a very basic help at backup/restore on larger SD Card.
+====
+
+.Backup
+[source,bash]
+----
+# Insert the SD card into reader...
+
+# Find the disk, with listing 
+$ fdisk -l
+...
+Disque /dev/sdb: 119,9 GiB, 127865454592 octets, 249737216 secteurs
+
+# Create an image disk
+$ sudo dd if=/dev/sdb of=/media/backups/switch-sd-card.img bs=1M status=progress
+
+# Unmout SD Card
+$ sudo umount /dev/sdb
+
+# Insert alternate SD Card into reader ...
+
+# Find the disk
+$ fdisk -l
+...
+
+# Copy image into SD Card
+$ sudo dd if=/media/backups/switch-sd-card.img of=/dev/sdb bs=1M status=progress
+----
