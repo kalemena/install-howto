@@ -16,6 +16,15 @@ Installation How-To (ubuntu, docker, etc)
 .Count files recursively with excluding some
   $ sudo find homes -type f | grep -iv '@eaDir' | grep -iv '#recycle'  | wc -l
 
+== Memory
+
+ $ free -h
+
+.List Process and memory usage
+ $ ps aux  | awk '{print $6/1024 " MB\t\t" $11}'  | sort -n
+
+.Flush Memory
+ $ sync; echo 3 | sudo tee /proc/sys/vm/drop_caches
 
 == BASH
 
