@@ -1,0 +1,117 @@
+= LLama.cpp
+
+== Summary
+
+> You  -->  Claude Code / VSCode Continue / etc  -->  llama-server (localhost:8131)  -->  Qwen 3.5-35B-A3B (GGUF on Metal)
+
+== Setup
+
+[source,bash]
+----
+# Prepare
+$ brew update
+$ brew upgrade
+
+# Install
+$ brew install llama.cpp
+# Verify
+$ llama-server --version
+
+# Start the model Server
+$ llama-server \
+  -hf unsloth/Qwen3.5-35B-A3B-GGUF:Q4_K_M \
+  --port 8131 \
+  -ngl 999 \
+  -t 8 \
+  -c 65536 \
+  -b 512 \
+  -ub 1024 \
+  --parallel 1 \
+  -fa on \
+  --jinja \
+  --keep 1024 \
+  --cache-type-k q8_0 \
+  --cache-type-v q8_0 \
+  --swa-full \
+  --no-context-shift \
+  --chat-template-kwargs '{"enable_thinking": false}' \
+  --mlock \
+  --no-mmap
+
+# Verify model
+$ curl http://localhost:8131/v1/models | jq .
+
+# Install Claude Coe
+$ brew install --cask claude-code
+# Verify
+$ claude --version
+# Configure Claude
+$ mkdir -p ~/.claude
+$ cat << 'SETTINGS' > ~/.claude/settings.json
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "ANTHROPIC_BASE_URL": "http://127.0.0.1:8131",
+    "ANTHROPIC_AUTH_TOKEN": "local",
+    "ANTHROPIC_MODEL": "unsloth/qwen3.5-35b-a3b",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "unsloth/qwen3.5-35b-a3b",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "unsloth/qwen3.5-35b-a3b",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "unsloth/qwen3.5-35b-a3b",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "unsloth/qwen3.5-35b-a3b",
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "128000",
+    "DISABLE_PROMPT_CACHING": "1",
+    "DISABLE_AUTOUPDATER": "1",
+    "DISABLE_TELEMETRY": "1",
+    "DISABLE_ERROR_REPORTING": "1",
+    "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(git *)", "Bash(npm *)", "Bash(npx *)", "Bash(node *)",
+      "Bash(python *)", "Bash(python3 *)", "Bash(pip *)", "Bash(pip3 *)",
+      "Bash(brew *)", "Bash(ls *)", "Bash(cat *)", "Bash(head *)",
+      "Bash(tail *)", "Bash(find *)", "Bash(grep *)", "Bash(rg *)",
+      "Bash(mkdir *)", "Bash(cp *)", "Bash(mv *)", "Bash(rm *)",
+      "Bash(echo *)", "Bash(curl *)", "Bash(which *)", "Bash(env *)",
+      "Bash(cd *)", "Bash(pwd)", "Bash(wc *)", "Bash(sort *)",
+      "Bash(uniq *)", "Bash(diff *)", "Bash(chmod *)", "Bash(touch *)",
+      "Bash(sed *)", "Bash(awk *)", "Bash(xargs *)", "Bash(tee *)",
+      "Read", "Edit", "Write", "Glob", "Grep",
+      "WebFetch", "WebSearch"
+    ],
+    "deny": [
+      "Read(./.env)", "Read(./.env.*)", "Read(./secrets/**)"
+    ]
+  }
+}
+SETTINGS
+
+$ cat << 'EOF' >> ~/.zshrc
+
+# Claude Code + Local Qwen 3.5 — because localhost > cloud
+export LM_MODEL="unsloth/qwen3.5-35b-a3b"
+export ANTHROPIC_BASE_URL="http://127.0.0.1:8131"
+export ANTHROPIC_AUTH_TOKEN="local"
+export CLAUDE_CODE_MAX_OUTPUT_TOKENS=128000
+export ANTHROPIC_MODEL="$LM_MODEL"
+export ANTHROPIC_DEFAULT_OPUS_MODEL="$LM_MODEL"
+export ANTHROPIC_DEFAULT_SONNET_MODEL="$LM_MODEL"
+export ANTHROPIC_DEFAULT_HAIKU_MODEL="$LM_MODEL"
+export CLAUDE_CODE_SUBAGENT_MODEL="$LM_MODEL"
+EOF
+
+$ source ~/.zshrc
+----
+
+[IMPORTANT]
+----
+CPU: -t 
+ -> =4 for Mx
+ -> =8 for Mx Max
+ -> =16 for Mx Ultra
+
+MEMORY: -c
+ -> =131072 for 64GB
+ -> =65536 for 32GB
+ -> =32768 for 16GB
+----
