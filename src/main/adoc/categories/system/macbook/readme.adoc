@@ -48,7 +48,6 @@
 ----
 
 .Docker
-
 [source,bash]
 ----
 > brew install docker colima
@@ -132,6 +131,12 @@
 # Mount All
 > sudo automount -vc
 ---- 
+
+.3D printing
+[source,bash]
+----
+# brew install --cask openscad@snapshot
+----
 
 .Tips
 * Shortcuts: https://support.apple.com/en-us/102650
