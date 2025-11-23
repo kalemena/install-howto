@@ -3061,41 +3061,14 @@ $ echo 1 | sudo tee /sys/module/snd_hda_intel/parameters/power_save</code></pre>
 $ sudo snap install pycharm-community --classic</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<div class="title">Security</div>
-<p>Password Managers:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>BitWarden</p>
-</li>
-<li>
-<p><a href="https://keepassxc.org/docs/">KeePassXC</a></p>
-</li>
-<li>
-<p>LastPass</p>
-</li>
-<li>
-<p>KeePass</p>
-</li>
-<li>
-<p>Buttercup</p>
-</li>
-<li>
-<p>OneLogin</p>
-</li>
-<li>
-<p>DashLane</p>
-</li>
-</ul>
-</div>
 <div class="listingblock">
-<div class="title">KeePassXC</div>
+<div class="title">SSH Server</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ sudo add-apt-repository ppa:phoerious/keepassxc
-$ sudo apt-get update
-$ sudo apt-get install keepassxc</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ sudo apt install openssh-server
+$ service ssh status
+$ sudo systemctl status ssh
+$ sudo systemctl enable --now ssh
+$ sudo ufw allow ssh</code></pre>
 </div>
 </div>
 <div class="admonitionblock important">
@@ -3722,7 +3695,7 @@ $ git commit -m "Blabla" --date "27 Mar 2022 20:19"</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-11-03 08:24:45 UTC
+Last updated 2025-11-23 12:49:15 UTC
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
